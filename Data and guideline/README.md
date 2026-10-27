@@ -1,5 +1,9 @@
 # Shared data and guidance
 
+## Shared cleaned dataset
+
+Use [the shared cleaned CSVs](Cleaned%20data/README.md) and read [the English cleaning and quality report](CLEANING_REPORT.md). The full workbook has been audited, with undated rows quarantined, source formulas exposed, missing data retained and unresolved alignment/timing issues documented. The existing 114-month no-change benchmark is unchanged. This is a common observation dataset, not an automatically release-safe feature matrix.
+
 ## Canvas sources
 
 The following existing local downloads were archived on 27 October 2026. The course module listing and assignment page were checked live. A fresh PDF download was blocked by Chrome, so these copies are not represented as newly downloaded or byte-verified against the server. SHA-256 hashes are in `source_manifest.json`.

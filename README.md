@@ -20,6 +20,16 @@ Our task is to develop interpretable oil futures forecasts and explain their use
 3. Review [the meeting record](Data%20and%20guideline/Meetings/MEETING_NOTES.md).
 4. Open `Felix's model/dist/index.html` locally for the interactive research report. GitHub displays HTML source; download or clone the repository to view the report.
 
+## Shared cleaned data
+
+The group can use [the shared CSV dataset](Data%20and%20guideline/Cleaned%20data/README.md). Read [the English cleaning report](Data%20and%20guideline/CLEANING_REPORT.md) for source issues, field restrictions and the common monthly targets. Original data and teammates' model folders remain unchanged.
+
+```bash
+python -m pip install -r "Data and guideline/cleaning-requirements.txt"
+python "Data and guideline/clean_data.py"
+python "Data and guideline/test_clean_data.py"
+```
+
 ## Reproduce Felix's results
 
 From the repository root, using Python 3.12 (the tested runtime):
