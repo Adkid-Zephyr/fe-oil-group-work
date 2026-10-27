@@ -1,0 +1,33 @@
+source_excel_row,label,description
+1,Date,December 1994 to June 2024
+2,Frequency,"Depending on the sheet, the frequency is Daily (D), Weekly (W), or Monthly (M)"
+3,,"The key contract data is provided as a daily series, most industry data is only available on a weekly basis, Macro data on a Monthly basis."
+5,Industry Data,
+6,CL1,Front-month crude oil futures contract price
+7,CL2,Second month crude oil futures contract price
+8,Brent ,The benchmark crude oil price (per barrel) for Brent Blend. (widely used as a global reference price for oil).
+9,CRKS321C Index,"Crack Spread 321, focusing on a refining ratio of three crude oil futures contracts versus two gasoline futures contracts and one ULSD futures contract. (A measure of the price of oil relative to the value of its outputs)"
+10,Baltic Dry Index,The Baltic Dry Index (BDI) is an index of average prices paid for the transport of dry bulk materials across more than 20 routes.
+11,Daily Production,The daily output of oil (in barrels)
+12,Inventories,The amount of crude oil and oil products stored (in barrels)
+13,Rig Count,The number of active drilling rigs (often a leading indicator of oil production trends.)
+14,Commercial Long,The number of long positions held by commercial traders in the futures market.
+15,Commercial Short,The number of short positions held by commercial traders in the futures market.
+16,Total Open Interest,The total number of outstanding contracts (both long and short) in the futures market.
+18,Macro Data,
+19,CPI YOY %,The year-over-year percentage change in the Consumer Price Index (CPI)  (a measure of inflation).
+20,3M Yield,The yield (interest rate) on a 3-month US Treasury bill
+21,10Y Yield,The yield (interest rate) on a 10-year US Treasury bond
+22,Industrial Production Index,"(IP) An index tracking the output of industrial sectors, such as manufacturing, mining, and utilities. (often used as a proxy for GDP)"
+23,DXY returns,"Returns of the U.S. Dollar Index (DXY), which measures the performance of the U.S. dollar against a basket of major foreign currencies."
+24,VIX,"The CBOE Volatility Index, a measure of market expectations for volatility over the next 30 days."
+25,SPX,"The S&P 500 index, a benchmark of the performance of 500 large publicly traded companies in the U.S."
+27,Oil Stock Prices,
+28,Gasoline All Grades,"The average retail price or wholesale price of gasoline, across all grades (regular, midgrade, and premium), measured in dollars per gallon"
+29,Dow Jones US Oil&Gas Index,"A stock market index tracking the performance of U.S.-based companies in the oil and gas sector, including exploration, production, and services."
+30,ExxonMobil,Stock price of mayor oil producer
+31,ConocoPhilips,Stock price of mayor oil producer
+32,Chevron,Stock price of mayor oil producer
+33,BP ,Stock price of mayor oil producer
+34,Shell,Stock price of mayor oil producer
+35,TotalEnergies,Stock price of mayor oil producer

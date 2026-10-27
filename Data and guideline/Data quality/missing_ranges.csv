@@ -1,0 +1,9 @@
+sheet,column,start,end,n_observations,action
+Industry_D,crack_spread_321,1990-01-02,1991-06-17,369,left missing
+Industry_D,baltic_dry_index,1990-01-02,1990-02-09,29,left missing
+Industry_W,rig_count,1990-01-05,1990-01-05,1,left missing
+Industry_W,crude_stock_change_source_units,1990-01-05,1990-01-26,4,left missing
+Industry_W,commercial_long,1990-01-05,1991-08-16,85,left missing
+Industry_W,commercial_short,1990-01-05,1991-08-16,85,left missing
+Industry_W,total_open_interest_source,1990-01-05,1991-08-16,85,left missing
+StockPrices_M,shell,1994-12-30,2005-06-30,127,left missing
