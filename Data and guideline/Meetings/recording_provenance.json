@@ -1,0 +1,11 @@
+{
+  "source": "User-supplied FE coursework meeting recording",
+  "duration_seconds": 1441.002667,
+  "sha256": "357dd95fe4b44a77b454311354293d6f4220535bd1d19285cff8f12baf94db3b",
+  "transcription": "Local mlx-whisper, whisper-large-v3-turbo",
+  "language_detected": "English",
+  "recording_date": "Unconfirmed",
+  "prepared_date": "2026-10-27",
+  "audio_uploaded": false,
+  "note": "ASR excerpts are unverified and omit unrelated conversation."
+}
