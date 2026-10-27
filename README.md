@@ -6,44 +6,67 @@ Our task is to develop interpretable oil futures forecasts and explain their use
 
 ## Repository structure
 
-| Folder | Purpose |
-| --- | --- |
-| `Data and guideline` | Original Canvas data and assignment documents, shared evaluation protocol, repository guidance and meeting records. |
-| `Felix's model` | Felix's monthly predictive OLS model, reproducible analysis, results and interactive research report. |
-| `Alan&Ronan’s model` | Alan and Ronan's model contributions. |
-| `Mike&Div‘s model` | Mike and Div's model contributions. |
+```text
+fe-oil-group-work/
+|-- data/
+|   |-- raw/                     # Original, unchanged source data
+|   |-- clean/                   # Shared cleaned CSVs and prepared data
+|   |-- results/                 # Forecasts and metrics, grouped by model
+|       |-- Benchmark/
+|       |-- Mike&Div/
+|       |-- Alan&Ronan/
+|       |-- no-change-benchmark/ # Separate zero-change baseline forecasts
+|-- models/
+|   |-- Benchmark/               # Monthly OLS model, analysis code and report
+|   |-- Mike&Div/
+|   |-- Alan&Ronan/
+|-- guidelines/                  # Coursework guidance, protocols and scripts
+|   |-- Canvas/                  # Coursework brief, syllabus and AI guidance
+|   |-- Data quality/             # Generated source audit and quality evidence
+|-- extra/
+|   |-- meetings/                # Meeting notes and source records
+|   |-- optional-comparisons/    # Historical-mean and AR(1) comparisons
+|-- .gitignore
+|-- README.md
+```
+
+- `data/raw/` holds the original `Oil Data.xlsx`; keep it unchanged.
+- `data/clean/` holds reproducible prepared datasets, such as `monthly_prepared.csv`.
+- `data/results/` groups forecasts and metrics by model: `Benchmark/`, `Mike&Div/`, and `Alan&Ronan/`. `no-change-benchmark/` holds the separate zero-change baseline forecasts.
+- `models/` contains model code, model-specific documentation and report assets. The `Benchmark` folder is the monthly OLS model workspace.
+- `guidelines/` contains shared coursework materials and the common benchmark protocol.
+- `extra/` contains meeting records and optional, non-primary model comparisons.
 
 ## Start here
 
-1. Read [the shared guidance](Data%20and%20guideline/README.md) and the original coursework PDF in `Data and guideline/Canvas`.
-2. Read [the benchmark protocol](Data%20and%20guideline/BENCHMARKS.md) before comparing models.
-3. Review [the meeting record](Data%20and%20guideline/Meetings/MEETING_NOTES.md).
-4. Open `Felix's model/dist/index.html` locally for the interactive research report. GitHub displays HTML source; download or clone the repository to view the report.
+1. Read [shared guidance](guidelines/README.md) and the original coursework PDF in `guidelines/Canvas/`.
+2. Read the [benchmark protocol](guidelines/BENCHMARKS.md) before comparing models.
+3. Open `models/Benchmark/dist/index.html` locally for the interactive research report. GitHub displays HTML source; clone or download the repository to view it.
 
 ## Shared cleaned data
 
-The group can use [the shared CSV dataset](Data%20and%20guideline/Cleaned%20data/README.md). Read [the English cleaning report](Data%20and%20guideline/CLEANING_REPORT.md) for source issues, field restrictions and the common monthly targets. Original data and teammates' model folders remain unchanged.
+Use [the shared cleaned-data guide](data/clean/README.md) and read the [cleaning and quality report](guidelines/CLEANING_REPORT.md) before choosing predictors. The data are standardised and auditable, but some source definitions and timestamps remain unresolved.
 
 ```bash
-python -m pip install -r "Data and guideline/cleaning-requirements.txt"
-python "Data and guideline/clean_data.py"
-python "Data and guideline/test_clean_data.py"
+python -m pip install -r guidelines/cleaning-requirements.txt
+python guidelines/clean_data.py
+python -m unittest discover -s guidelines -p "test_clean_data.py"
 ```
 
-## Reproduce Felix's results
+The script reads the unchanged workbook from `data/raw/`, writes shared CSVs to `data/clean/`, and writes source-quality evidence to `guidelines/Data quality/`.
+
+## Reproduce the Benchmark model
 
 From the repository root, using Python 3.12 (the tested runtime):
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r "Felix's model/requirements.txt"
-python "Felix's model/analyze.py"
-python "Felix's model/build.py"
-python "Data and guideline/benchmark.py"
+python -m pip install -r models/Benchmark/requirements.txt
+python models/Benchmark/analyze.py
+python models/Benchmark/build.py
+python guidelines/benchmark.py
 ```
 
-Felix has completed the shared **no-change benchmark**. The last command regenerates ready-to-use forecasts under `Data and guideline/Benchmark results`. See the short benchmark guide linked above. Earlier multi-model comparisons remain optional; the original research report retains its historical-mean comparison.
+The analysis reads the original workbook from `data/raw/`, writes prepared data to `data/clean/`, and writes model outputs to `data/results/Benchmark/`. The final command regenerates the separate **no-change benchmark** forecasts in `data/results/no-change-benchmark/`. See the [benchmark guide](guidelines/BENCHMARKS.md) for how to compare models. Historical-mean and AR(1) results are optional comparisons in `extra/optional-comparisons/`.
 
 ## Collaboration
 

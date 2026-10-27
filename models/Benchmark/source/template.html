@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Oil, explained — FE research note</title>
+<style>
+:root{--paper:#f7f5ef;--ink:#242821;--muted:#687067;--line:#d5d7ca;--green:#426953;--clay:#b36345;--light:#e9ede3;--white:#fffef9;--serif:Georgia,'Songti SC',serif;--sans:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}a{color:var(--green);text-underline-offset:4px}button,input,select,textarea{font:inherit}button,select{border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 14px;border-radius:4px;cursor:pointer}button:hover{background:var(--light)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--clay);outline-offset:4px}button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}button.primary:hover{background:var(--green)}button:disabled{opacity:.4;cursor:default}header{position:sticky;top:0;z-index:10;background:rgba(247,245,239,.97);border-bottom:1px solid var(--line)}.topbar{max-width:1280px;margin:auto;padding:15px 36px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:var(--serif);font-size:24px;color:var(--ink);text-decoration:none;white-space:nowrap}.brand span{font-family:var(--sans);font-size:12px;color:var(--muted);margin-left:12px}nav{display:flex;gap:22px}nav a{font-size:13px;color:var(--muted);text-decoration:none}.actions{display:flex;gap:8px;align-items:center}.actions button{font-size:13px}main{max-width:1208px;padding:0 36px;margin:auto}.hero{padding:68px 0 28px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}.meta{font-size:13px;color:var(--muted);margin:0 0 25px}h1{font-family:var(--serif);font-size:clamp(38px,4.2vw,66px);line-height:1.18;font-weight:400;letter-spacing:-1.8px;margin:0 0 28px}h2{font-family:var(--serif);font-size:clamp(30px,3vw,43px);line-height:1.25;font-weight:400;letter-spacing:-.8px;margin:0 0 20px}h3{font-size:19px;line-height:1.4;margin:0 0 14px;font-weight:600}p{margin:0 0 18px}.lede{font-size:18px;line-height:1.85;max-width:39em}.small,.caption{font-size:13px;color:var(--muted)}.caption{margin:14px 0 0}.status{display:inline-block;padding:3px 10px;border:1px solid #b8c4b4;border-radius:3px;color:var(--green);font-size:12px}.hero-figure{border-top:1px solid var(--ink);padding-top:20px}.figure-head{display:flex;justify-content:space-between;font-size:13px;gap:20px;margin-bottom:18px}.figure-head span:last-child{color:var(--muted)}svg{display:block;width:100%;height:auto;overflow:visible}svg text{font-family:var(--sans);fill:var(--muted);font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:35px 0 0;padding:24px 0;gap:24px}.stats .value{font-family:var(--serif);font-size:40px;line-height:1.2}.stats .label{font-size:13px;color:var(--muted);margin:7px 0}.stats .sub{font-size:12px}.section{padding:70px 0;border-bottom:1px solid var(--line)}.section-title{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start;margin-bottom:28px}.section-title p{color:var(--muted);max-width:48em}.signals{display:grid;grid-template-columns:repeat(3,1fr);gap:38px;margin-top:32px}.signal{border-top:2px solid var(--green);padding-top:22px}.signal .symbol{font-family:var(--serif);font-size:27px;margin-bottom:16px}.signal p{font-size:15px}.formula{font-family:var(--serif);font-size:23px;text-align:center;background:var(--light);padding:27px 18px;margin:32px 0 20px;border-radius:3px}.timeline{display:flex;height:14px;gap:4px;margin:28px 0 10px}.timeline span:first-child{flex:239;background:#9da998}.timeline span:last-child{flex:114;background:var(--green)}.timeline-labels{display:flex;justify-content:space-between;font-size:13px;gap:20px;color:var(--muted)}.controls{display:flex;align-items:end;gap:20px;flex-wrap:wrap;margin:24px 0}.control label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}.control select{min-width:190px}.evidence{display:grid;grid-template-columns:1.8fr 1fr;gap:40px;align-items:start}.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:14px}.legend i{display:inline-block;width:17px;height:3px;vertical-align:middle;margin-right:6px}.callout{border-left:3px solid var(--clay);padding:8px 0 8px 20px;margin:24px 0;color:var(--ink)}.callout p:last-child{margin-bottom:0}.note{background:var(--light);padding:24px;border-radius:3px;font-size:15px}.note strong{display:block;margin-bottom:9px}.tablewrap{width:100%;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}th{text-align:left;font-size:12px;font-weight:500;color:var(--muted);padding:11px 12px;border-bottom:1px solid var(--ink)}td{padding:13px 12px;border-bottom:1px solid var(--line)}td:first-child,th:first-child{padding-left:0}td.num,th.num{text-align:right;white-space:nowrap}.highlight td{color:var(--green);font-weight:600}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin-top:35px}.month-control{background:var(--light);padding:22px 26px;margin-bottom:30px}.month-label{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:8px}output{font-variant-numeric:tabular-nums;font-weight:600}input[type=range]{width:100%;accent-color:var(--green);cursor:pointer}.slider-group{margin:20px 0}.slider-group label{display:flex;justify-content:space-between;gap:15px;font-size:14px}.forecast-box{border-top:1px solid var(--ink);padding-top:20px}.forecast-number{font-family:var(--serif);font-size:58px;line-height:1.2;color:var(--green)}.forecast-sub{font-size:13px;color:var(--muted)}.contribution{display:grid;grid-template-columns:100px 1fr 70px;gap:10px;align-items:center;margin:12px 0;font-size:13px}.bartrack{height:17px;background:#e9e9df;position:relative}.bartrack:after{content:'';position:absolute;height:100%;width:1px;background:#9ba494;left:50%}.barfill{height:100%;position:absolute;background:var(--green)}.barfill.negative{background:var(--clay)}.endnum{text-align:right;font-variant-numeric:tabular-nums}.diagnostics td:last-child{max-width:330px}.pass{color:var(--green)}.warn{color:#945031}.qa details{border-top:1px solid var(--line);padding:18px 0}.qa summary{cursor:pointer;font-weight:500}.qa details p{margin:14px 0 0;color:var(--muted)}.trade-controls{display:grid;grid-template-columns:1fr 1fr;gap:36px}.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:20px 0}.mini-stats b{display:block;font-family:var(--serif);font-weight:400;font-size:30px}.mini-stats span{font-size:12px;color:var(--muted)}.report{max-width:760px;margin:auto;font-family:var(--serif);font-size:18px;line-height:1.85}.report h2{font-size:29px;margin-top:38px}.report p{margin-bottom:22px}.report .report-head{border-bottom:1px solid var(--ink);padding-bottom:26px;margin-bottom:25px}.report .report-head h2{font-size:42px}.report-tools{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.report-wrap{display:none}.report-wrap.open{display:block}.sources{display:grid;grid-template-columns:1fr 1fr;gap:50px;font-size:14px}.sources ul{padding-left:20px}.sources li{margin:9px 0}.source-hash{word-break:break-all;font-size:11px;color:var(--muted)}textarea{width:100%;min-height:150px;resize:vertical;background:var(--white);border:1px solid var(--line);border-radius:4px;padding:16px;font-size:14px}.footer{padding:30px 0 50px;display:flex;justify-content:space-between;gap:25px;font-size:12px;color:var(--muted)}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:fixed;top:-80px;left:20px;background:var(--paper);padding:10px;z-index:100}.skip:focus{top:10px}.presentation{border:0;width:100vw;max-width:none;height:100vh;max-height:none;background:var(--paper);padding:0;color:var(--ink)}.presentation::backdrop{background:var(--paper)}.slide-shell{max-width:1100px;margin:auto;padding:40px 55px;min-height:100%;display:flex;flex-direction:column}.slide-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px}.slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:55px 0}.slide-content h2{font-size:clamp(32px,5vw,70px);max-width:950px}.slide-content p{font-size:clamp(19px,2.3vw,30px);max-width:850px}.slide-content .slide-num{font-family:var(--serif);font-size:clamp(27px,7vw,80px);color:var(--green)}.slide-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px}.progress{height:3px;background:var(--line);margin-top:20px}.progress span{display:block;height:3px;background:var(--green)}.slide-note{font-size:14px!important;color:var(--muted)}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:5px;z-index:30;display:none;font-size:14px}.smallbtn{font-size:12px;padding:5px 10px}.hide{display:none!important}
++@media(max-width:1000px){nav{display:none}.hero{gap:28px}.evidence{grid-template-columns:1fr}.stats{gap:15px}.sources{gap:25px}.contribution{grid-template-columns:90px 1fr 65px}}@media(max-width:700px){.topbar{padding:12px 18px}.brand{font-size:20px}.brand span{display:none}.actions button{padding:7px 10px}.actions .print-btn{display:none}main{padding:0 20px}.hero{grid-template-columns:1fr;padding-top:38px;gap:25px}h1{letter-spacing:-1px}.section{padding:45px 0}.section-title{grid-template-columns:1fr;gap:0}.signals,.method-grid,.sources{grid-template-columns:1fr;gap:25px}.stats{grid-template-columns:1fr 1fr;row-gap:25px}.stats .value{font-size:34px}.signal{padding-top:16px}.formula{font-size:18px;text-align:left;overflow-x:auto}.trade-controls{grid-template-columns:1fr;gap:0}.footer{flex-direction:column}.slide-shell{padding:22px}.slide-content{padding:35px 0}.slide-bottom{flex-wrap:wrap}.timeline-labels{font-size:11px}.mini-stats{gap:10px}.mini-stats b{font-size:24px}th,td{padding:10px 8px}.month-label{align-items:start}svg text{font-size:13px}}
++@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
++@media print{header,.controls,.month-control,input,button,textarea,.trade-controls,.presentation,.skip,.footer,.report-tools{display:none!important}body{background:white;font-size:11pt;color:black}main{max-width:none;padding:0}.hero{padding-top:0;gap:30px}h1{font-size:32pt}h2{font-size:23pt}.section{padding:24px 0;break-inside:auto}.stats .value{font-size:26pt}figure,table,.signal,.note{break-inside:avoid}a{color:inherit}.report-wrap{display:block!important}.report{font-size:11pt;max-width:none}.report h2{font-size:19pt}.report-wrap{break-before:page}body.print-report main>*,body.print-report header{display:none!important}body.print-report main>#report-section{display:block!important}body.print-report #report-section>.section-title{display:none!important}body.print-report .report-wrap{break-before:auto}.sources{display:block}svg{max-height:300px}}
+</style></head>
+<body><a href="#main" class="skip">Skip to content</a>
+<header><div class="topbar"><a class="brand" href="#main">Oil, explained<span>Financial Econometrics</span></a><nav aria-label="Sections"><a href="#approach" data-en="Approach"></a><a href="#evidence" data-en="Evidence"></a><a href="#explain" data-en="Explain"></a><a href="#report-section" data-en="Report"></a></nav><div class="actions"><button id="present" class="primary" data-en="5-minute briefing"></button></div></div></header>
+<main id="main">
+<section class="hero"><div><p class="meta">Research note / 27 October 2026 <span class="status" data-en="AI-assisted research draft"></span></p><h1 data-en="Can three signals improve oil forecasts?"></h1><p class="lede" data-en="A linear model brings together recent price changes, the futures curve and the dollar. Historical tests show a small improvement, with insufficient evidence of a reliable trading edge."></p><a href="#evidence" data-en="Explore the out-of-sample evidence"></a></div><figure class="hero-figure" style="margin:0"><div class="figure-head"><span data-en="CL1 monthly price"></span><span>1994–2024 · USD / barrel</span></div><div id="priceChart"></div><figcaption class="caption" data-en="The pale-green area is the 2015–2024 evaluation period. Monthly data end in June 2024. This is not a live market forecast."></figcaption></figure></section>
+<div class="stats"><div><div class="value" id="heroGain"></div><div class="label" data-en="Reduction in RMSE"></div><div class="sub" data-en="Versus the historical mean"></div></div><div><div class="value">114</div><div class="label" data-en="Monthly out-of-sample forecasts"></div><div class="sub">Jan 2015 – Jun 2024</div></div><div><div class="value">3</div><div class="label" data-en="Interpretable signals"></div><div class="sub" data-en="One specification, refitted monthly"></div></div><div><div class="value" id="heroDirection"></div><div class="label" data-en="Directional accuracy"></div><div class="sub" data-en="Historical mean: 56.1%"></div></div></div>
+<section class="section" id="approach"><div class="section-title"><h2 data-en="Start with a clear question."></h2><p data-en="At the end of this month, can observed information help predict next month's change in oil prices? Three signals keep the model easy to challenge and explain."></p></div><div class="signals"><article class="signal"><div class="symbol">Momentum</div><h3 data-en="Did oil rise or fall last month?"></h3><p data-en="Last month's percentage change in CL1 tests short-term persistence or reversal. Future price movements are never inputs."></p><span class="small">rₜ₋₁</span></article><article class="signal"><div class="symbol">Curve</div><h3 data-en="Is nearby oil more expensive?"></h3><p data-en="The front-minus-second-month spread, divided by the front price, captures curve shape. A positive value means nearby oil is dearer, not a guaranteed carry return."></p><span class="small">cₜ₋₁ = 100 × (CL1 − CL2) / CL1</span></article><article class="signal"><div class="symbol">Dollar</div><h3 data-en="Has the dollar strengthened?"></h3><p data-en="Dollar moves may be associated with demand and dollar-denominated prices. DXY uses an extra month's delay because publication timestamps are undocumented."></p><span class="small">dₜ₋₂ = DXY return × 100</span></article></div><div class="formula">rₜ = α + β₁ × rₜ₋₁ + β₂ × cₜ₋₁ + β₃ × dₜ₋₂ + εₜ</div><p class="small" data-en="r is the monthly percentage change in the continuous CL1 price series: a price-change proxy, not a verified futures investment return after rolling, margin and execution. Changes use percentage points."></p><div class="timeline"><span></span><span></span></div><div class="timeline-labels"><span data-en="Initial training: Feb 1995–Dec 2014 · 239 months"></span><span data-en="Evaluation: Jan 2015–Jun 2024 · 114 months"></span></div><div class="method-grid"><div><h3 data-en="Only the past is visible"></h3><p data-en="Refit each month using target observations strictly before the forecast month. Align by calendar month. No random split, full-sample scaling or deletion of 2020."></p></div><div><h3 data-en="Compare with simple alternatives"></h3><p data-en="Benchmark one predicts no change. Benchmark two predicts the mean of past changes and is the primary comparator. A more complex model must justify its extra work."></p></div></div></section>
+<section class="section" id="evidence"><div class="section-title"><h2 data-en="A small gain. Large errors remain."></h2><p data-en="Compare periods to see how performance changes. Every forecast is estimated before its target month. Display filters do not reselect or retrain the model."></p></div><div class="controls"><div class="control"><label for="period" data-en="Evaluation period"></label><select id="period"><option value="all" data-en="All: 2015–2024"></option><option value="pre2020">2015–2019</option><option value="2020">2020</option><option value="post2020">2021–2024</option></select></div><div class="control"><label for="view" data-en="Chart view"></label><select id="view"><option value="forecast" data-en="Forecasts and outcomes"></option><option value="error" data-en="Monthly absolute errors"></option></select></div></div><div class="evidence"><div><div class="legend"><span><i style="background:#8e9389"></i><span data-en="Actual"></span></span><span><i style="background:var(--green)"></i>OLS</span><span><i style="background:var(--clay)"></i><span data-en="Historical mean"></span></span></div><div id="forecastChart"></div><div class="caption" id="periodSummary"></div></div><div><div class="tablewrap"><table><thead><tr><th data-en="Model"></th><th class="num">RMSE</th><th class="num">MAE</th></tr></thead><tbody id="metrics"></tbody></table></div><p class="caption" data-en="Percentage points; lower is better. RMSE penalises large errors more. MAE is the average absolute mistake."></p><div class="note" style="margin-top:24px"><strong id="r2"></strong><span data-en="Reduction in squared error versus the historical mean. This is neither directional accuracy nor investment return."></span></div></div></div><div class="callout"><p><strong data-en="The improvement is uncertain."></strong> <span data-en="The mean squared-loss difference, OLS minus benchmark, is −12.91. A paired block-bootstrap approximate 95% interval is [−34.54, +1.11]. It includes zero, so a reliable advantage is not established."></span></p></div><details><summary data-en="Monthly forecast table and uncertainty method"></summary><p class="caption" data-en="Circular six-month blocks, 2,000 resamples, fixed seed. Resamples paired realised forecast losses, without refitting the models. The interval depends on sample and block assumptions."></p><div class="tablewrap" style="max-height:360px;overflow:auto;margin-top:15px"><table><thead><tr><th data-en="Target month"></th><th data-en="Training ends"></th><th class="num" data-en="Actual"></th><th class="num">OLS</th><th class="num" data-en="Mean"></th></tr></thead><tbody id="forecastRows"></tbody></table></div></details></section>
+<section class="section" id="explain"><div class="section-title"><h2 data-en="Explain every forecast."></h2><p data-en="Choose a historical month to inspect what the model knew. Move the inputs for a sensitivity illustration, keeping that month's pre-forecast coefficients fixed."></p></div><div class="month-control"><div class="month-label"><label for="month" data-en="Historical forecast month"></label><output id="monthValue" for="month"></output></div><input type="range" id="month" min="0" max="113" value="113" step="1"><div class="small" id="informationDate"></div></div><div class="method-grid"><div><h3 data-en="Three inputs"></h3><div class="slider-group"><label for="momentum"><span data-en="Previous oil change (%)"></span><output id="momentumValue"></output></label><input type="range" id="momentum" min="-60" max="100" step="0.1"></div><div class="slider-group"><label for="carry"><span data-en="Nearby premium (%)"></span><output id="carryValue"></output></label><input type="range" id="carry" min="-40" max="15" step="0.1"></div><div class="slider-group"><label for="dollar"><span data-en="Delayed dollar change (%)"></span><output id="dollarValue"></output></label><input type="range" id="dollar" min="-10" max="10" step="0.1"></div><button id="resetScenario" class="smallbtn" data-en="Restore historical inputs"></button><p class="caption" data-en="Signs follow fitted coefficients, not a predetermined market story. Scenario sliders are learning tools, not current-market advice."></p></div><div class="forecast-box"><div class="small" id="scenarioState"></div><div class="forecast-number" id="forecastNumber" aria-live="polite"></div><p class="forecast-sub" id="actualNumber"></p><div id="contributions"></div><div class="small" id="formulaDetail"></div><div class="note" style="margin-top:22px" id="bandNote"></div></div></div></section>
+<section class="section" id="diagnostics"><div class="section-title"><h2 data-en="Check the assumptions."></h2><p data-en="Tests use the initial 1995–2014 training sample. They are not selected after viewing evaluation results. Failure to reject a null does not prove it true."></p></div><div class="tablewrap"><table class="diagnostics"><thead><tr><th data-en="Test"></th><th class="num">p-value</th><th data-en="Interpretation"></th></tr></thead><tbody id="diagnosticRows"></tbody></table></div><div class="method-grid"><div><h3 data-en="Variance is not constant"></h3><p data-en="Breusch–Pagan gives p = 0.011. Coefficient uncertainty therefore uses HAC(3) standard errors. HAC adjusts inference; it does not repair the forecasts or remove risk."></p></div><div><h3 data-en="The curve coefficient is negative"></h3><p data-en="The initial nearby-premium coefficient is about −0.545. This is a conditional sample association, potentially reflecting reversal, confounding or continuous-series construction, not a causal law."></p></div></div><details><summary data-en="Initial coefficients and HAC 95% intervals"></summary><div class="tablewrap"><table><thead><tr><th data-en="Parameter"></th><th class="num" data-en="Estimate"></th><th class="num">95% CI</th><th class="num">p-value</th></tr></thead><tbody id="coefRows"></tbody></table></div><p class="caption" data-en="Initial in-sample R² is just 2.51%. Individual significance does not guarantee forecasting value; multiple tests also increase opportunities for chance findings."></p></details></section>
+<section class="section" id="trading"><div class="section-title"><h2 data-en="What separates a forecast from a trade?"></h2><p data-en="Illustrate one rule: long above a positive forecast threshold, short below its negative, otherwise flat. The threshold is not optimised for performance."></p></div><div class="trade-controls"><div class="slider-group"><label for="threshold"><span data-en="Forecast threshold (pp)"></span><output id="thresholdValue"></output></label><input type="range" id="threshold" min="0" max="5" step="0.25" value="1"></div><div class="slider-group"><label for="cost"><span data-en="Assumed cost per position-change unit (bp)"></span><output id="costValue"></output></label><input type="range" id="cost" min="0" max="100" step="5" value="10"></div></div><div class="mini-stats"><div><b id="activeMonths"></b><span data-en="Months with directional exposure"></span></div><div><b id="turnover"></b><span data-en="Turnover units, including entry and exit"></span></div><div><b id="netProxy"></b><span data-en="Net proxy score, summed pp"></span></div></div><div class="legend"><span><i style="background:#8e9389"></i><span data-en="Gross proxy"></span></span><span><i style="background:var(--green)"></i><span data-en="After assumed costs"></span></span></div><div id="tradeChart"></div><p class="callout" data-en="This is not a wealth curve. It sums direction × CL1-series change minus assumed costs. Actual futures require contract rolling, margin, funding, slippage and execution timestamps. This score does not establish profitability."></p></section>
+<section class="section qa" id="brief"><div class="section-title"><h2 data-en="Make it easy for the team to explain."></h2><p data-en="Use five minutes to explain the question, method, evidence and limitations. These are discussion prompts, not a script to read word for word."></p></div><details open><summary data-en="Why not predict the price level?"></summary><p data-en="Price levels may be nonstationary, confusing shared trends with forecasting skill. The initial ADF test does not reject a unit root in levels. Changes suit directional questions, while remaining a continuous-series proxy."></p></details><details><summary data-en="Why not use neural networks or topology?"></summary><p data-en="The assignment values justification, diagnostics and communication. Three-variable OLS can be explained term by term. More complex methods require more evidence. We retain chronological validation and simple benchmarks from prior research without importing high-dimensional methods."></p></details><details><summary data-en="Is 57.9% direction accuracy impressive?"></summary><p data-en="The historical-mean benchmark already scores 56.1%. The gap is only about 1.8 percentage points. Correct directions can gain little while wrong calls lose more, so accuracy cannot replace error or executable trading evaluation."></p></details><details><summary data-en="What if the forecasting gains are modest?"></summary><p data-en="State the modest improvement, uncertainty and large crisis errors. Explain model choices, information timing and diagnostics. The assignment does not require beating the market."></p></details><details><summary data-en="What should every member understand?"></summary><p data-en="Explain the three variables, information and target dates, benchmark choice, crisis failures and why the proxy score is not trading profit. Re-run the code, verify the data and produce your own final assessment output."></p></details><div class="method-grid"><div><h3 data-en="Your team's discussion notes"></h3><label for="notes" class="small" data-en="Record what you accept, question or plan to change. Stored only in this browser."></label><textarea id="notes" aria-label="Team discussion notes" placeholder=""></textarea><button id="saveNotes" class="smallbtn" data-en="Download notes"></button></div><div class="note"><strong data-en="Specific items to verify before submission"></strong><p data-en="Canvas deadline: 27 Nov 2026, 16:00 London. The brief says 2,000 words; the assessment page says max 3,000. The brief retains an old year/week reference. Presentation links are duplicated. Confirm length, slot, code packaging and permitted AI use."></p><span class="small" data-en="Completed analysis is not instructor approval or a final assessment submission."></span></div></div></section>
+<section class="section" id="report-section"><div class="section-title"><h2 data-en="Full English research draft"></h2><p data-en="Read the data, method, results and limitations as one argument. For team learning, review and revision, not your completed final assessment output."></p></div><div class="report-tools"><button id="toggleReport" class="primary" aria-expanded="false" data-en="Read the report"></button><button id="printReport" data-en="Print / save report as PDF"></button><button id="downloadCsv" data-en="Download forecast CSV"></button><button id="downloadCode" data-en="Download analysis code"></button></div><div id="reportWrap" class="report-wrap"><article class="report" lang="en"><div class="report-head"><p class="small">AI-assisted research draft · for team review and learning</p><h2>Three signals for monthly oil-price forecasting</h2><p class="small">BUSI70606 · 27 October 2026 · __WORDCOUNT__ words, excluding title and sources</p></div>__REPORT__<h2>Sources and reproducibility</h2><p>Course workbook: Oil Data.xlsx, Industry_M and Macro_M. Assignment: 26 Fintech CW Financial Econometrics.pdf, pages 1–4. Analysis: analyze.py and the recorded protocol, with forecast-level results embedded in this page. Diagnostic methods use statsmodels. This draft and its code were AI-assisted. Team members must independently verify the evidence and write their own final assessment output under the school's guidance.</p></article></div></section>
+<section class="section" id="sources"><div class="sources"><div><h3 data-en="Data and original instructions"></h3><ul><li><a href="https://canvas.imperial.ac.uk/courses/9001/files/2784233" target="_blank" rel="noopener">Oil Data.xlsx / Canvas</a></li><li><a href="https://canvas.imperial.ac.uk/courses/9001/modules/items/2361031" target="_blank" rel="noopener" data-en="Coursework brief PDF"></a></li><li><a href="https://canvas.imperial.ac.uk/courses/9001/assignments/195314" target="_blank" rel="noopener" data-en="Submission page (link only)"></a></li><li><a href="https://canvas.imperial.ac.uk/courses/5594/files/2665512" target="_blank" rel="noopener" data-en="Business School AI guidance 2026/27"></a></li></ul><p class="source-hash">Source SHA-256: <span id="hash"></span></p></div><div><h3 data-en="Reproduction and design sources"></h3><p data-en="The delivery package contains analysis code, protocol, dependencies and source data. Independent least-squares verification and future-truncation checks pass."></p><ul><li><a href="https://www.statsmodels.org/stable/stats.html" target="_blank" rel="noopener">statsmodels diagnostic reference</a></li><li><a href="https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md" target="_blank" rel="noopener">Anthropic frontend-design Skill</a></li></ul><p class="small" data-en="Works offline, without third-party scripts or telemetry. Research-note styling does not imply institutional endorsement."></p></div></div></section>
+<div class="footer"><span>Oil, explained / FE research note</span><span data-en="Data through Jun 2024 · Prepared 27 Oct 2026"></span></div>
+</main><dialog id="presentation" class="presentation" aria-labelledby="slideTitle"><div class="slide-shell"><div class="slide-toolbar"><span>Oil, explained / <span id="slideIndex"></span></span><button id="closePresent" data-en="Exit briefing"></button></div><div class="slide-content" id="slideContent"></div><div class="slide-bottom"><span id="slideTime" class="small"></span><div class="actions"><button id="prevSlide" data-en="Previous"></button><button id="nextSlide" class="primary" data-en="Next"></button></div></div><div class="progress"><span id="slideProgress"></span></div></div></dialog><div class="toast" id="toast" role="status"></div>
+<script id="analysis-data" type="application/json">__DATA__</script>
+<script id="code-data" type="application/json">__CODE__</script>
+<script>
+'use strict';
+
+const D = JSON.parse(document.getElementById('analysis-data').textContent),
+  code = JSON.parse(document.getElementById('code-data').textContent);
+let lang = 'en',
+  scenario = null,
+  slide = 0;
+const $ = id => document.getElementById(id),
+  t = (zh, en) => lang === 'zh' ? zh : en,
+  fmt = (v, n = 2) => Number(v).toFixed(n),
+  signed = (v, n = 2) => (v >= 0 ? '+' : '') + fmt(v, n),
+  pval = v => v < .001 ? '<0.001' : fmt(v, 3);
+const colors = {
+  actual: '#8e9389',
+  ols: '#426953',
+  mean: '#b36345',
+  gross: '#8e9389',
+  net: '#426953'
+};
+function chart(id, labels, series, {
+  height = 280,
+  unit = '',
+  shade = null,
+  zero = false
+} = {}) {
+  const width = Math.max(320, $(id).clientWidth),
+    pad = {
+      l: 58,
+      r: 14,
+      t: 25,
+      b: 38
+    },
+    iw = width - pad.l - pad.r,
+    ih = height - pad.t - pad.b;
+  const all = series.flatMap(s => s.values).filter(Number.isFinite);
+  let lo = Math.min(...all),
+    hi = Math.max(...all);
+  if (zero) {
+    lo = Math.min(lo, 0);
+    hi = Math.max(hi, 0);
+  }
+  if (lo === hi) {
+    lo -= 1;
+    hi += 1;
+  }
+  const span = hi - lo;
+  lo -= span * .08;
+  hi += span * .08;
+  const x = i => pad.l + i * iw / Math.max(labels.length - 1, 1),
+    y = v => pad.t + (hi - v) / (hi - lo) * ih;
+  let out = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${unit}"><title>${unit}</title>`;
+  if (shade !== null) out += `<rect x="${x(shade)}" y="${pad.t}" width="${width - pad.r - x(shade)}" height="${ih}" fill="#e3e9dc"/>`;
+  for (let i = 0; i < 5; i++) {
+    const v = lo + (hi - lo) * i / 4,
+      yy = y(v);
+    out += `<line x1="${pad.l}" x2="${width - pad.r}" y1="${yy}" y2="${yy}" stroke="#dedfd5"/><text x="${pad.l - 10}" y="${yy + 4}" text-anchor="end">${fmt(v, 1)}</text>`;
+  }
+  if (lo < 0 && hi > 0) out += `<line x1="${pad.l}" x2="${width - pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#92998c" stroke-dasharray="4 5"/>`;
+  (width < 500 ? [0, .5, 1] : [0, .25, .5, .75, 1]).forEach(f => {
+    const i = Math.round(f * (labels.length - 1));
+    out += `<text x="${x(i)}" y="${height - 10}" text-anchor="${f === 0 ? 'start' : f === 1 ? 'end' : 'middle'}">${labels[i]}</text>`;
+  });
+  out += `<text x="${pad.l}" y="14">${unit}</text>`;
+  series.forEach(s => {
+    const path = s.values.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(2)},${y(v).toFixed(2)}`).join(' ');
+    out += `<path d="${path}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2}" stroke-linejoin="round"/>`;
+  });
+  out += '</svg>';
+  $(id).innerHTML = out;
+}
+function rows() {
+  const per = $('period').value;
+  return D.forecasts.filter(r => per === 'all' || per === 'pre2020' && r.month < '2020-01' || per === '2020' && r.month.startsWith('2020') || per === 'post2020' && r.month >= '2021-01');
+}
+function results() {
+  let r = rows(),
+    m = D.metrics[$('period').value],
+    error = $('view').value === 'error';
+  document.querySelector('#evidence .legend>span').hidden = error;
+  chart('forecastChart', r.map(x => x.month), [...(!error ? [{
+    values: r.map(x => x.actual),
+    color: colors.actual,
+    width: 1.5
+  }] : []), {
+    values: r.map(x => error ? Math.abs(x.actual - x.ols) : x.ols),
+    color: colors.ols
+  }, {
+    values: r.map(x => error ? Math.abs(x.actual - x.mean) : x.mean),
+    color: colors.mean
+  }], {
+    height: 310,
+    zero: true,
+    unit: error ? 'Absolute error (pp)' : 'Monthly change (%)'
+  });
+  $('metrics').innerHTML = ['ols', 'mean', 'zero'].map(k => `<tr class="${k === 'ols' ? 'highlight' : ''}"><td>${k === 'ols' ? 'OLS' : k === 'mean' ? 'Historical mean' : 'Zero change'}</td><td class="num">${fmt(m[k].rmse)}</td><td class="num">${fmt(m[k].mae)}</td></tr>`).join('');
+  $('r2').textContent = `OOS R² = ${fmt(m.oos_r2 * 100)}%`;
+  $('periodSummary').textContent = `${r.length} months · OLS direction accuracy ${fmt(m.ols.direction, 1)}% · Subperiods are descriptive, not model-selection filters.`;
+  $('forecastRows').innerHTML = r.map(x => `<tr><td>${x.month}</td><td>${x.train_end}</td><td class="num">${fmt(x.actual)}</td><td class="num">${fmt(x.ols)}</td><td class="num">${fmt(x.mean)}</td></tr>`).join('');
+}
+function resetScenario() {
+  const r = D.forecasts[+$('month').value];
+  scenario = {
+    momentum: r.momentum,
+    carry: r.carry,
+    dollar: r.dollar
+  };
+  for (const k of Object.keys(scenario)) {
+    $(k).value = scenario[k];
+  }
+  explain();
+}
+function explain() {
+  let r = D.forecasts[+$('month').value],
+    custom = Object.keys(scenario).some(k => Math.abs(scenario[k] - r[k]) > 1e-8),
+    contrib = {
+      intercept: r.b_intercept
+    };
+  for (const k of Object.keys(scenario)) {
+    contrib[k] = scenario[k] * r['b_' + k];
+    $(k + 'Value').textContent = signed(scenario[k]) + '%';
+  }
+  const pred = Object.values(contrib).reduce((a, b) => a + b, 0);
+  $('monthValue').textContent = r.month;
+  $('informationDate').textContent = `Oil and curve information through ${r.origin}; dollar observation ${r.dollar_month}; ${r.n_train} training months.`;
+  $('forecastNumber').textContent = signed(pred) + '%';
+  $('scenarioState').textContent = custom ? 'Sensitivity illustration with adjusted inputs' : 'Historical pre-outcome forecast';
+  $('actualNumber').textContent = custom ? `Original forecast ${signed(r.ols)}%; observed historical change ${signed(r.actual)}%. A counterfactual outcome after changing inputs is unobserved.` : `Observed: ${signed(r.actual)}% · Absolute error: ${fmt(Math.abs(pred - r.actual))} pp`;
+  const names = {
+      intercept: 'Intercept',
+      momentum: 'Momentum',
+      carry: 'Curve',
+      dollar: 'Dollar'
+    },
+    max = Math.max(...Object.values(contrib).map(Math.abs), 1);
+  $('contributions').innerHTML = Object.entries(contrib).map(([k, v]) => `<div class="contribution"><span>${names[k]}</span><div class="bartrack"><div class="barfill ${v < 0 ? 'negative' : ''}" style="left:${v < 0 ? 50 - Math.abs(v) / max * 48 : 50}%;width:${Math.abs(v) / max * 48}%"></div></div><span class="endnum">${signed(v)}</span></div>`).join('');
+  $('formulaDetail').textContent = `α ${fmt(r.b_intercept, 3)}; β₁ ${fmt(r.b_momentum, 3)}; β₂ ${fmt(r.b_carry, 3)}; β₃ ${fmt(r.b_dollar, 3)}`;
+  $('bandNote').textContent = `Original forecast plus training-residual 10th–90th percentiles: ${signed(r.lo)}% to ${signed(r.hi)}%. Holdout coverage: ${fmt(D.residual_band_coverage, 1)}%. An empirical error band, not a calibrated prediction interval; not recomputed for scenarios.`;
+}
+function diagnostics() {
+  const names = ["", "", "", "", "", "", "", ""];
+  const explanations = [["", 'Unit root not rejected; levels are not the main target.'], ["", 'Rejects unit root; supports modelling changes.'], ["", 'Rejects unit root in the initial sample.'], ["", 'Rejects unit root, not proof of permanent stability.'], ["", 'Rejects unit root; converted to percentage points.'], ["", 'Not rejected at 5%; not proof of independence.'], ["", 'Rejects constant variance; use HAC(3) inference.'], ["", 'Stability not rejected; future stability is not guaranteed.']];
+  $('diagnosticRows').innerHTML = D.diagnostics.tests.map((d, i) => `<tr><td>${lang === 'zh' ? names[i] : d.series + ' · ' + d.test}</td><td class="num ${i === 6 ? 'warn' : ''}">${pval(d.p)}</td><td>${t(...explanations[i])}</td></tr>`).join('');
+  $('coefRows').innerHTML = D.diagnostics.coefficients.map(c => `<tr><td>${c.name}</td><td class="num">${fmt(c.estimate, 3)}</td><td class="num">[${fmt(c.lo, 3)}, ${fmt(c.hi, 3)}]</td><td class="num">${pval(c.p)}</td></tr>`).join('');
+}
+function trade() {
+  const threshold = +$('threshold').value,
+    cost = +$('cost').value / 100;
+  let last = 0,
+    gross = 0,
+    net = 0,
+    turn = 0,
+    active = 0;
+  const g = [],
+    n = [];
+  D.forecasts.forEach((r, i) => {
+    const pos = r.ols > threshold ? 1 : r.ols < -threshold ? -1 : 0,
+      change = Math.abs(pos - last);
+    turn += change;
+    active += pos !== 0 ? 1 : 0;
+    gross += pos * r.actual;
+    net += pos * r.actual - cost * change;
+    last = pos;
+    if (i === D.forecasts.length - 1) {
+      turn += Math.abs(pos);
+      net -= cost * Math.abs(pos);
+    }
+    g.push(gross);
+    n.push(net);
+  });
+  $('thresholdValue').textContent = fmt(threshold, 2);
+  $('costValue').textContent = +$('cost').value + ' bp';
+  $('activeMonths').textContent = active + '/114';
+  $('turnover').textContent = turn;
+  $('netProxy').textContent = signed(net, 1);
+  chart('tradeChart', D.forecasts.map(r => r.month), [{
+    values: g,
+    color: colors.gross
+  }, {
+    values: n,
+    color: colors.net
+  }], {
+    height: 240,
+    zero: true,
+    unit: 'Cumulative proxy score (pp)'
+  });
+}
+function render() {
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-en]').forEach(e => e.textContent = e.dataset[lang]);
+  $('heroGain').textContent = fmt((1 - D.metrics.all.ols.rmse / D.metrics.all.mean.rmse) * 100, 1) + '%';
+  $('heroDirection').textContent = fmt(D.metrics.all.ols.direction, 1) + '%';
+  $('hash').textContent = D.meta.sha256;
+  chart('priceChart', D.prices.map(r => r.month), [{
+    values: D.prices.map(r => r.cl1),
+    color: colors.ols,
+    width: 2.5
+  }], {
+    height: 320,
+    unit: 'USD / barrel',
+    shade: D.prices.findIndex(r => r.month === '2015-01')
+  });
+  results();
+  explain();
+  diagnostics();
+  trade();
+  updateReportButton();
+  if ($('presentation').open) renderSlide();
+}
+function updateReportButton() {
+  const open = $('reportWrap').classList.contains('open');
+  $('toggleReport').textContent = open ? 'Close report' : 'Read the report';
+  $('toggleReport').setAttribute('aria-expanded', String(open));
+}
+function download(name, body, type = 'text/plain;charset=utf-8') {
+  const url = URL.createObjectURL(new Blob([body], {
+      type
+    })),
+    a = document.createElement('a');
+  a.href = url;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+const slides = [{
+  title: ["", 'A clear forecasting question'],
+  body: ["", 'Can three simple signals improve next-month oil-price forecasts? Monthly CL1 data end in June 2024.'],
+  note: ["", 'Define the target first. Continuous-series changes are not executable trading returns.'],
+  time: '0:00–0:40'
+}, {
+  title: ["", 'One regression. Three signals.'],
+  body: ["", 'Recent oil changes, curve shape and a delayed dollar return. Every forecast decomposes into three contributions plus an intercept.'],
+  note: ["", 'Explain meanings and information dates rather than deriving the estimator.'],
+  time: '0:40–1:25'
+}, {
+  title: ["", 'Learn from the past, test the next month'],
+  body: ["", '239 initial training months and 114 sequential forecasts. Compare with zero change and the historical mean. Keep 2020.'],
+  note: ["", 'Each forecast uses only target outcomes from earlier months.'],
+  time: '1:25–2:10'
+}, {
+  title: ["", 'A modest improvement'],
+  big: '12.92 vs 13.41',
+  body: ["", 'Model versus historical-mean RMSE in percentage points. Direction accuracy: 57.9% versus 56.1%.'],
+  note: ["", 'Squared-error reduction: 7.18%. The block-bootstrap interval still includes zero.'],
+  time: '2:10–3:10'
+}, {
+  title: ["", 'Explain the failures and limits'],
+  body: ["", '2020 RMSE reaches 30.55. Heteroskedasticity is present; HAC adjusts inference only. Missing roll and execution data prevent profitability claims.'],
+  note: ["", 'Use observed failures to explain risk rather than removing difficult periods.'],
+  time: '3:10–4:15'
+}, {
+  title: ["", 'The message for the trading desk'],
+  body: ["", 'A transparent analytical starting point. Retain simple benchmarks, verify series construction and test the unchanged model on genuinely unseen data.'],
+  note: ["", 'Every member should explain the variables, chronology, benchmarks and limitations.'],
+  time: '4:15–5:00'
+}];
+function renderSlide() {
+  const s = slides[slide],
+    idx = lang === 'zh' ? 0 : 1;
+  $('slideIndex').textContent = `${slide + 1} / ${slides.length}`;
+  $('slideContent').innerHTML = `<h2 id="slideTitle">${s.title[idx]}</h2>${s.big ? `<div class="slide-num">${s.big}</div>` : ''}<p>${s.body[idx]}</p><p class="slide-note">${s.note[idx]}</p>`;
+  $('slideTime').textContent = 'Suggested timing ' + s.time;
+  $('slideProgress').style.width = (slide + 1) / slides.length * 100 + '%';
+  $('prevSlide').disabled = slide === 0;
+  $('nextSlide').disabled = slide === slides.length - 1;
+}
+$('period').onchange = results;
+$('view').onchange = results;
+$('month').oninput = resetScenario;
+['momentum', 'carry', 'dollar'].forEach(k => $(k).oninput = () => {
+  scenario[k] = +$(k).value;
+  explain();
+});
+$('resetScenario').onclick = resetScenario;
+$('threshold').oninput = trade;
+$('cost').oninput = trade;
+$('toggleReport').onclick = () => {
+  $('reportWrap').classList.toggle('open');
+  updateReportButton();
+};
+$('printReport').onclick = () => {
+  $('reportWrap').classList.add('open');
+  document.body.classList.add('print-report');
+  updateReportButton();
+  window.print();
+};
+window.addEventListener('afterprint', () => document.body.classList.remove('print-report'));
+$('downloadCsv').onclick = () => {
+  const fields = Object.keys(D.forecasts[0]);
+  download('oil_forecasts.csv', fields.join(',') + '\n' + D.forecasts.map(r => fields.map(k => r[k]).join(',')).join('\n'), 'text/csv;charset=utf-8');
+};
+$('downloadCode').onclick = () => download('analyze.py', code);
+try {
+  $('notes').value = localStorage.getItem('fe-oil-team-notes-v1') || '';
+} catch (e) {}
+$('notes').oninput = () => {
+  try {
+    localStorage.setItem('fe-oil-team-notes-v1', $('notes').value);
+  } catch (e) {}
+};
+$('saveNotes').onclick = () => download('team-review-notes.txt', $('notes').value);
+$('present').onclick = () => {
+  slide = 0;
+  renderSlide();
+  $('presentation').showModal();
+};
+$('closePresent').onclick = () => $('presentation').close();
+$('prevSlide').onclick = () => {
+  if (slide > 0) {
+    slide--;
+    renderSlide();
+  }
+};
+$('nextSlide').onclick = () => {
+  if (slide < slides.length - 1) {
+    slide++;
+    renderSlide();
+  }
+};
+$('presentation').addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    $('nextSlide').click();
+  }
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    $('prevSlide').click();
+  }
+});
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(render, 120);
+});
+resetScenario();
+render();
+</script></body></html>
