@@ -10,7 +10,7 @@ Our task is to develop interpretable oil futures forecasts and explain their use
 fe-oil-group-work/
 |-- data/
 |   |-- raw/                     # Original, unchanged source data
-|   |-- clean/                   # Prepared data generated during analysis
+|   |-- clean/                   # Shared cleaned CSVs and prepared data
 |   |-- results/                 # Forecasts and metrics, grouped by model
 |       |-- Benchmark/
 |       |-- Mike&Div/
@@ -22,6 +22,7 @@ fe-oil-group-work/
 |   |-- Alan&Ronan/
 |-- guidelines/                  # Coursework guidance, protocols and scripts
 |   |-- Canvas/                  # Coursework brief, syllabus and AI guidance
+|   |-- Data quality/             # Generated source audit and quality evidence
 |-- extra/
 |   |-- meetings/                # Meeting notes and source records
 |   |-- optional-comparisons/    # Historical-mean and AR(1) comparisons
@@ -42,12 +43,23 @@ fe-oil-group-work/
 2. Read the [benchmark protocol](guidelines/BENCHMARKS.md) before comparing models.
 3. Open `models/Benchmark/dist/index.html` locally for the interactive research report. GitHub displays HTML source; clone or download the repository to view it.
 
+## Shared cleaned data
+
+Use [the shared cleaned-data guide](data/clean/README.md) and read the [cleaning and quality report](guidelines/CLEANING_REPORT.md) before choosing predictors. The data are standardised and auditable, but some source definitions and timestamps remain unresolved.
+
+```bash
+python -m pip install -r guidelines/cleaning-requirements.txt
+python guidelines/clean_data.py
+python -m unittest discover -s guidelines -p "test_clean_data.py"
+```
+
+The script reads the unchanged workbook from `data/raw/`, writes shared CSVs to `data/clean/`, and writes source-quality evidence to `guidelines/Data quality/`.
+
 ## Reproduce the Benchmark model
 
 From the repository root, using Python 3.12 (the tested runtime):
 
 ```bash
-python -m venv .venv
 python -m pip install -r models/Benchmark/requirements.txt
 python models/Benchmark/analyze.py
 python models/Benchmark/build.py
