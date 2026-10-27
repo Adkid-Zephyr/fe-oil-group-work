@@ -1,6 +1,6 @@
 """Transparent monthly oil forecasting exercise. Run from any directory."""
 from pathlib import Path
-import json, hashlib, warnings
+import json, hashlib
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -8,18 +8,43 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.stats.diagnostic import acorr_ljungbox, het_breuschpagan, breaks_cusumolsresid
 
 ROOT = Path(__file__).resolve().parent
-SOURCE = ROOT.parent / 'Data and guideline' / 'Canvas' / 'Oil Data.xlsx'
+SNAPSHOT = ROOT / 'data' / 'cleaning_snapshot'
+EXPECTED_SOURCE_SHA = '4355813a4761a6f242ae6ff1eff03dce6f89127320161b6fb2481e9aa908bae5'
 FEATURES = ['momentum', 'carry', 'dollar']
 
-def read_monthly(sheet):
-    df = pd.read_excel(SOURCE, sheet_name=sheet)
-    df = df.loc[:, ~df.columns.astype(str).str.startswith('Unnamed')]
-    df.columns = df.columns.str.strip()
-    df['Date'] = pd.to_datetime(df['Date'])
-    assert df.Date.notna().all()
-    df['month'] = df.Date.dt.to_period('M')
-    assert not df.month.duplicated().any(), 'Duplicate monthly records'
-    return df.set_index('month').sort_index()
+def load_cleaned_inputs(shared=SNAPSHOT):
+    """Read Felix personal frozen CSVs; never silently fall back to raw Excel."""
+    shared = Path(shared)
+    summary = json.loads((shared/'Data quality/summary.json').read_text())
+    manifest = json.loads((shared/'Data quality/manifest.json').read_text())
+    assert summary['dataset_version'] == '1.0.0', 'Review changed cleaning version'
+    assert summary['source_sha256'] == manifest['source_sha256'] == EXPECTED_SOURCE_SHA
+    frames, hashes = {}, {}
+    for name in ['industry_monthly.csv', 'macro_monthly.csv', 'monthly_targets.csv']:
+        relative = 'Cleaned data/' + name
+        path = shared/relative
+        sha = hashlib.sha256(path.read_bytes()).hexdigest()
+        assert sha == manifest['files_sha256'][relative], f'Cleaned file changed: {relative}'
+        hashes[relative] = sha
+        df = pd.read_csv(path, float_precision='round_trip')
+        index = pd.PeriodIndex(df['month'], freq='M')
+        assert index.is_unique and index.is_monotonic_increasing, f'Invalid months: {name}'
+        assert index.equals(pd.period_range(index.min(),index.max(),freq='M')), f'Month gaps: {name}'
+        assert str(index.min()) == '1994-12' and str(index.max()) == '2024-06'
+        frames[name] = df.set_index(index).drop(columns='month')
+    industry, macro, targets = (frames[k] for k in ['industry_monthly.csv','macro_monthly.csv','monthly_targets.csv'])
+    assert industry.index.equals(macro.index) and industry.index.equals(targets.index)
+    assert np.allclose(macro.dxy_return_pct,100*macro.dxy_return_decimal,rtol=1e-12,atol=1e-12)
+    assert np.isfinite(industry[['cl1','cl2']].to_numpy()).all()
+    assert np.isfinite(macro.dxy_return_decimal.to_numpy()).all()
+    ind = industry[['date','cl1','cl2']].rename(columns={'date':'Date','cl1':'CL1','cl2':'CL2'})
+    mac = macro[['dxy_return_decimal']].rename(columns={'dxy_return_decimal':'DXY returns'})
+    ind['Date'] = pd.to_datetime(ind['Date'])
+    assert ind.Date.dt.to_period('M').tolist() == list(ind.index)
+    assert pd.to_datetime(macro.date).dt.to_period('M').tolist() == list(macro.index)
+    return ind, mac, targets, dict(dataset_version=summary['dataset_version'],
+        source_sha256=summary['source_sha256'], input_hashes=hashes,
+        manifest_sha256=hashlib.sha256((shared/'Data quality/manifest.json').read_bytes()).hexdigest())
 
 def make_frame(ind, mac):
     # Reindex before shifting so a missing month can never become a one-month change.
@@ -82,13 +107,26 @@ def diagnostics(frame):
     return dict(tests=out,coefficients=coefs,n=len(tr),start=str(tr.index[0]),end=str(tr.index[-1]),r2=float(fit.rsquared))
 
 def main():
-    ind,mac=read_monthly('Industry_M'),read_monthly('Macro_M')
+    ind,mac,targets,provenance=load_cleaned_inputs()
     assert (ind[['CL1','CL2']]>0).all().all(), 'Monthly prices must be positive'
     d=make_frame(ind,mac)
+    np.testing.assert_allclose(d.actual,targets.actual_return_pct,rtol=1e-12,atol=1e-12,equal_nan=True)
+    np.testing.assert_allclose(d.CL1,targets.actual_price,rtol=1e-12,atol=1e-12)
+    assert (targets.origin.to_numpy() == (targets.index-1).astype(str).to_numpy()).all()
+    # Shared y is authoritative; the independent price derivation above checks it.
+    d['actual'] = targets.actual_return_pct
+    d['momentum'] = d.actual.shift(1)
     assert len(d)==len(ind), 'Missing monthly observations'
     assert str(d.index.max())=='2024-06', 'Revisit fixed sample if source changes'
     o=walk_forward(d)
     assert len(o)==114 and not o.isna().any().any()
+    shared_eval=targets.loc[targets.is_shared_evaluation]
+    assert list(shared_eval.index.astype(str)) == o.month.tolist()
+    assert shared_eval.target_valid.all()
+    np.testing.assert_allclose(o.zero,shared_eval.benchmark_return_pct,atol=0,rtol=0)
+    reference=pd.DataFrame(json.loads((ROOT/'validation/pre_cleaning_reference.json').read_text())['forecasts'])
+    assert reference.month.tolist()==o.month.tolist()
+    change={k:float(np.max(np.abs(o[k]-reference[k]))) for k in ['actual','ols','mean','zero']}
     assert all(pd.Period(r.train_end) < pd.Period(r.month) for r in o.itertuples())
     # Independent regression prediction and source-point checks.
     errs=[]
@@ -113,22 +151,18 @@ def main():
         boot.append(float(loss[ids].mean()))
     periods={'all':o,'pre2020':o[o.month<'2020-01'],'2020':o[o.month.str.startswith('2020')],'post2020':o[o.month>='2021-01']}
     summary={k:metrics(v) for k,v in periods.items()}
-    inventory=[]
-    for sh in pd.ExcelFile(SOURCE).sheet_names:
-        f=pd.read_excel(SOURCE,sheet_name=sh)
-        item=dict(sheet=sh,rows=len(f),columns=[str(c).strip() for c in f.columns if not str(c).startswith('Unnamed')])
-        if sh!='Data Definitions':
-            dates=pd.to_datetime(f.Date);item.update(start=str(dates.min().date()),end=str(dates.max().date()))
-        inventory.append(item)
-    payload=dict(meta=dict(source='Oil Data.xlsx, Canvas BUSI70606',sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+    payload=dict(meta=dict(source='Felix personal cleaning snapshot v1.0.0 (not the group-agreed dataset)',sha256=provenance['source_sha256'],cleaned_data=provenance,
                           created='2026-10-27',raw_start=str(ind.index.min()),raw_end=str(ind.index.max()),raw_n=len(ind),
                           complete_n=int(d[['actual']+FEATURES].notna().all(axis=1).sum()),
-                          source_url='https://canvas.imperial.ac.uk/courses/9001/files/2784233',inventory=inventory),
+                          source_url='https://github.com/Adkid-Zephyr/fe-oil-group-work/tree/main/Felix%27s%20model/data/cleaning_snapshot/Cleaned%20data',
+                          cleaning_report_url='https://github.com/Adkid-Zephyr/fe-oil-group-work/blob/main/Felix%27s%20model/data/cleaning_snapshot/CLEANING_REPORT.md',input_revision='personal-cleaning-snapshot-v1.0.0'),
                  metrics=summary,diagnostics=diagnostics(d),forecasts=o.to_dict('records'),
                  prices=[dict(month=str(m),cl1=float(r.CL1),cl2=float(r.CL2)) for m,r in ind.iterrows()],
                  bootstrap=dict(mean_loss_diff=float(loss.mean()),lo=float(np.quantile(boot,.025)),hi=float(np.quantile(boot,.975)),block=block,draws=B),
                  residual_band_coverage=float(((o.actual>=o.lo)&(o.actual<=o.hi)).mean()*100),
-                 audit=dict(independent_prediction_max_abs_error=max(errs),prefix_invariance=True,forecast_count=len(o),source_unchanged=True))
+                 audit=dict(independent_prediction_max_abs_error=max(errs),prefix_invariance=True,forecast_count=len(o),
+                            cleaned_input_hashes_verified=True,shared_targets_verified=True,pre_cleaning_max_abs_change=change,
+                            unchanged_within_1e_12=all(v<1e-12 for v in change.values())))
     (ROOT/'results').mkdir(exist_ok=True)
     (ROOT/'results/analysis.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2,allow_nan=False))
     o.to_csv(ROOT/'results/forecasts.csv',index=False)

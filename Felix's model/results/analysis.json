@@ -1,105 +1,25 @@
 {
   "meta": {
-    "source": "Oil Data.xlsx, Canvas BUSI70606",
+    "source": "Felix personal cleaning snapshot v1.0.0 (not the group-agreed dataset)",
     "sha256": "4355813a4761a6f242ae6ff1eff03dce6f89127320161b6fb2481e9aa908bae5",
+    "cleaned_data": {
+      "dataset_version": "1.0.0",
+      "source_sha256": "4355813a4761a6f242ae6ff1eff03dce6f89127320161b6fb2481e9aa908bae5",
+      "input_hashes": {
+        "Cleaned data/industry_monthly.csv": "fef0f7f577cf6606dd4dd8a8bf195fda8e111f9d129d5498240ddfb87f482fb0",
+        "Cleaned data/macro_monthly.csv": "cff838fc8ad83d4174f5cf3df114cb314dc7b00a871600a5f9970493ea4390d6",
+        "Cleaned data/monthly_targets.csv": "9912c8671260a7996d041c9005d04cee1a84b982cc3ddbfc63492136e640bc9b"
+      },
+      "manifest_sha256": "2d3a8471b2f805aef677662b4f5fa4f2a187ea420808bc70a738f04f2f956b1f"
+    },
     "created": "2026-10-27",
     "raw_start": "1994-12",
     "raw_end": "2024-06",
     "raw_n": 355,
     "complete_n": 353,
-    "source_url": "https://canvas.imperial.ac.uk/courses/9001/files/2784233",
-    "inventory": [
-      {
-        "sheet": "Data Definitions",
-        "rows": 34,
-        "columns": [
-          "Date",
-          "December 1994 to June 2024"
-        ]
-      },
-      {
-        "sheet": "Industry_D",
-        "rows": 9226,
-        "columns": [
-          "Date",
-          "CL1",
-          "CL2",
-          "Brent",
-          "CRKS321C Index",
-          "BDIY Index"
-        ],
-        "start": "1990-01-02",
-        "end": "2024-07-30"
-      },
-      {
-        "sheet": "Industry_W",
-        "rows": 1803,
-        "columns": [
-          "Date",
-          "Weekly Prod Crude",
-          "Weekly Rig Count",
-          "Weekly change in Crude Stock",
-          "Weekly Commercial Long",
-          "Weekly Commercial Short",
-          "Weekly Total Open Interest"
-        ],
-        "start": "1990-01-05",
-        "end": "2024-07-19"
-      },
-      {
-        "sheet": "Industry_M",
-        "rows": 355,
-        "columns": [
-          "Date",
-          "CL1",
-          "CL2",
-          "Brent",
-          "CRKS321C Index",
-          "Baltic Dry Index",
-          "Daily Production",
-          "Inventories",
-          "Rig Count",
-          "Commercial Long",
-          "Commercial Short",
-          "Total Open Interest"
-        ],
-        "start": "1994-12-30",
-        "end": "2024-06-28"
-      },
-      {
-        "sheet": "Macro_M",
-        "rows": 355,
-        "columns": [
-          "Date",
-          "CPI YOY %",
-          "3M Yield",
-          "10Y Yield",
-          "IndustrialProduction Index",
-          "SPX",
-          "DXY returns",
-          "VIX"
-        ],
-        "start": "1994-12-31",
-        "end": "2024-06-30"
-      },
-      {
-        "sheet": "StockPrices_M",
-        "rows": 355,
-        "columns": [
-          "Date",
-          "Gasoline All Grades",
-          "Dow Jones US Oil&Gas Index",
-          "ExxonMobil",
-          "ConocoPhilips",
-          "Chevron",
-          "BP",
-          "Shell",
-          "TotalEnergies"
-        ],
-        "start": "1994-12-30",
-        "end": "2024-06-28"
-      }
-    ]
+    "source_url": "https://github.com/Adkid-Zephyr/fe-oil-group-work/tree/main/Felix%27s%20model/data/cleaning_snapshot/Cleaned%20data",
+    "cleaning_report_url": "https://github.com/Adkid-Zephyr/fe-oil-group-work/blob/main/Felix%27s%20model/data/cleaning_snapshot/CLEANING_REPORT.md",
+    "input_revision": "personal-cleaning-snapshot-v1.0.0"
   },
   "metrics": {
     "all": {
@@ -4817,6 +4737,14 @@
     "independent_prediction_max_abs_error": 1.9984014443252818e-15,
     "prefix_invariance": true,
     "forecast_count": 114,
-    "source_unchanged": true
+    "cleaned_input_hashes_verified": true,
+    "shared_targets_verified": true,
+    "pre_cleaning_max_abs_change": {
+      "actual": 0.0,
+      "ols": 0.0,
+      "mean": 0.0,
+      "zero": 0.0
+    },
+    "unchanged_within_1e_12": true
   }
 }
