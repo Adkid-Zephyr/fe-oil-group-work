@@ -21,3 +21,7 @@ The PDF carries an Autumn 2025 heading despite appearing in the 2026-2027 course
 Keep original data immutable. Store model-specific transformations and results in the relevant model folder. Use English filenames and prose; preserve the team folder spellings requested by the group. Record methodological changes before rerunning comparisons, including any choices informed by previously observed test results.
 
 `Meetings` contains source-linked draft minutes. Model settings proposed in `BENCHMARKS.md` are analytical recommendations, not automatically decisions made in the recorded meeting.
+
+## Shared benchmark - completed by Felix
+
+Use the **no-change benchmark**. The [short guide](BENCHMARKS.md) explains it; [forecast CSV](Benchmark%20results/forecasts.csv) is ready for teammates to use. Historical-mean and AR(1) results are retained only as optional comparisons.

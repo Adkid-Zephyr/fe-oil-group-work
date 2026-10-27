@@ -1,6 +1,6 @@
 # Financial Econometrics: Oil Futures Forecasting
 
-Private collaboration repository for the Financial Econometrics group coursework at Imperial College Business School (BUSI70606, 2026-2027).
+Collaboration repository for the Financial Econometrics group coursework at Imperial College Business School (BUSI70606, 2026-2027).
 
 Our task is to develop interpretable oil futures forecasts and explain their usefulness, diagnostics and limitations to a trading desk. All repository documentation, code comments and reports use English.
 
@@ -33,7 +33,7 @@ python "Felix's model/build.py"
 python "Data and guideline/benchmark.py"
 ```
 
-The last command generates common-sample comparison files under `Data and guideline/Benchmark results`. The AR(1) baseline is an additional comparison; the original report retains its historical-mean primary benchmark.
+Felix has completed the shared **no-change benchmark**. The last command regenerates ready-to-use forecasts under `Data and guideline/Benchmark results`. See the short benchmark guide linked above. Earlier multi-model comparisons remain optional; the original research report retains its historical-mean comparison.
 
 ## Collaboration
 

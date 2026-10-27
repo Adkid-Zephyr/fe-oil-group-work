@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "forecast_months": 114,
   "checks": [
-    "unique aligned months",
-    "strictly earlier training outcomes",
-    "AR(1) closed-form against independent least squares",
-    "future-truncation invariance through 2019-12",
-    "original model forecasts reproduced"
+    "114 aligned monthly forecasts",
+    "actual changes match original analysis",
+    "zero forecasts match original benchmark",
+    "previous-month price checked for every forecast",
+    "future-truncation invariance",
+    "original source hashes unchanged"
   ]
 }
