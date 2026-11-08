@@ -1,0 +1,17 @@
+variable,standardized_coef,selected
+basis_l1,0.0,False
+inv_g_l1,0.0,False
+dxy_l1,0.0,False
+ip_g_l1,0.0,False
+bdi_g_l1,0.0,False
+ret_l1,0.0,False
+rig_g_l1,0.0,False
+prod_g_l1,0.0,False
+crack_d_l1,0.0,False
+slope_d_l1,0.0,False
+vix_d_l1,0.0,False
+spx_l1,0.0,False
+cpi_d_l1,0.0,False
+net_spec_d_l1,0.0,False
+gas_l1,0.0,False
+oil_eq_l1,0.0,False
