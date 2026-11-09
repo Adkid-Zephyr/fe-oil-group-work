@@ -1,0 +1,30 @@
+predictor,adf_p,action
+ret,0.0,keep
+ret_lag2,0.0,keep
+ret_lag3,0.0,keep
+mom12,0.003,keep
+spread,0.0,keep
+d_spread_last,0.0,keep
+brent_wti,0.52,use monthly change (brent_wti_d)
+crack_chg,0.0,keep
+bdi_chg,0.0,keep
+vix,0.002,keep
+vix_chg,0.0,keep
+spx_ret,0.0,keep
+dxy_ret,0.0,keep
+ip_growth,0.004,keep
+cpi_chg,0.001,keep
+y3m,0.257,drop (already have y3m_chg)
+y3m_chg,0.043,keep
+term_spread,0.211,use monthly change (term_spread_d)
+inv_chg,0.017,keep
+inv_yoy,0.087,keep
+inv_vs_seasonal,0.403,use monthly change (inv_vs_seasonal_d)
+prod_chg,0.0,keep
+rig_chg,0.0,keep
+hedging_pressure,0.0,keep
+hedging_pressure_chg,0.0,keep
+inv_nowcast_weekly,0.001,keep
+hedging_pressure_weekly,0.896,use monthly change (hedging_pressure_weekly_d)
+rig_chg_weekly,0.0,keep
+realised_vol,0.0,keep

@@ -1,0 +1,7 @@
+,0
+R-squared (in sample),0.07365812323868404
+Ljung-Box(12) p  [autocorrelation],0.378333059307882
+Breusch-Pagan p  [heteroskedasticity],0.24681272796805562
+White p          [heteroskedasticity],0.7495887248585562
+Chow Dec 2008 p  [break],0.28485708903988094
+CUSUM p          [stability],0.14990908834654731
