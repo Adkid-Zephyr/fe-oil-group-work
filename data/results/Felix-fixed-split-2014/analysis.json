@@ -1,0 +1,24 @@
+{
+  "monthly": {
+    "train_start": "1995-02-28",
+    "train_end": "2013-12-31",
+    "train_n": 227,
+    "test_start": "2014-01-31",
+    "test_end": "2024-06-30",
+    "test_n": 126,
+    "coefficients": {
+      "intercept": 1.0330217631833172,
+      "momentum": 0.08521878783644792,
+      "carry": -0.48892972301522797,
+      "dollar": -0.12726442679591554
+    },
+    "excluded_test_rows": 0
+  },
+  "sources": [
+    {
+      "path": "data/clean/monthly_levels/oil_monthly_clean.csv",
+      "sha256": "de9ea190970b628a1c024901ee0949c8fb226a69f9d4b2996c5ce3ed0d4b1109"
+    }
+  ],
+  "method": "Fixed OLS fit using targets before 2014; no test-period refitting or tuning. One-step forecasts use lagged observed inputs."
+}
