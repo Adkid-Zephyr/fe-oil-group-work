@@ -14,10 +14,33 @@
     },
     "excluded_test_rows": 0
   },
+  "weekly": {
+    "train_start": "1995-02-10",
+    "train_end": "2013-12-27",
+    "train_n": 986,
+    "test_start": "2014-01-03",
+    "test_end": "2024-07-19",
+    "test_n": 551,
+    "coefficients": {
+      "intercept": 0.2940566414646855,
+      "momentum": -0.057599985648866286,
+      "carry": -0.19063687137477942,
+      "dollar": -0.018744084900142653
+    },
+    "excluded_test_rows": 0
+  },
   "sources": [
     {
       "path": "data/clean/monthly_levels/oil_monthly_clean.csv",
       "sha256": "de9ea190970b628a1c024901ee0949c8fb226a69f9d4b2996c5ce3ed0d4b1109"
+    },
+    {
+      "path": "data/clean/industry_daily.csv",
+      "sha256": "0d63373c983f651848c4fd6b99244772e0c73917c7cb2ef6a5c3986346cf27f3"
+    },
+    {
+      "path": "data/clean/industry_weekly.csv",
+      "sha256": "bae2bca1b1f0da3efcb6fca5a5798ac005f458706096188c74fadf2b97b99d3a"
     }
   ],
   "method": "Fixed OLS fit using targets before 2014; no test-period refitting or tuning. One-step forecasts use lagged observed inputs."

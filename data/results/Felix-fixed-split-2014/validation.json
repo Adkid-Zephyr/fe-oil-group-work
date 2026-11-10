@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "tests_run": 5,
+  "checks": [
+    "monthly fixed split and independent statsmodels estimates",
+    "test outcomes cannot change monthly fitted coefficients",
+    "monthly future truncation",
+    "weekly input timing",
+    "weekly Ronan price convention, independent OLS, fixed split, future truncation and test outcome invariance"
+  ],
+  "weekly_source_commit": "df0369a4e3e1c5c7c36a1e504f413ee0c05f3285",
+  "warning": "Pandas dayofweek deprecation warning only; no test failure"
+}

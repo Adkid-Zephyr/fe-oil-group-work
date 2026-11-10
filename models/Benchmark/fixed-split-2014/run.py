@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'data/results/Felix-fixed-split-2014'
 MONTHLY = ROOT / 'data/clean/monthly_levels/oil_monthly_clean.csv'
 DAILY = ROOT / 'data/clean/industry_daily.csv'
+WEEKLY = ROOT / 'data/clean/industry_weekly.csv'
 FEATURES = ['momentum', 'carry', 'dollar']
 
 def monthly_frame(source):
@@ -26,17 +27,21 @@ def monthly_frame(source):
     f['dollar_source_date'] = p-pd.offsets.MonthEnd(2)
     return f
 
-def weekly_frame(daily, monthly):
+def weekly_frame(daily, monthly, weekly):
     s = daily.copy(); s['date'] = pd.to_datetime(s.date)
     assert s.date.is_unique
     s = s.sort_values('date').set_index('date')
-    # Select an actual common row, never separately forward-fill CL1 and CL2.
-    s['week_end'] = s.index.to_period('W-FRI').end_time.normalize()
+    # Ronan's weekly_returns convention: native weekly Fridays and last known close.
+    grid = pd.DatetimeIndex(pd.to_datetime(weekly.date)).sort_values()
+    assert grid.is_unique and (grid.dayofweek == 4).all()
+    assert grid.equals(pd.date_range(grid.min(), grid.max(), freq='W-FRI'))
+    assert grid.max() <= s.index.max()
     s['observed_date'] = s.index
-    w = s.groupby('week_end').tail(1).set_index('week_end')
-    w = w.loc[w.index <= s.index.max()]
-    grid = pd.date_range(w.index.min(), w.index.max(), freq='W-FRI')
-    w = w.reindex(grid)
+    w = pd.merge_asof(pd.DataFrame({'week_end':grid}),
+                      s.reset_index(),left_on='week_end',right_on='date',
+                      direction='backward').set_index('week_end')
+    assert w[['cl1','cl2']].notna().all().all()
+    assert ((w.index-w.observed_date).dt.days <= 6).all(), 'Stale weekly price'
     f = pd.DataFrame(index=grid)
     f['price'] = w.cl1
     f['actual'] = w.cl1.pct_change(fill_method=None)*100
@@ -77,7 +82,7 @@ def main():
     monthly=pd.read_csv(MONTHLY)
     sources=[MONTHLY]; frames={'monthly':monthly_frame(monthly)}
     if args.weekly:
-        sources.append(DAILY);frames['weekly']=weekly_frame(pd.read_csv(DAILY),monthly)
+        sources.extend([DAILY,WEEKLY]);frames['weekly']=weekly_frame(pd.read_csv(DAILY),monthly,pd.read_csv(WEEKLY))
     OUT.mkdir(parents=True,exist_ok=True)
     all_scores=[];meta={}
     for frequency,frame in frames.items():

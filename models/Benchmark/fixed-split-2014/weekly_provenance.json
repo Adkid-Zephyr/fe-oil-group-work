@@ -1,0 +1,18 @@
+{
+  "branch": "origin/alan-ronan/lasso-return-model",
+  "commit": "df0369a4e3e1c5c7c36a1e504f413ee0c05f3285",
+  "method_source": "models/Alan&Ronan/explore_frequency_and_models.py:weekly_returns",
+  "inputs": [
+    {
+      "path": "data/clean/industry_daily.csv",
+      "sha256": "0d63373c983f651848c4fd6b99244772e0c73917c7cb2ef6a5c3986346cf27f3",
+      "matches_ronan_branch": true
+    },
+    {
+      "path": "data/clean/industry_weekly.csv",
+      "sha256": "bae2bca1b1f0da3efcb6fca5a5798ac005f458706096188c74fadf2b97b99d3a",
+      "matches_ronan_branch": true
+    }
+  ],
+  "target": "continuous CL1 percentage change; no approximate roll-adjusted held-return substitution"
+}

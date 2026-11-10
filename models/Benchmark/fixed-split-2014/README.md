@@ -1,6 +1,6 @@
 # Felix: fixed training split at 2014
 
-Monthly run completed on 10 November 2026. Weekly model evaluation is pending confirmation of the cleaned daily source used to construct weekly prices; Mike's uploaded cleaning script produces monthly data only.
+Monthly and weekly runs completed on 10 November 2026. Monthly uses Mike's cleaned monthly data. Weekly uses the cleaned daily and weekly tables present on Ronan's branch and his Friday price-alignment convention. Input identities and the exact source commit are recorded in `weekly_provenance.json`.
 
 ## Design
 
@@ -25,14 +25,25 @@ RMSE is 4.19% lower than no change; OOS R-squared against no change is 8.21%. Th
 From the repository root, install `models/Benchmark/requirements.txt`, then run:
 
 ```bash
-python models/Benchmark/fixed-split-2014/run.py
+python models/Benchmark/fixed-split-2014/run.py --weekly
 python models/Benchmark/fixed-split-2014/test_run.py
 ```
 
 Outputs: `data/results/Felix-fixed-split-2014/`. The manifest records input hashes, training and test dates, fixed coefficients and exclusions. Tests check the cutoff, independent statsmodels estimates, invariance to changed test outcomes, future-data truncation and the proposed weekly date alignment.
 
-## Proposed weekly construction (pending input confirmation)
+## Weekly construction and results
 
-Use the existing cleaned daily CL1/CL2 table, selecting the last actual observation in each Friday-ending week. Drop the final incomplete week; preserve missing weeks in the calendar grid. Do not interpolate monthly oil prices to invent weekly observations. Weekly momentum and curve use the preceding week. Monthly DXY is carried forward only after the end of the following month, using Mike's monthly file. This is a weekly model with a monthly dollar signal, not a weekly DXY return series. The daily table is the earlier shared audit output, not Mike's monthly cleaning output.
+Ronan's `weekly_returns()` uses the Fridays in `industry_weekly.csv`, matching the last daily CL1/CL2 close on or before each Friday. Our implementation selects the same actual price row and checks it is no more than six days old. Both input files are byte-identical to his branch at `df0369a4e3e1c5c7c36a1e504f413ee0c05f3285`. The weekly input table itself contains fundamentals, so CL1/CL2 still come from the cleaned daily table, as in Ronan's code.
 
-After source confirmation, `run.py --weekly` runs both frequencies. Compare each model with its own same-frequency benchmark; weekly and monthly raw RMSE values measure different horizons and cannot directly rank frequency quality.
+We use his continuous CL1 change target, consistent with our monthly model. We do not substitute his approximate roll-adjusted held-contract target or his larger predictor set. Weekly momentum and curve use the preceding week. DXY remains a monthly signal from Mike's file and becomes usable only after the end of the following month. No weekly dollar observations are invented. No crisis weeks are removed.
+
+Train: 10 February 1995-27 December 2013 (986 complete weeks). Test: 3 January 2014-19 July 2024 (551 weeks), with no excluded test rows. The 1995 training start is set by availability of the lagged monthly dollar signal. Model coefficients are fitted once and stay fixed.
+
+| Model | RMSE (pp) | MAE (pp) | Direction accuracy |
+| --- | ---: | ---: | ---: |
+| Three-variable OLS | 5.6037 | 3.9377 | 52.09% |
+| No change | 5.5631 | 3.9188 | Not applicable |
+
+Weekly OLS has about 0.73% higher RMSE than no change (OOS R-squared -1.47%). This specification adds no forecast improvement on the weekly test sample. Monthly OLS improves relative to its own benchmark, while weekly OLS does not. Raw weekly and monthly RMSE levels cannot directly rank frequency quality because the horizons differ. Their available end dates also differ.
+
+Both runs are historical one-step forecast evaluations. Updated lagged inputs are allowed during testing, but test outcomes never enter coefficient estimation. The weekly data construction and predictions pass independent checks against Ronan's price convention and statsmodels OLS, as well as future-truncation checks.
