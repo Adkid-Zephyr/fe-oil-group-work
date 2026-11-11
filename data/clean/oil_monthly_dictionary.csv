@@ -1,0 +1,34 @@
+column,description,source sheet,unit,release lag (months)
+target_month,month of y (join key for the no-change benchmark),derived,,
+sample,train / validation / test (by target month),derived,,
+y,TARGET: next month's % change in CL1,derived,%,
+y_log,next month's log return of CL1 (x100),derived,%,
+y_tradable,next month's return holding one contract: 100*(CL1[t+1]/CL2[t]-1),derived,%,
+y_z,z-score of y (training moments),derived,sd units,
+outlier,1 if |y_z| > Z_OUTLIER,derived,0/1,
+cl1,CL1,Industry_M,$/bbl,0
+cl2,CL2,Industry_M,$/bbl,0
+crack_321,CRKS321C Index,Industry_M,$/bbl,0
+bdi,Baltic Dry Index,Industry_M,index,0
+production,Daily Production,Industry_M,thousand bbl/day,1
+inventories,Inventories,Industry_M,thousand bbl (crude + products),1
+rig_count,Rig Count,Industry_M,rigs,1
+comm_long,Commercial Long,Industry_M,contracts,1
+comm_short,Commercial Short,Industry_M,contracts,1
+cpi_yoy,CPI YOY %,Macro_M,% YoY,1
+ip_index,IndustrialProduction Index,Macro_M,index,1
+y3m,3M Yield,Macro_M,% p.a.,1
+y10y,10Y Yield,Macro_M,% p.a.,1
+spx,SPX,Macro_M,index,0
+dxy_ret,DXY returns,Macro_M,decimal monthly return,0
+vix,VIX,Macro_M,index points,0
+gasoline,Gasoline All Grades,StockPrices_M,$/gallon,1
+dj_oil_gas,Dow Jones US Oil&Gas Index,StockPrices_M,index,0
+xom,ExxonMobil,StockPrices_M,$,0
+cop,ConocoPhilips,StockPrices_M,$,0
+cvx,Chevron,StockPrices_M,$,0
+bp,BP,StockPrices_M,$,0
+shell,Shell,StockPrices_M,$,0
+total,TotalEnergies,StockPrices_M,$,0
+cl1_pct,this month's % change in CL1,derived,%,0
+carry,"100*(CL2/CL1-1), + = contango",derived,%,0
