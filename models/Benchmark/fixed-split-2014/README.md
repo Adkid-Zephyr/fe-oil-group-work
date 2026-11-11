@@ -1,5 +1,7 @@
 # Felix: fixed training split at 2014
 
+**Historical experiment:** the original cleaned inputs were removed in main `51d116d`. Reproduce this experiment at commit `a32df7627c38c583602fbb0f37658cd7d6be7532` in a separate checkout. For Mike's current shared data, use the root `felix-model.ipynb` and [handoff guide](../handoff/README.md).
+
 Monthly and weekly runs completed on 10 November 2026. Monthly uses Mike's cleaned monthly data. Weekly uses the cleaned daily and weekly tables present on Ronan's branch and his Friday price-alignment convention. Input identities and the exact source commit are recorded in `weekly_provenance.json`.
 
 ## Design

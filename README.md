@@ -37,6 +37,10 @@ fe-oil-group-work/
 - `guidelines/` contains shared coursework materials and the common benchmark protocol.
 - `extra/` contains meeting records and optional, non-primary model comparisons.
 
+## Felix model handoff
+
+Open [felix-model.ipynb](felix-model.ipynb) in VS Code/Jupyter. It uses Mike's current shared cleaned data and fits the training sample only. [Exact momentum, carry and dollar definitions](models/Benchmark/handoff/README.md) are included for integration into the group notebook.
+
 ## Start here
 
 1. Read [shared guidance](guidelines/README.md) and the original coursework PDF in `guidelines/Canvas/`.
