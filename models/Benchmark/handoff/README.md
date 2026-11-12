@@ -1,6 +1,10 @@
 # Felix model handoff
 
-Open `felix-model.ipynb` at the repository root in VS Code or Jupyter. Select a Python kernel with `models/Benchmark/requirements.txt` and `ipykernel` installed, then Run All. It reads Mike's current shared `data/clean/oil_monthly_clean.csv`, shows the exact original features and fits the training sample only. It does not run validation or test forecasts or overwrite shared outputs.
+**Current group entry point:** [oil-forecasting.ipynb](../../../oil-forecasting.ipynb), Section **5.1** (Felix OLS) and **7.1** (validation, 2005–2014). The model has been integrated on main. The standalone notebook below remains a compact reference; use the group notebook for coordinated evaluation.
+
+[Back to repository overview](../../../README.md)
+
+Open [felix-model.ipynb](../../../felix-model.ipynb) at the repository root in VS Code or Jupyter. Select a Python kernel with `models/Benchmark/requirements.txt` and `ipykernel` installed, then Run All. It reads Mike's current shared `data/clean/oil_monthly_clean.csv`, shows the exact original features and fits the training sample only. It does not run validation or test forecasts or overwrite shared outputs.
 
 ## Exact original specification
 

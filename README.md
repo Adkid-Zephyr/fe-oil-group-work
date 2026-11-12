@@ -1,83 +1,67 @@
 # Financial Econometrics: Oil Futures Forecasting
 
-Collaboration repository for the Financial Econometrics group coursework at Imperial College Business School (BUSI70606, 2026-2027).
-
-Our task is to develop interpretable oil futures forecasts and explain their usefulness, diagnostics and limitations to a trading desk. All repository documentation, code comments and reports use English.
-
-## Repository structure
-
-```text
-fe-oil-group-work/
-|-- data/
-|   |-- raw/                     # Original, unchanged source data
-|   |-- clean/                   # Shared cleaned CSVs and prepared data
-|   |-- results/                 # Forecasts and metrics, grouped by model
-|       |-- Benchmark/
-|       |-- Mike&Div/
-|       |-- Alan&Ronan/
-|       |-- no-change-benchmark/ # Separate zero-change baseline forecasts
-|-- models/
-|   |-- Benchmark/               # Monthly OLS model, analysis code and report
-|   |-- Mike&Div/
-|   |-- Alan&Ronan/
-|-- guidelines/                  # Coursework guidance, protocols and scripts
-|   |-- Canvas/                  # Coursework brief, syllabus and AI guidance
-|   |-- Data quality/             # Generated source audit and quality evidence
-|-- extra/
-|   |-- meetings/                # Meeting notes and source records
-|   |-- optional-comparisons/    # Historical-mean and AR(1) comparisons
-|-- .gitignore
-|-- README.md
-```
-
-- `data/raw/` holds the original `Oil Data.xlsx`; keep it unchanged.
-- `data/clean/` holds reproducible prepared datasets, such as `monthly_prepared.csv`.
-- `data/results/` groups forecasts and metrics by model: `Benchmark/`, `Mike&Div/`, and `Alan&Ronan/`. `no-change-benchmark/` holds the separate zero-change baseline forecasts.
-- `models/` contains model code, model-specific documentation and report assets. The `Benchmark` folder is the monthly OLS model workspace.
-- `guidelines/` contains shared coursework materials and the common benchmark protocol.
-- `extra/` contains meeting records and optional, non-primary model comparisons.
-
-## Felix model handoff
-
-Open [felix-model.ipynb](felix-model.ipynb) in VS Code/Jupyter. It uses Mike's current shared cleaned data and fits the training sample only. [Exact momentum, carry and dollar definitions](models/Benchmark/handoff/README.md) are included for integration into the group notebook.
+Imperial College Business School · BUSI70606 · Group coursework, 2026–2027.
 
 ## Start here
 
-1. Read [shared guidance](guidelines/README.md) and the original coursework PDF in `guidelines/Canvas/`.
-2. Read the [benchmark protocol](guidelines/BENCHMARKS.md) before comparing models.
-3. Open `models/Benchmark/dist/index.html` locally for the interactive research report. GitHub displays HTML source; clone or download the repository to view it.
+1. Open **[oil-forecasting.ipynb](oil-forecasting.ipynb)** for the current shared analysis. Felix's OLS is in **5.1** and its 2005–2014 validation in **7.1**.
+2. Use **[data/clean/oil_monthly_clean.csv](data/clean/oil_monthly_clean.csv)**, produced by Section 2 of the group notebook. [Column definitions and release lags](data/clean/oil_monthly_dictionary.csv).
+3. Read the [coursework brief](guidelines/Canvas/26%20Fintech%20CW%20Financial%20Econometrics.pdf) and [benchmark definition](guidelines/BENCHMARKS.md).
 
-## Shared cleaned data
+The current group split is by **target month**: training through December 2004, validation January 2005–December 2014, test January 2015–June 2024. Do not mix these results with the earlier fixed-2014 experiment below.
 
-Use [the shared cleaned-data guide](data/clean/README.md) and read the [cleaning and quality report](guidelines/CLEANING_REPORT.md) before choosing predictors. The data are standardised and auditable, but some source definitions and timestamps remain unresolved.
+## Felix's work: what to use and where
+
+| Item | Location | Purpose / status |
+| --- | --- | --- |
+| Integrated OLS and validation | [Group notebook](oil-forecasting.ipynb), Sections **5.1 / 7.1** | Current collaboration entry point; includes the three-signal model and validation analysis. |
+| Standalone model handoff | [felix-model.ipynb](felix-model.ipynb) | Executed reference using Mike's current cleaned CSV. Run All fits training only; no validation/test evaluation. |
+| Exact signal definitions and setup | [Felix handoff guide](models/Benchmark/handoff/README.md) | Momentum window, carry sign, dollar lag, dependencies and integration notes. |
+| No-change benchmark | [Definition](guidelines/BENCHMARKS.md) · [code](guidelines/benchmark.py) · [forecasts and metrics](data/results/no-change-benchmark/) | Completed shared zero-return reference. Saved forecasts cover 2015–June 2024; match dates when comparing. |
+| Weekly / monthly fixed-2014 experiment | [Code and method](models/Benchmark/fixed-split-2014/README.md) · [results](data/results/Felix-fixed-split-2014/) | Historical experiment: trained before 2014, tested from 2014. Requires the recorded historical input version. |
+| Original monthly research | [Original model guide](models/Benchmark/README.md) · [results](data/results/Benchmark/) | Earlier expanding-window experiment; retained for provenance. |
+| Interactive results website | [Oil, explained](https://fe-oil-explained.laufs0310.chatgpt.site/) | Published 10 November fixed-2014 weekly/monthly results. It does not yet reflect the group's newer validation analysis. |
+| Earlier data audit and meeting notes | [Cleaning report](guidelines/CLEANING_REPORT.md) · [quality evidence](guidelines/Data%20quality/) · [meeting notes](extra/meetings/MEETING_NOTES.md) | Reference material; the current cleaned-data workflow is Section 2 of the group notebook. |
+
+**Signal definitions at origin t:** momentum is the one-month CL1 percentage change; carry is `100*(CL1(t)-CL2(t))/CL1(t)` (minus the shared CSV's carry); dollar is `100*dxy_ret(t-1)`. The target is next month's CL1 percentage change. Full details are in the handoff guide.
+
+**Outstanding Felix work:** Section 3 (stationarity) is still a placeholder in the current notebook. The assigned ADF/KPSS/ACF table, independent release-lag spot checks and final fresh-clone reproducibility review are not marked complete by the model handoff. Existing notebook checks and older audits are not substitutes for those deliverables.
+
+## Run Felix's standalone handoff
+
+From the repository root:
 
 ```bash
-python -m pip install -r guidelines/cleaning-requirements.txt
-python guidelines/clean_data.py
-python -m unittest discover -s guidelines -p "test_clean_data.py"
+python -m pip install -r models/Benchmark/requirements.txt ipykernel
 ```
 
-The script reads the unchanged workbook from `data/raw/`, writes shared CSVs to `data/clean/`, and writes source-quality evidence to `guidelines/Data quality/`.
+Open `felix-model.ipynb` in VS Code/Jupyter, select that Python environment and use **Run All**. It reads the shared cleaned file and does not overwrite group data. These dependencies cover Felix's handoff, not a verified environment for the entire evolving group notebook.
 
-## Reproduce the Benchmark model
+## Repository map
 
-From the repository root, using Python 3.12 (the tested runtime):
-
-```bash
-python -m pip install -r models/Benchmark/requirements.txt
-python models/Benchmark/analyze.py
-python models/Benchmark/build.py
-python guidelines/benchmark.py
+```text
+ oil-forecasting.ipynb             Current group notebook
+ felix-model.ipynb                 Felix's standalone handoff
+ data/raw/                        Original workbook
+ data/clean/                      Current shared cleaned CSV and dictionary
+ data/results/                    Saved results, separated by experiment/model
+ models/Benchmark/handoff/        Felix's definitions and integration guide
+ models/Benchmark/fixed-split-2014/ Historical weekly/monthly experiment
+ models/Benchmark/                Original Felix OLS source and report
+ models/Alan&Ronan/                Team model workspace
+ models/Mike&Div/                  Team model workspace
+ guidelines/                      Coursework, benchmark and earlier audit tools
+ extra/                           Meeting notes and optional comparisons
 ```
 
-The analysis reads the original workbook from `data/raw/`, writes prepared data to `data/clean/`, and writes model outputs to `data/results/Benchmark/`. The final command regenerates the separate **no-change benchmark** forecasts in `data/results/no-change-benchmark/`. See the [benchmark guide](guidelines/BENCHMARKS.md) for how to compare models. Historical-mean and AR(1) results are optional comparisons in `extra/optional-comparisons/`.
+The folder name `models/Benchmark` is historical: it contains Felix's **OLS model**. The actual shared **no-change benchmark** is `guidelines/benchmark.py` with outputs in `data/results/no-change-benchmark/`.
 
 ## Collaboration
 
-Create a branch for your changes, work in your team's folder, then open a pull request into `main`. Keep shared raw data unchanged. Include run instructions, target definition, forecast horizon, information timing and forecast CSVs with each model. Do not compare errors across different targets, units, frequencies or test dates. Agree a common evaluation protocol before selecting the final model.
+Pull the latest main before starting. Use a branch for changes and review the diff before merging. Coordinate edits to the shared notebook; avoid unrelated cell/output churn. Keep raw data unchanged and use the current shared cleaned CSV for group work. The older `guidelines/clean_data.py` and `clean_monthly.py` workflows are historical audit tools, not the current data-generation entry point.
 
-The repository contains working research drafts, not a submitted group report. Review numerical claims and the course's AI guidance before submission. Course materials remain for private group use; no public redistribution licence is granted here.
+Keep target definitions, date windows, units and information timing consistent. Label earlier experiments explicitly. Felix's historical experiments already examined overlapping 2015–2024 outcomes, so do not describe those years as untouched by all prior group research.
 
-The live Canvas assignment page showed **27 November 2026 at 16:00** on 27 October 2026. Confirm the displayed timezone and any later changes in Canvas. The PDF still says Autumn 2025 and Wednesday Week 7; the live assignment page is the current scheduling reference.
+The repository contains research drafts, not a submitted assessment. Review the [AI guidance](guidelines/Canvas/Student%20Guidance%20on%20Use%20of%20AI%202026.27.pdf) before submission. Course materials retain their original rights; public repository visibility does not grant redistribution rights.
 
-Group members still need to be added as GitHub collaborators using their GitHub usernames.
+Canvas showed **27 November 2026 at 16:00** when checked on 27 October. Recheck Canvas for current deadlines and presentation details; the brief retains an older year/week reference.
