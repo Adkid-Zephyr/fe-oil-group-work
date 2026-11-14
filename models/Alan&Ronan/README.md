@@ -63,6 +63,25 @@ Out-of-sample R² is measured against the no-change forecast. Above zero beats i
 
 The band model also beats plain mean reversion (Clark-West p = 0.004). Diebold-Mariano against no-change is not significant (p = 0.22). That test is known to be conservative for nested models, and 120 months is a small sample.
 
+## Test results (Jan 2015 to Jun 2024, 114 months, run once on 14 Nov 2026)
+
+The specification was committed before the test window was opened (commit `f963e99`).
+
+| Model | RMSE ($) | MAE ($) | OOS R² vs no-change | Direction | Clark-West p |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| No change | 0.678 | 0.397 | | | |
+| Plain mean reversion | 0.641 | 0.373 | 10.5% | 56.2% | 0.011 |
+| ARMA(1,0) | 0.641 | 0.373 | 10.6% | 56.2% | 0.011 |
+| **Band mean reversion (final)** | **0.622** | **0.368** | **15.7%** | 56.2% | **0.003** |
+| Final model, outside-band months only (26) | 0.724 | 0.553 | 36.6% | 76.9% | |
+
+- The band model beats plain mean reversion by 5.8% (Clark-West p = 0.004).
+- Diebold-Mariano against no-change: p = 0.069. Conservative for nested models.
+- Not driven by 2020: without that year the OOS R² is 13.6%. It is 16.2% over 2015-19 and 15.5% over 2020-24.
+- BIC picks ARMA(1,0) on pre-2015 data, which is plain mean reversion, so the two benchmarks are the same model here.
+- The largest miss is March 2020 (spread fell $3.85, forecast about zero). The model does not see shocks coming. It says what tends to happen after the spread is already stretched.
+- The 77% direction rate rests on 26 months. Treat it as indicative.
+
 ## Why monthly and not weekly
 
 Tested on validation data only, same grid at both frequencies (`exploration/`).
