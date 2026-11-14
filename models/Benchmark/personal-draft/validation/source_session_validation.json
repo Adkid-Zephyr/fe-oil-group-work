@@ -1,0 +1,32 @@
+{
+  "forecast_n": 114,
+  "independent_prediction_max_error": 1.9984014443252818e-15,
+  "future_prefix_invariance": true,
+  "decomposition_check": true,
+  "information_dates": true,
+  "source_sha256": "4355813a4761a6f242ae6ff1eff03dce6f89127320161b6fb2481e9aa908bae5",
+  "browser_csv_download_matches": true,
+  "browser_code_download_matches": true,
+  "cost_score_independent_checks": [
+    267.18870927366,
+    205.98870927366
+  ],
+  "browser_ui": [
+    "Chinese/English",
+    "period filter 2020",
+    "absolute error view",
+    "historical month keyboard slider",
+    "scenario input and reset",
+    "cost slider",
+    "report expand",
+    "presentation navigation",
+    "mobile 390px layout, no page overflow"
+  ],
+  "browser_console_errors": 0,
+  "limits": [
+    "Print-to-PDF system dialog not exercised; print CSS provided",
+    "AI-assisted learning/review draft, not instructor-approved submission",
+    "Continuous futures prices do not identify executable trading returns",
+    "Direct file:// browser QA blocked by browser URL policy; same self-contained HTML tested over local HTTP. No external scripts or fetch dependencies."
+  ]
+}

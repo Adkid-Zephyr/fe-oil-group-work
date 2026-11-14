@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-27",
+  "checks": {
+    "source_file_checksums": true,
+    "english_only_authored_text": true,
+    "readme_links": true,
+    "four_requested_top_level_folders": true,
+    "original_ols_forecasts_reproduced": true,
+    "ar1_independent_calculation": true,
+    "future_truncation_invariance": true,
+    "english_report_rendered": true,
+    "period_filter": true,
+    "presentation_mode": true
+  },
+  "limitations": [
+    "Source session UI evidence is retained separately; repository English interface changes received targeted browser checks.",
+    "No collaborator accounts have been supplied.",
+    "Meeting minutes are based on automatic transcription, without reliable speaker attribution."
+  ]
+}
