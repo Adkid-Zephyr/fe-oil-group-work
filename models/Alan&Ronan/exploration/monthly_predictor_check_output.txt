@@ -1,0 +1,39 @@
+                base                           added predictor     R2  R2 2005-09  R2 2010-14 beats base in both halves
+plain mean reversion                                    (none)  0.018      -0.024       0.105                          
+plain mean reversion                        last spread change -0.012      -0.067       0.104                        no
+plain mean reversion                                 IP growth -0.002      -0.052       0.104                        no
+plain mean reversion           IP growth, one more month's lag -0.036      -0.092       0.080                        no
+plain mean reversion                          inventory growth  0.014      -0.027       0.101                        no
+plain mean reversion                         production growth -0.002      -0.043       0.086                        no
+plain mean reversion                          rig count change  0.005      -0.040       0.098                        no
+plain mean reversion net commercial position (% of long+short)  0.023      -0.012       0.096                        no
+plain mean reversion                                CL1 return  0.008      -0.036       0.101                        no
+plain mean reversion                        crack spread level -0.012      -0.066       0.102                        no
+plain mean reversion                       crack spread change  0.006      -0.038       0.098                        no
+plain mean reversion                         Baltic Dry change  0.015      -0.035       0.118                        no
+plain mean reversion                             dollar return  0.006      -0.038       0.100                        no
+plain mean reversion                                       VIX -0.023      -0.078       0.091                        no
+plain mean reversion                    yield curve (10y - 3m)  0.002      -0.044       0.098                        no
+plain mean reversion                             CPI inflation  0.007      -0.030       0.085                        no
+plain mean reversion                            S&P 500 return  0.003      -0.037       0.089                        no
+plain mean reversion                   oil & gas equity return  0.009      -0.029       0.089                        no
+plain mean reversion                     gasoline price change  0.035      -0.003       0.113                       yes
+ band mean reversion                                    (none)  0.068       0.028       0.154                          
+ band mean reversion                        last spread change  0.050      -0.005       0.165                        no
+ band mean reversion                                 IP growth  0.045      -0.006       0.151                        no
+ band mean reversion           IP growth, one more month's lag  0.019      -0.037       0.138                        no
+ band mean reversion                          inventory growth  0.064       0.024       0.148                        no
+ band mean reversion                         production growth  0.051       0.011       0.136                        no
+ band mean reversion                          rig count change  0.052       0.008       0.146                        no
+ band mean reversion net commercial position (% of long+short)  0.079       0.044       0.153                        no
+ band mean reversion                                CL1 return  0.062       0.021       0.148                        no
+ band mean reversion                        crack spread level  0.050      -0.005       0.167                        no
+ band mean reversion                       crack spread change  0.059       0.018       0.146                        no
+ band mean reversion                         Baltic Dry change  0.064       0.021       0.155                        no
+ band mean reversion                             dollar return  0.055       0.009       0.150                        no
+ band mean reversion                                       VIX  0.029      -0.026       0.144                        no
+ band mean reversion                    yield curve (10y - 3m)  0.052       0.009       0.143                        no
+ band mean reversion                             CPI inflation  0.057       0.018       0.139                        no
+ band mean reversion                            S&P 500 return  0.053       0.014       0.136                        no
+ band mean reversion                   oil & gas equity return  0.061       0.026       0.134                        no
+ band mean reversion                     gasoline price change  0.087       0.054       0.157                       yes

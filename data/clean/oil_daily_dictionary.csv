@@ -1,0 +1,8 @@
+column,description,source sheet,unit
+date,trading day,Industry_D,
+cl1,front-month crude oil futures settlement,Industry_D,$/bbl
+cl2,second-month crude oil futures settlement,Industry_D,$/bbl
+spread,cl1 - cl2 (above zero = backwardation),derived,$/bbl
+cl1_last_trading_day,1 on the estimated last trading day of the CL1 contract,derived,0/1
+days_to_cl1_expiry,trading days until the CL1 contract's last trading day,derived,days
+cl1_rolled,1 on the first day CL1 is the next contract; spread change on this day is not a tradeable P&L,derived,0/1
