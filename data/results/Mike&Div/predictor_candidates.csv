@@ -1,0 +1,18 @@
+candidate,Section 3 series,link to the curve,expected sign,our hypothesis,form used,Section 3 verdict for that form,note,release lag (months),first month available
+last spread change,spread S,the spread itself,?,"A tightening month might keep going (+), or it might overshoot and snap back (-). We can't call it.",Δ,stationary,,0,1995-01
+CL1 return,CL1 price,price level,?,A big oil rally can mean the market is really tight (+). It can also be a spike that fades (-). We can't call it.,100·Δlog,stationary,,0,1995-01
+crack spread,crack_321,direct (refining),+,"Refiners make more money per barrel, so they buy more crude now. That lifts the front contract more than the next one.",Δ,conflict,KPSS also rejects for the change,0,1995-01
+Baltic Dry,bdi,indirect (global trade),+,"Shipping rates follow world trade, and busier trade burns more oil. It's not an oil number, so we see it as a loose link.",100·Δlog,stationary,,0,1995-01
+production,production,direct (supply),-,"More oil out of the ground means more supply today, so the front contract weakens first.",100·Δlog,conflict,KPSS also rejects for the change,1,1995-02
+inventories,inventories,direct (storage),-,"Full tanks mean oil is easy to get now. Nobody pays up for the front barrel, so the spread falls.",100·Δlog,stationary,,1,1995-02
+rig count,rig_count,direct (future supply),?,"Rigs take months to add oil, and the news hits both contracts the same. We expect almost no effect on the gap.",100·Δlog,stationary,,1,1995-02
+net commercial position,net commercial,positioning,?,"Producers and refiners hedge for business reasons, so a bigger position can mean either. The README notes the label probably covers all reporting traders.",Δ,stationary,,1,1995-02
+CPI inflation,cpi_yoy,indirect (macro),?,"Rising inflation can mean strong demand (+). It can also mean higher interest rates, which make storing oil costlier (-).",Δ,stationary,,1,1995-02
+industrial production,IP,indirect (demand),+,"Busier factories use more energy now, which tightens the prompt market.",100·Δlog,stationary,,1,1995-02
+3-month yield,y3m,indirect (cost of storage),-,"Holding oil ties up money. When short rates rise, storing costs more, so the later contract has to be dearer than the front. The spread falls.",Δ,stationary,,1,1995-02
+term spread (10y - 3m),term spread,indirect (growth outlook),?,"A steeper curve means stronger growth ahead. That demand sits mostly beyond the next two months, so it could lift the later contract (-) or point to a tight market now (+).",Δ,stationary,,1,1995-02
+S&P 500,spx,indirect (risk appetite),+,"Rising stocks mean people expect growth, and growth burns oil. We read it as more demand now.",100·Δlog,stationary,,0,1995-01
+dollar return,dxy_ret,indirect (FX),-,"A stronger dollar makes oil dearer for buyers paying in other currencies, so demand drops. It hits both contracts, so we expect only a small effect on the gap.",level,stationary,,0,1994-12
+VIX,vix,indirect (market fear),-,"High fear has come with demand collapses and deep contango (2008-09 and 2020, see Section 1.3). We expect fear at month-end to mean the market loosens further.",level,stationary,,0,1994-12
+gasoline price,gasoline,direct (product demand),+,"Rising pump prices point to strong demand for fuel, so refiners want crude sooner.",100·Δlog,stationary,,1,1995-02
+oil & gas equities,dj_oil_gas,indirect (equity market),+,Energy shares often move on oil news before the futures curve shows it.,100·Δlog,stationary,,0,1995-01

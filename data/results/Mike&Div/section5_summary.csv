@@ -1,0 +1,9 @@
+check,test,result (sample A unless stated),verdict,what we do
+Autocorrelation,"Breusch-Godfrey (1, 12)","p = 0.492, p = 0.741",holds,OLS consistent; no extra lags needed
+Heteroskedasticity,"Breusch-Pagan, White, ARCH-LM","p = 0.003, p = 0.003, p = 0.0009",violated,use Newey-West standard errors
+Parameter stability,Chow 2008/2014/2020; predictive failure; recursive and rolling (sample B),Chow lowest p = 0.121; predictive failure p = 0.0001,coefficients stable; shocks grew,one frozen model is consistent with the data
+Normality,Jarque-Bera,p < 0.0001; p = 0.0001 without event months,violated (fat tails),read tests as large-sample; dummies diagnostic only
+Functional form,RESET,"p = 0.458 (slide), p = 0.093 (F)",holds,-
+Multicollinearity,VIF,largest 1.04,holds,-
+The band matters,"Wald b_in = b_out, Newey-West(3), lags 0-12",p < 0.0001,supported,the outside-band pull is the signal
+Omitted variables,Section 4,2 of 17 pass; consistent with chance,none found,spread-only design
