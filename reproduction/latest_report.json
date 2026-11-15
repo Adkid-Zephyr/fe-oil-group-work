@@ -1,5 +1,5 @@
 {
-  "source_commit": "5e9742479073d6a114eebb362da02c6130bd5f34",
+  "source_commit": "6dd790ccb7ca854ce3ee12d65d49746ba65c798f",
   "notebook_sha256": "9d720d4d35c12c4553bd00a2cc4b6f4ac527a7e9173b0ce90dbd4d7fc22b58d6",
   "python": "3.12.14",
   "platform": "macOS-26.6.1-arm64-arm-64bit",
@@ -414,6 +414,10 @@
       "version": "13.0.0"
     },
     {
+      "name": "pip",
+      "version": "25.0.1"
+    },
+    {
       "name": "platformdirs",
       "version": "4.14.5"
     },
@@ -506,12 +510,7 @@
       "version": "2.5.2"
     }
   ],
-  "tracked_changes": [
-    ".gitignore",
-    "README.md",
-    "models/Alan&Ronan/spread_model.py",
-    "oil-forecasting.ipynb"
-  ],
+  "tracked_changes": [],
   "runner_sha256": "f635f630c2bb0613cfa44c45a1c5f72023716a1b98596692a9afe581cb577e3e",
   "requirements_sha256": "cb4b0004e7adc7fab4e2a21ccb4035d3f8d867a73c562b9ca2914fdad43f7d16",
   "input_hashes": {
@@ -541,5 +540,13 @@
       "dm_p": 0.06894006562651978
     }
   },
-  "elapsed_seconds": 6.51
+  "elapsed_seconds": 21.93,
+  "acceptance": {
+    "fresh_remote_clone": true,
+    "branch": "codex/felix-fixed-split-2014",
+    "installation": "python -m venv .venv; python -m pip install -r requirements.txt",
+    "pip_check": "No broken requirements found.",
+    "working_tree_after_run": "clean",
+    "verified_date": "2026-11-15"
+  }
 }

@@ -6,7 +6,8 @@
 
 - Fresh remote clone of main commit `5e9742479073d6a114eebb362da02c6130bd5f34`.
 - Actual notebook: root `oil-forecasting.ipynb`, 33 cells, 17 executable code cells.
-- A new virtual environment was installed for the clone. CPython 3.12.14, macOS arm64; exact dependency versions are pinned in root `requirements.txt`.
+- Final acceptance also cloned the pushed Felix branch at `6dd790ccb7ca854ce3ee12d65d49746ba65c798f`, installed via the documented `python -m venv` and `pip install -r requirements.txt` commands, and ran the checker again. All 17 code cells completed, no unaccepted mismatches were found, `pip check` passed and the clone remained clean.
+- A new virtual environment was installed for each clone. CPython 3.12.14, macOS arm64; exact dependency versions are pinned in root `requirements.txt`.
 - Every cell ran in order in a fresh kernel. The runner uses an isolated copy of tracked files, not prior notebook memory or another project's data.
 - Reference files were captured before execution. The saved test forecasts were reproduced, not retuned. Raw workbook and shared monthly input remained byte-identical.
 - Runtime test forecasts, metrics and ARMA search results were captured separately because the notebook does not overwrite saved test tables when they already exist.
