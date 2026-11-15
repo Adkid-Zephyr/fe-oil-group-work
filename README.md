@@ -2,7 +2,7 @@
 
 We forecast next month's change in the CL1-CL2 calendar spread. This is a different target from the CL1 return models in this repo, so **our RMSE and MAE cannot be ranked against them or against the shared CL1 no-change benchmark.** We compare against a no-change forecast of the spread instead, on the same 114 test months.
 
-Everything is in `spread_model.ipynb` (tasks 1-3: data and repo setup, evaluation and test run, stationarity and data checks). It runs top to bottom on a fresh clone.
+The current integrated notebook is **[oil-forecasting.ipynb](oil-forecasting.ipynb)** at the repository root. It contains **tasks 1–3**, not yet the complete group submission. Felix's [reproducibility review](reproduction/README.md) checks this version from a fresh clone and records numerical differences and remaining integration work.
 
 ## The model in one paragraph
 
@@ -59,11 +59,27 @@ Use one dummy per month, not a single outlier dummy: the moves have opposite sig
 
 Row `t` of the clean file holds what was known at the end of month `t`. Market prices (CL1, CL2, crack, Baltic Dry, equities, dollar, VIX) are used in their own month. Macro and industry data (IP, CPI, production, inventories, rigs, positioning, gasoline) are published the following month, so row `t` holds month `t-1`. Treasury yields are dated one month early in the workbook and are lagged one month too. The final model uses only CL1 and CL2, so it needs no release lag.
 
-## Running it
+## Reproduce from a fresh clone
+
+Tested on CPython **3.12.14**, macOS arm64. The pinned [requirements.txt](requirements.txt) covers the shared notebook and automated execution. Other operating systems have not been tested.
 
 ```bash
-python -m pip install numpy pandas scipy statsmodels matplotlib openpyxl jupyter
-jupyter nbconvert --to notebook --execute --inplace models/Alan\&Ronan/spread_model.ipynb
+git clone --branch codex/felix-fixed-split-2014 https://github.com/Adkid-Zephyr/fe-oil-group-work.git
+cd fe-oil-group-work
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python reproduction/run_notebook.py
+```
+
+The runner executes all cells in a temporary copy, compares regenerated outputs with the committed reference and independently checks the band predictions and main metrics. It leaves shared data and committed results unchanged. Local evidence is written to `.repro/`: the executed notebook, log, figures, regenerated CSVs and `report.json`.
+
+`PASS` means all checks match at the documented tolerance. `REPRODUCED_WITH_DIFFERENCES` means only the explicitly recorded small ARMA/label differences were found; details remain visible in the report. `FAIL` means an execution or unaccepted comparison failure. `--strict` also exits nonzero for any recorded difference. Read [the review](reproduction/README.md) before quoting reproducibility status.
+
+For interactive use, open `oil-forecasting.ipynb` in VS Code/Jupyter with this environment selected. Run All recreates some result files in the working tree; the isolated runner above is preferred for verification. To export a review copy after the runner succeeds:
+
+```bash
+python -m nbconvert --to html .repro/oil-forecasting.executed.ipynb --output-dir .repro
 ```
 
 The notebook needs `data/raw/Oil Data.xlsx` and `data/clean/oil_monthly_clean.csv`. It writes:

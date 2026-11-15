@@ -1,0 +1,479 @@
+{
+  "source_commit": "5e9742479073d6a114eebb362da02c6130bd5f34",
+  "notebook_sha256": "3e45a976a1ba4e5021c910fdc0424c678eb51fc207b1656e6050c5ee94bfd5ce",
+  "python": "3.12.14",
+  "platform": "macOS-26.6.1-arm64-arm-64bit",
+  "status": "FAIL",
+  "code_cells": 17,
+  "comparisons": {
+    "data/clean/oil_daily_cl1_cl2.csv": {
+      "status": "PASS",
+      "rows": 8692,
+      "max_abs_numeric_difference": 0.0,
+      "differences": [],
+      "evidence": "regenerated file"
+    },
+    "data/clean/oil_daily_dictionary.csv": {
+      "status": "PASS",
+      "rows": 7,
+      "max_abs_numeric_difference": 0.0,
+      "differences": [],
+      "evidence": "regenerated file"
+    },
+    "data/clean/oil_monthly_clean.csv": {
+      "status": "PASS",
+      "check": "input unchanged"
+    },
+    "data/clean/oil_monthly_dictionary.csv": {
+      "status": "PASS",
+      "check": "input unchanged"
+    },
+    "data/raw/Oil Data.xlsx": {
+      "status": "PASS",
+      "check": "input unchanged"
+    },
+    "data/results/Alan&Ronan/arma_order_test.csv": {
+      "status": "PASS",
+      "rows": 16,
+      "max_abs_numeric_difference": 7.067163591001346e-07,
+      "differences": [],
+      "evidence": "runtime object"
+    },
+    "data/results/Alan&Ronan/arma_order_validation.csv": {
+      "status": "FAIL",
+      "rows": 16,
+      "max_abs_numeric_difference": 0.00039447001228154477,
+      "differences": [
+        {
+          "column": "aic",
+          "rows": [
+            15
+          ]
+        },
+        {
+          "column": "bic",
+          "rows": [
+            15
+          ]
+        },
+        {
+          "column": "ljung_box_p_12",
+          "rows": [
+            15
+          ]
+        }
+      ],
+      "evidence": "regenerated file"
+    },
+    "data/results/Alan&Ronan/cumulative_sse_test.png": {
+      "status": "PASS",
+      "check": "image decodes",
+      "size": [
+        2700,
+        1200
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "data/results/Alan&Ronan/cumulative_sse_validation.png": {
+      "status": "PASS",
+      "check": "image decodes",
+      "size": [
+        2700,
+        1200
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "data/results/Alan&Ronan/forecasts_test.csv": {
+      "status": "PASS",
+      "rows": 114,
+      "max_abs_numeric_difference": 1.479796285508428e-10,
+      "differences": [],
+      "evidence": "runtime object"
+    },
+    "data/results/Alan&Ronan/forecasts_validation.csv": {
+      "status": "FAIL",
+      "rows": 120,
+      "max_abs_numeric_difference": 1.8497570318798395e-06,
+      "differences": [
+        {
+          "column": "pred_arma",
+          "rows": [
+            116
+          ]
+        }
+      ],
+      "evidence": "regenerated file"
+    },
+    "data/results/Alan&Ronan/metrics_test.csv": {
+      "status": "FAIL",
+      "rows": 5,
+      "max_abs_numeric_difference": 2.6572433142746377e-10,
+      "differences": [
+        {
+          "column": "model",
+          "rows": [
+            1
+          ]
+        }
+      ],
+      "evidence": "runtime object"
+    },
+    "data/results/Alan&Ronan/metrics_validation.csv": {
+      "status": "PASS",
+      "rows": 5,
+      "max_abs_numeric_difference": 2.809350050370085e-07,
+      "differences": [],
+      "evidence": "regenerated file"
+    },
+    "data/results/Alan&Ronan/spread_band_test.png": {
+      "status": "PASS",
+      "check": "image decodes",
+      "size": [
+        2700,
+        1200
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "data/results/Alan&Ronan/spread_band_validation.png": {
+      "status": "PASS",
+      "check": "image decodes",
+      "size": [
+        2700,
+        1200
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "data/results/Alan&Ronan/stationarity_acf.png": {
+      "status": "PASS",
+      "check": "image decodes",
+      "size": [
+        4200,
+        1650
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "data/results/Alan&Ronan/stationarity_decisions.csv": {
+      "status": "PASS",
+      "rows": 26,
+      "max_abs_numeric_difference": 0.0,
+      "differences": [],
+      "evidence": "regenerated file"
+    },
+    "data/results/Alan&Ronan/stationarity_tests_full.csv": {
+      "status": "PASS",
+      "rows": 51,
+      "max_abs_numeric_difference": 1.5658585539313208e-12,
+      "differences": [],
+      "evidence": "regenerated file"
+    },
+    "data/results/Alan&Ronan/stationarity_tests_to_2014.csv": {
+      "status": "PASS",
+      "rows": 51,
+      "max_abs_numeric_difference": 1.2607692667643278e-12,
+      "differences": [],
+      "evidence": "regenerated file"
+    },
+    "data/results/Alan&Ronan/target_outliers.csv": {
+      "status": "PASS",
+      "rows": 6,
+      "max_abs_numeric_difference": 0.0,
+      "differences": [],
+      "evidence": "regenerated file"
+    }
+  },
+  "packages": [
+    {
+      "name": "appnope",
+      "version": "1.0.0"
+    },
+    {
+      "name": "asttokens",
+      "version": "3.0.2"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "beautifulsoup4",
+      "version": "4.15.0"
+    },
+    {
+      "name": "bleach",
+      "version": "6.4.0"
+    },
+    {
+      "name": "comm",
+      "version": "0.2.3"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.4.0"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1"
+    },
+    {
+      "name": "debugpy",
+      "version": "1.8.22"
+    },
+    {
+      "name": "defusedxml",
+      "version": "0.7.1"
+    },
+    {
+      "name": "et_xmlfile",
+      "version": "2.0.0"
+    },
+    {
+      "name": "executing",
+      "version": "2.3.0"
+    },
+    {
+      "name": "fastjsonschema",
+      "version": "2.22.3"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.68.0"
+    },
+    {
+      "name": "formulaic",
+      "version": "1.2.2"
+    },
+    {
+      "name": "interface_meta",
+      "version": "2.0.1"
+    },
+    {
+      "name": "ipykernel",
+      "version": "7.4.0"
+    },
+    {
+      "name": "ipython",
+      "version": "9.18.1"
+    },
+    {
+      "name": "ipython_pygments_lexers",
+      "version": "1.1.1"
+    },
+    {
+      "name": "jedi",
+      "version": "0.20.1"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1"
+    },
+    {
+      "name": "jupyter_client",
+      "version": "8.10.0"
+    },
+    {
+      "name": "jupyter_core",
+      "version": "5.9.1"
+    },
+    {
+      "name": "jupyterlab_pygments",
+      "version": "0.3.0"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.2"
+    },
+    {
+      "name": "matplotlib-inline",
+      "version": "0.2.2"
+    },
+    {
+      "name": "mistune",
+      "version": "3.4.0"
+    },
+    {
+      "name": "narwhals",
+      "version": "2.28.0"
+    },
+    {
+      "name": "nbclient",
+      "version": "0.11.0"
+    },
+    {
+      "name": "nbconvert",
+      "version": "7.17.2"
+    },
+    {
+      "name": "nbformat",
+      "version": "5.11.1"
+    },
+    {
+      "name": "nest-asyncio2",
+      "version": "1.7.4"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4"
+    },
+    {
+      "name": "openpyxl",
+      "version": "3.1.5"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pandas",
+      "version": "3.1.1"
+    },
+    {
+      "name": "pandocfilters",
+      "version": "1.5.1"
+    },
+    {
+      "name": "parso",
+      "version": "0.8.7"
+    },
+    {
+      "name": "patsy",
+      "version": "1.0.3"
+    },
+    {
+      "name": "pexpect",
+      "version": "4.9.0"
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.14.5"
+    },
+    {
+      "name": "prompt_toolkit",
+      "version": "3.0.53"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2"
+    },
+    {
+      "name": "ptyprocess",
+      "version": "0.7.0"
+    },
+    {
+      "name": "pure_eval",
+      "version": "0.2.4"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "4.0.0"
+    },
+    {
+      "name": "pyzmq",
+      "version": "27.3.0"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1"
+    },
+    {
+      "name": "scipy",
+      "version": "1.18.1"
+    },
+    {
+      "name": "soupsieve",
+      "version": "4.1.1"
+    },
+    {
+      "name": "stack-data",
+      "version": "0.6.3"
+    },
+    {
+      "name": "statsmodels",
+      "version": "0.15.0"
+    },
+    {
+      "name": "tinycss2",
+      "version": "1.5.1"
+    },
+    {
+      "name": "tornado",
+      "version": "6.6.1"
+    },
+    {
+      "name": "traitlets",
+      "version": "5.16.1"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6"
+    },
+    {
+      "name": "wcwidth",
+      "version": "0.9.4"
+    },
+    {
+      "name": "webencodings",
+      "version": "0.6.1"
+    },
+    {
+      "name": "wrapt",
+      "version": "2.5.2"
+    }
+  ],
+  "input_hashes": {
+    "data/clean/oil_monthly_clean.csv": "849a5f5df788ac038200c8d236463d247901de2a80e50530b7cbb050e86902af",
+    "data/clean/oil_monthly_dictionary.csv": "c02a59e574d97e92ac3406e11fe18904aa31020bce6b9747e95b769bb40c88f6",
+    "data/raw/Oil Data.xlsx": "4355813a4761a6f242ae6ff1eff03dce6f89127320161b6fb2481e9aa908bae5"
+  },
+  "elapsed_seconds": 23.23
+}

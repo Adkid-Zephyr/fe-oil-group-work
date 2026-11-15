@@ -241,7 +241,7 @@ def _charts(fc, label):
         ax.plot(x, np.cumsum(y ** 2 - (y - fc[col].values) ** 2), label=name)
     ax.axhline(0, color="black", lw=0.8)
     ax.set_title(f"Cumulative squared-error gain over no-change ({label})")
-    ax.set_ylabel("($/bbl)$^2$, above zero = beating no-change")
+    ax.set_ylabel("Cumulative SSE gain (USD/bbl)²")
     ax.legend(frameon=False)
     fig.tight_layout(); fig.savefig(RESULTS / f"cumulative_sse_{label}.png", dpi=300); plt.close(fig)
 

@@ -4,3 +4,7 @@ __pycache__/
 *.pyc
 .env
 .env.*
+
+# Isolated notebook execution evidence (local; summary is in reproduction/)
+.repro/
+.ipynb_checkpoints/
