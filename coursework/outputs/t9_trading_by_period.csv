@@ -1,0 +1,5 @@
+,before Mar 2020,Mar-May 2020,after May 2020,"weeks traded, before Mar 2020","weeks traded, Mar-May 2020","weeks traded, after May 2020"
+"M1 rule (k = 10) – illustration, winner is B1",-105.99999999999957,-14.000000000000739,172.99999999999164,18.0,8.0,120.0
+always long contango,206.00000000000063,-300.9999999999995,336.99999999999784,157.0,13.0,213.0
+"B2 rule (k = 10), re-estimated weekly",0.0,-23.00000000000017,444.9999999999923,0.0,6.0,55.0
+"B2 rule (k = 10), coefficients fixed at the freeze",0.0,-593.9999999999998,0.0,0.0,4.0,0.0
