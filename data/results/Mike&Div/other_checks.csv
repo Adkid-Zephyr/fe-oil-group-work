@@ -1,6 +1,0 @@
-check,statistic,p-value
-Jarque-Bera,"W = 580, skewness -1.30, kurtosis 10.2",1.375478074500617e-126
-Jarque-Bera without the 3 event months,"W = 18.2, kurtosis 4.24",0.0001123596538505988
-"RESET (slide: u on y-hat², y-hat³)",T R² = 1.56,0.45812783554754544
-RESET (standard F),F = 2.40,0.09257706378021437
-VIF (largest),1.042,

@@ -1,6 +1,0 @@
-,R²_OS 2005-14,R²_OS 2005-09,R²_OS 2010-14,passes
-month dummies alone (vs band model),-0.011338437734070617,-0.029938479610100988,0.03378510781822586,False
-"inventories, with month dummies (vs band + month dummies)",-0.00188915802727041,0.0022999125432880962,-0.012722052901569025,False
-"inventories, without month dummies (4.4, for comparison)",-0.004671898463107116,-0.003784953936374569,-0.006823618444231405,False
-"gasoline price, with month dummies (vs band + month dummies)",0.03322885897336281,0.05809581528855967,-0.031076842988202014,False
-"gasoline price, without month dummies (4.4, for comparison)",0.029423942369880662,0.038914464195835885,0.006400016037734435,True

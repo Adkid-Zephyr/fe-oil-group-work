@@ -1,8 +1,0 @@
-step,what was tested,regressions,"result (R²_OS vs band model, 2005-09 / 2010-14)"
-4.3,each candidate alone,17,"2 pass (CPI inflation, gasoline price)"
-4.3,each pair,136,"18 pass, all containing CPI or gasoline"
-4.3,all 17 together,1,out of sample −20.24% / −5.48%; in-sample p = 0.013 (p = 0.40 without 2008-09)
-4.4,luck check,5000,useless predictors pass 7.7%; 2 of 17 is consistent with chance
-4.5,LASSO,1,−0.88% / −0.15%
-4.5,Ridge,1,−0.04% / +0.18%; heaviest penalty in 119 of 120 months
-4.5,gasoline with month dummies,1,+5.81% / −3.11%
