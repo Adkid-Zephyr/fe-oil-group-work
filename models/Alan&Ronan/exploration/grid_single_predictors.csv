@@ -1,0 +1,341 @@
+freq,target,sample,window,n,predictor,R2 base+pred,gain vs base
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,dlev,-0.031368906667167185,-0.013459583407910314
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,inv,-0.018763181203420354,-0.000853857944163483
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,inv4,-0.01929822034465367,-0.0013888970853968008
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,prod,-0.021475695693912833,-0.003566372434655962
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,rig,-0.018927364266283275,-0.0010180410070264045
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,cot,-0.018642605032058057,-0.0007332817728011864
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,dcot,-0.016254094755261406,0.001655228503995465
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,oi,-0.019146256155462282,-0.0012369328962054116
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,cl1_ret,-0.0069191889639406146,0.010990134295316256
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,crack_lvl,-0.02372177686682897,-0.005812453607572099
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,dcrack,-0.01348616246494827,0.0044231607943086
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,brent_wti,-0.022895939502635354,-0.004986616243378483
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,bdi_chg,-0.016661202510849904,0.0012481207484069667
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,dxy,-0.022204892592674552,-0.0042955693334176814
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,vix,-0.032534080754702766,-0.014624757495445895
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,term,-0.022361665770644024,-0.004452342511387153
+Weekly (Fri),$ spread,non-roll weeks,expanding,401,ipg,-0.02296389684878175,-0.00505457358952488
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,dlev,-0.06414010962765992,-0.02854731171877445
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,inv,-0.03782768204376441,-0.002234884134878934
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,inv4,-0.0436283221684679,-0.008035524259582427
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,prod,-0.046962422131545445,-0.011369624222659969
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,rig,-0.03993505682477716,-0.0043422589158916836
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,cot,-0.04722846883341947,-0.011635670924533992
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,dcot,-0.041667863653925385,-0.006075065745039909
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,oi,-0.041591871873534636,-0.00599907396464916
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,cl1_ret,-0.04090027513494632,-0.005307477226060842
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,crack_lvl,-0.047742136158507975,-0.012149338249622499
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,dcrack,-0.03320069097120104,0.002392106937684435
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,brent_wti,-0.0452180334965242,-0.009625235587638725
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,bdi_chg,-0.05651063719723437,-0.020917839288348894
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,dxy,-0.040621472195868424,-0.005028674286982948
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,vix,-0.0760440250331933,-0.04045122712430782
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,term,-0.06754037843756655,-0.031947580528681074
+Weekly (Fri),$ spread,non-roll weeks,rolling 5y,401,ipg,-0.04854764650301857,-0.012954848594133095
+Weekly (Fri),$ spread,all weeks,expanding,521,dlev,0.26838327545932006,0.010731454516432981
+Weekly (Fri),$ spread,all weeks,expanding,521,inv,0.2572313118520857,-0.00042050909080137977
+Weekly (Fri),$ spread,all weeks,expanding,521,inv4,0.2569881894105469,-0.0006636315323401698
+Weekly (Fri),$ spread,all weeks,expanding,521,prod,0.2559612089484151,-0.0016906119944719578
+Weekly (Fri),$ spread,all weeks,expanding,521,rig,0.2564949937306533,-0.0011568272122337575
+Weekly (Fri),$ spread,all weeks,expanding,521,cot,0.25640206085766903,-0.0012497600852180435
+Weekly (Fri),$ spread,all weeks,expanding,521,dcot,0.25776972159623446,0.00011790065334738031
+Weekly (Fri),$ spread,all weeks,expanding,521,oi,0.25715050047200905,-0.0005013204708780306
+Weekly (Fri),$ spread,all weeks,expanding,521,cl1_ret,0.2628344327497576,0.0051826118068705185
+Weekly (Fri),$ spread,all weeks,expanding,521,crack_lvl,0.25475698811590075,-0.0028948328269863266
+Weekly (Fri),$ spread,all weeks,expanding,521,dcrack,0.25756623075385165,-8.55901890354227e-05
+Weekly (Fri),$ spread,all weeks,expanding,521,brent_wti,0.254837764357125,-0.002814056585762059
+Weekly (Fri),$ spread,all weeks,expanding,521,bdi_chg,0.25118575401868326,-0.006466066924203817
+Weekly (Fri),$ spread,all weeks,expanding,521,dxy,0.2556359170338557,-0.0020159039090313913
+Weekly (Fri),$ spread,all weeks,expanding,521,vix,0.2476251884479178,-0.010026632494969268
+Weekly (Fri),$ spread,all weeks,expanding,521,term,0.254540071689777,-0.0031117492531100854
+Weekly (Fri),$ spread,all weeks,expanding,521,ipg,0.25338670622570847,-0.004265114717178609
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,dlev,0.23673681895831145,0.00024466491524344214
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,inv,0.23606964720336454,-0.0004225068397034626
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,inv4,0.23308802961417596,-0.0034041244288920414
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,prod,0.23172783273301578,-0.004764321310052222
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,rig,0.23143819864307813,-0.005053955399989873
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,cot,0.2360982039018985,-0.0003939501411694968
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,dcot,0.2331436093207616,-0.0033485447223063902
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,oi,0.23414954956652312,-0.002342604476544885
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,cl1_ret,0.23474037730336939,-0.0017517767396986184
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,crack_lvl,0.23371857290143783,-0.002773581141630177
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,dcrack,0.2359008814111866,-0.0005912726318814121
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,brent_wti,0.23076748024565885,-0.005724673797409152
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,bdi_chg,0.22098637162732315,-0.015505782415744851
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,dxy,0.23164786430627748,-0.004844289736790519
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,vix,0.20385148873478054,-0.032640665308287464
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,term,0.21586818252641327,-0.020623971516654738
+Weekly (Fri),$ spread,all weeks,rolling 5y,521,ipg,0.22766246713657246,-0.008829686906495549
+Weekly (Fri),% spread,non-roll weeks,expanding,401,dlev,-0.02594666031091397,-0.01386180192060027
+Weekly (Fri),% spread,non-roll weeks,expanding,401,inv,-0.01869186268145384,-0.006607004291140139
+Weekly (Fri),% spread,non-roll weeks,expanding,401,inv4,-0.013932622282941454,-0.0018477638926277518
+Weekly (Fri),% spread,non-roll weeks,expanding,401,prod,-0.013183471704780958,-0.001098613314467256
+Weekly (Fri),% spread,non-roll weeks,expanding,401,rig,-0.013400096397805594,-0.0013152380074918923
+Weekly (Fri),% spread,non-roll weeks,expanding,401,cot,-0.013107208185604069,-0.001022349795290367
+Weekly (Fri),% spread,non-roll weeks,expanding,401,dcot,-0.010511846752366605,0.001573011637947097
+Weekly (Fri),% spread,non-roll weeks,expanding,401,oi,-0.012455986568658428,-0.0003711281783447262
+Weekly (Fri),% spread,non-roll weeks,expanding,401,cl1_ret,0.010698742986122833,0.022783601376436535
+Weekly (Fri),% spread,non-roll weeks,expanding,401,crack_lvl,-0.020590260960673623,-0.008505402570359921
+Weekly (Fri),% spread,non-roll weeks,expanding,401,dcrack,-0.01264312317702454,-0.0005582647867108381
+Weekly (Fri),% spread,non-roll weeks,expanding,401,brent_wti,-0.014788877335604411,-0.0027040189452907093
+Weekly (Fri),% spread,non-roll weeks,expanding,401,bdi_chg,-0.01827468194026638,-0.006189823549952678
+Weekly (Fri),% spread,non-roll weeks,expanding,401,dxy,-0.020009420159367464,-0.007924561769053762
+Weekly (Fri),% spread,non-roll weeks,expanding,401,vix,-0.021588610310077305,-0.009503751919763603
+Weekly (Fri),% spread,non-roll weeks,expanding,401,term,-0.015284752105434674,-0.0031998937151209716
+Weekly (Fri),% spread,non-roll weeks,expanding,401,ipg,-0.020114992026729617,-0.008030133636415915
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,dlev,-0.07986640990205274,-0.015743902799249865
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,inv,-0.066680822220335,-0.0025583151175321284
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,inv4,-0.07226422893759277,-0.008141721834789895
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,prod,-0.0673936207785204,-0.0032711136757175296
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,rig,-0.06800812198452011,-0.0038856148817172365
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,cot,-0.07564586115454275,-0.011523354051739876
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,dcot,-0.0706941746496732,-0.00657166754687033
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,oi,-0.06969460434413688,-0.005572097241334006
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,cl1_ret,-0.07266582539819244,-0.008543318295389568
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,crack_lvl,-0.08084660922669218,-0.016724102123889306
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,dcrack,-0.06558514554470074,-0.0014626384418978677
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,brent_wti,-0.06910838957179677,-0.004985882468993896
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,bdi_chg,-0.08750931489384173,-0.023386807791038855
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,dxy,-0.07108927348822047,-0.0069667663854176
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,vix,-0.11311544008789731,-0.04899293298509444
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,term,-0.1141198122665883,-0.04999730516378542
+Weekly (Fri),% spread,non-roll weeks,rolling 5y,401,ipg,-0.07666757156962078,-0.012545064466817912
+Weekly (Fri),% spread,all weeks,expanding,521,dlev,0.3157570617673454,0.011857134433029937
+Weekly (Fri),% spread,all weeks,expanding,521,inv,0.30078968399289996,-0.0031102433414155195
+Weekly (Fri),% spread,all weeks,expanding,521,inv4,0.302851684271507,-0.001048243062808485
+Weekly (Fri),% spread,all weeks,expanding,521,prod,0.3031814830894808,-0.0007184442448346928
+Weekly (Fri),% spread,all weeks,expanding,521,rig,0.3028767750685061,-0.0010231522658094017
+Weekly (Fri),% spread,all weeks,expanding,521,cot,0.3014163511051371,-0.002483576229178386
+Weekly (Fri),% spread,all weeks,expanding,521,dcot,0.30405208184429855,0.00015215450998307123
+Weekly (Fri),% spread,all weeks,expanding,521,oi,0.3037063709507607,-0.00019355638355478266
+Weekly (Fri),% spread,all weeks,expanding,521,cl1_ret,0.3153262187781942,0.011426291443878744
+Weekly (Fri),% spread,all weeks,expanding,521,crack_lvl,0.2973632972040535,-0.006536630130261956
+Weekly (Fri),% spread,all weeks,expanding,521,dcrack,0.30354400259481207,-0.0003559247395034104
+Weekly (Fri),% spread,all weeks,expanding,521,brent_wti,0.3010138048003067,-0.0028861225340087726
+Weekly (Fri),% spread,all weeks,expanding,521,bdi_chg,0.2949381955466186,-0.00896173178769688
+Weekly (Fri),% spread,all weeks,expanding,521,dxy,0.30182927220418976,-0.0020706551301257203
+Weekly (Fri),% spread,all weeks,expanding,521,vix,0.2957845221820967,-0.008115405152218758
+Weekly (Fri),% spread,all weeks,expanding,521,term,0.30130307561189185,-0.002596851722423632
+Weekly (Fri),% spread,all weeks,expanding,521,ipg,0.29902237608891935,-0.004877551245396128
+Weekly (Fri),% spread,all weeks,rolling 5y,521,dlev,0.26097553337348267,-0.002583529009497876
+Weekly (Fri),% spread,all weeks,rolling 5y,521,inv,0.26377450914208334,0.00021544675910278865
+Weekly (Fri),% spread,all weeks,rolling 5y,521,inv4,0.2614747997281184,-0.002084262654862168
+Weekly (Fri),% spread,all weeks,rolling 5y,521,prod,0.26168544872302,-0.0018736136599605269
+Weekly (Fri),% spread,all weeks,rolling 5y,521,rig,0.2576123686281627,-0.005946693754817822
+Weekly (Fri),% spread,all weeks,rolling 5y,521,cot,0.2589448783820486,-0.004614184000931942
+Weekly (Fri),% spread,all weeks,rolling 5y,521,dcot,0.25862295341508224,-0.004936108967898312
+Weekly (Fri),% spread,all weeks,rolling 5y,521,oi,0.26213890711125076,-0.0014201552717297838
+Weekly (Fri),% spread,all weeks,rolling 5y,521,cl1_ret,0.26001261425105604,-0.0035464481319245067
+Weekly (Fri),% spread,all weeks,rolling 5y,521,crack_lvl,0.25614398397916227,-0.007415078403818276
+Weekly (Fri),% spread,all weeks,rolling 5y,521,dcrack,0.26273710747064805,-0.000821954912332501
+Weekly (Fri),% spread,all weeks,rolling 5y,521,brent_wti,0.2596754236852884,-0.003883638697692149
+Weekly (Fri),% spread,all weeks,rolling 5y,521,bdi_chg,0.24315342000646678,-0.020405642376513766
+Weekly (Fri),% spread,all weeks,rolling 5y,521,dxy,0.25860441304561466,-0.004954649337365891
+Weekly (Fri),% spread,all weeks,rolling 5y,521,vix,0.2182037134537379,-0.045355348929242645
+Weekly (Fri),% spread,all weeks,rolling 5y,521,term,0.220227012138429,-0.043332050244551557
+Weekly (Fri),% spread,all weeks,rolling 5y,521,ipg,0.2524903005410407,-0.011068761841939834
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,dlev,-0.028290627326418294,0.012096320142886974
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,inv,-0.04266568597172249,-0.0022787385024172213
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,inv4,-0.04169205584117863,-0.0013051083718733647
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,prod,-0.03690076125458508,0.0034861862147201883
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,rig,-0.04298790354605253,-0.002600956076747263
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,cot,-0.043339114246726096,-0.0029521667774208282
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,dcot,-0.04002358278552198,0.0003633646837832849
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,oi,-0.04134196007146551,-0.0009550126021602434
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,cl1_ret,-0.044162649305276025,-0.0037757018359707573
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,crack_lvl,-0.04842865310517075,-0.008041705635865481
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,dcrack,-0.04301649076568137,-0.0026295432963761023
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,brent_wti,-0.04559083312762113,-0.0052038856583158655
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,bdi_chg,-0.06063275378625832,-0.020245806316953052
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,dxy,-0.045037799600812445,-0.004650852131507177
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,vix,-0.04634918610403971,-0.00596223863473444
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,term,-0.04907093498554782,-0.008683987516242553
+Weekly (Wed),$ spread,non-roll weeks,expanding,402,ipg,-0.049920490771807824,-0.009533543302502556
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,dlev,-0.0666753047404749,0.0011365785447192689
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,inv,-0.06989712521540636,-0.0020852419302122005
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,inv4,-0.07382902401205982,-0.006017140726865655
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,prod,-0.06783308446072289,-2.120117552872891e-05
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,rig,-0.08079492888522455,-0.012983045600030385
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,cot,-0.07691217279177542,-0.00910028950658126
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,dcot,-0.07077875701374459,-0.002966873728550423
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,oi,-0.06873626424919732,-0.0009243809640031575
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,cl1_ret,-0.07915268259272357,-0.011340799307529403
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,crack_lvl,-0.08244552432619567,-0.01463364104100151
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,dcrack,-0.0731239339429095,-0.005312050657715339
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,brent_wti,-0.07544348653080135,-0.007631603245607188
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,bdi_chg,-0.11133921736261843,-0.04352733407742426
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,dxy,-0.07792646631778521,-0.010114583032591051
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,vix,-0.09421073420901216,-0.026398850923817996
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,term,-0.09908979825441211,-0.031277914969217946
+Weekly (Wed),$ spread,non-roll weeks,rolling 5y,402,ipg,-0.08708328476740834,-0.01927140148221418
+Weekly (Wed),$ spread,all weeks,expanding,522,dlev,0.20656301868859617,0.04570444952373187
+Weekly (Wed),$ spread,all weeks,expanding,522,inv,0.16149616605377137,0.0006375968889070771
+Weekly (Wed),$ spread,all weeks,expanding,522,inv4,0.16087494989342666,1.6380728562359614e-05
+Weekly (Wed),$ spread,all weeks,expanding,522,prod,0.1610852225948315,0.00022665342996719406
+Weekly (Wed),$ spread,all weeks,expanding,522,rig,0.15954786084714967,-0.0013107083177146261
+Weekly (Wed),$ spread,all weeks,expanding,522,cot,0.15908959538416234,-0.0017689737807019545
+Weekly (Wed),$ spread,all weeks,expanding,522,dcot,0.16072554507632464,-0.0001330240885396572
+Weekly (Wed),$ spread,all weeks,expanding,522,oi,0.16044145546037414,-0.0004171137044901574
+Weekly (Wed),$ spread,all weeks,expanding,522,cl1_ret,0.1585144647844242,-0.002344104380440082
+Weekly (Wed),$ spread,all weeks,expanding,522,crack_lvl,0.15805955021289186,-0.0027990189519724318
+Weekly (Wed),$ spread,all weeks,expanding,522,dcrack,0.15984171591225438,-0.0010168532526099172
+Weekly (Wed),$ spread,all weeks,expanding,522,brent_wti,0.15754926170635497,-0.003309307458509325
+Weekly (Wed),$ spread,all weeks,expanding,522,bdi_chg,0.1515178566358869,-0.00934071252897739
+Weekly (Wed),$ spread,all weeks,expanding,522,dxy,0.15726408110852075,-0.0035944880563435477
+Weekly (Wed),$ spread,all weeks,expanding,522,vix,0.15680760823136075,-0.004050960933503545
+Weekly (Wed),$ spread,all weeks,expanding,522,term,0.15822654938556757,-0.0026320197792967237
+Weekly (Wed),$ spread,all weeks,expanding,522,ipg,0.15600461257663778,-0.004853956588226516
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,dlev,0.16468045681025412,0.041680282302467675
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,inv,0.1270604267657891,0.004060252258002661
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,inv4,0.1213583126798411,-0.0016418618279453456
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,prod,0.12105949475286426,-0.001940679754922181
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,rig,0.11469874101049016,-0.008301433497296284
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,cot,0.12655603888819467,0.0035558643804082246
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,dcot,0.11726827441904364,-0.005731900088742803
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,oi,0.12100062869670047,-0.0019995458110859676
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,cl1_ret,0.1175264279978454,-0.005473746509941035
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,crack_lvl,0.11521157333894516,-0.00778860116884128
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,dcrack,0.12147674017395016,-0.0015234343338362821
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,brent_wti,0.11701147758513641,-0.0059886969226500275
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,bdi_chg,0.106573441972443,-0.016426732535343436
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,dxy,0.11348025645542448,-0.009519918052361964
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,vix,0.1137070885661774,-0.009293085941609047
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,term,0.10494688159840404,-0.0180532929093824
+Weekly (Wed),$ spread,all weeks,rolling 5y,522,ipg,0.11151703601303864,-0.011483138494747802
+Weekly (Wed),% spread,non-roll weeks,expanding,402,dlev,-0.011561589386315463,0.020764590626141555
+Weekly (Wed),% spread,non-roll weeks,expanding,402,inv,-0.04332329506282839,-0.010997115050371375
+Weekly (Wed),% spread,non-roll weeks,expanding,402,inv4,-0.034649591589650086,-0.0023234115771930686
+Weekly (Wed),% spread,non-roll weeks,expanding,402,prod,-0.029007061868967732,0.003319118143489286
+Weekly (Wed),% spread,non-roll weeks,expanding,402,rig,-0.037870176284366286,-0.005543996271909268
+Weekly (Wed),% spread,non-roll weeks,expanding,402,cot,-0.035867752782011264,-0.0035415727695542465
+Weekly (Wed),% spread,non-roll weeks,expanding,402,dcot,-0.03185001410828714,0.0004761659041698785
+Weekly (Wed),% spread,non-roll weeks,expanding,402,oi,-0.0392806199049458,-0.006954439892488784
+Weekly (Wed),% spread,non-roll weeks,expanding,402,cl1_ret,-0.034327605618260426,-0.0020014256058034086
+Weekly (Wed),% spread,non-roll weeks,expanding,402,crack_lvl,-0.03727774038491449,-0.004951560372457475
+Weekly (Wed),% spread,non-roll weeks,expanding,402,dcrack,-0.034441642918194404,-0.0021154629057373864
+Weekly (Wed),% spread,non-roll weeks,expanding,402,brent_wti,-0.03619465550591383,-0.0038684754934568133
+Weekly (Wed),% spread,non-roll weeks,expanding,402,bdi_chg,-0.05336519679245599,-0.021039016779998976
+Weekly (Wed),% spread,non-roll weeks,expanding,402,dxy,-0.043423534527305296,-0.011097354514848279
+Weekly (Wed),% spread,non-roll weeks,expanding,402,vix,-0.03344586386680648,-0.0011196838543494625
+Weekly (Wed),% spread,non-roll weeks,expanding,402,term,-0.04680527730749939,-0.014479097295042376
+Weekly (Wed),% spread,non-roll weeks,expanding,402,ipg,-0.04629165933095081,-0.01396547931849379
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,dlev,-0.17249003002402685,-0.03103318781138853
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,inv,-0.1399497295690466,0.0015071126435917126
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,inv4,-0.14519733419038205,-0.0037404919777437318
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,prod,-0.14127930021171675,0.00017754200092157113
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,rig,-0.15271149182652777,-0.011254649613889445
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,cot,-0.152009605080609,-0.010552762867970689
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,dcot,-0.1446558090442973,-0.003198966831658989
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,oi,-0.1428707571922736,-0.001413914979635278
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,cl1_ret,-0.1536825926360874,-0.012225750423449089
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,crack_lvl,-0.16710067372266257,-0.02564383151002425
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,dcrack,-0.14547714638247733,-0.004020304169839006
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,brent_wti,-0.1444174485235683,-0.0029606063109299807
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,bdi_chg,-0.20235437104918907,-0.06089752883655075
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,dxy,-0.16166897650795242,-0.0202121342953141
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,vix,-0.15824420975254672,-0.016787367539908393
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,term,-0.18670502432600244,-0.04524818211336412
+Weekly (Wed),% spread,non-roll weeks,rolling 5y,402,ipg,-0.16481729044130033,-0.023360448228662012
+Weekly (Wed),% spread,all weeks,expanding,522,dlev,0.25582581031322826,0.04301380276569722
+Weekly (Wed),% spread,all weeks,expanding,522,inv,0.21068036722913452,-0.0021316403183965216
+Weekly (Wed),% spread,all weeks,expanding,522,inv4,0.2123738072701088,-0.00043820027742225154
+Weekly (Wed),% spread,all weeks,expanding,522,prod,0.21238832586746736,-0.0004236816800636811
+Weekly (Wed),% spread,all weeks,expanding,522,rig,0.2114064006839238,-0.001405606863607245
+Weekly (Wed),% spread,all weeks,expanding,522,cot,0.2095821336746876,-0.0032298738728434584
+Weekly (Wed),% spread,all weeks,expanding,522,dcot,0.21300932819073404,0.0001973206432029917
+Weekly (Wed),% spread,all weeks,expanding,522,oi,0.21225541033856066,-0.0005565972089703886
+Weekly (Wed),% spread,all weeks,expanding,522,cl1_ret,0.2112721218755933,-0.0015398856719377463
+Weekly (Wed),% spread,all weeks,expanding,522,crack_lvl,0.2076828692731436,-0.005129138274387435
+Weekly (Wed),% spread,all weeks,expanding,522,dcrack,0.2118999608253852,-0.0009120467221458428
+Weekly (Wed),% spread,all weeks,expanding,522,brent_wti,0.209565095470989,-0.003246912076542041
+Weekly (Wed),% spread,all weeks,expanding,522,bdi_chg,0.20396940860388513,-0.008842598943645918
+Weekly (Wed),% spread,all weeks,expanding,522,dxy,0.20797717120348036,-0.004834836344050686
+Weekly (Wed),% spread,all weeks,expanding,522,vix,0.21087065306572872,-0.0019413544818023265
+Weekly (Wed),% spread,all weeks,expanding,522,term,0.2112784220258448,-0.0015335855216862537
+Weekly (Wed),% spread,all weeks,expanding,522,ipg,0.20649948032724064,-0.006312527220290409
+Weekly (Wed),% spread,all weeks,rolling 5y,522,dlev,0.11737342014049867,0.03664284736738044
+Weekly (Wed),% spread,all weeks,rolling 5y,522,inv,0.08585013049572343,0.005119557722605195
+Weekly (Wed),% spread,all weeks,rolling 5y,522,inv4,0.08088369355173075,0.00015312077861251439
+Weekly (Wed),% spread,all weeks,rolling 5y,522,prod,0.07877278609965821,-0.001957786673460027
+Weekly (Wed),% spread,all weeks,rolling 5y,522,rig,0.07793200917493193,-0.00279856359818631
+Weekly (Wed),% spread,all weeks,rolling 5y,522,cot,0.07535775786612298,-0.00537281490699526
+Weekly (Wed),% spread,all weeks,rolling 5y,522,dcot,0.07253645175836299,-0.008194121014755251
+Weekly (Wed),% spread,all weeks,rolling 5y,522,oi,0.08116020313815109,0.00042963036503285146
+Weekly (Wed),% spread,all weeks,rolling 5y,522,cl1_ret,0.07430286688729715,-0.006427705885821089
+Weekly (Wed),% spread,all weeks,rolling 5y,522,crack_lvl,0.06453629422496066,-0.01619427854815758
+Weekly (Wed),% spread,all weeks,rolling 5y,522,dcrack,0.07808576786116972,-0.0026448049119485173
+Weekly (Wed),% spread,all weeks,rolling 5y,522,brent_wti,0.07551685031113498,-0.005213722461983261
+Weekly (Wed),% spread,all weeks,rolling 5y,522,bdi_chg,0.060311511979182275,-0.02041906079393596
+Weekly (Wed),% spread,all weeks,rolling 5y,522,dxy,0.06567278679348543,-0.01505778597963281
+Weekly (Wed),% spread,all weeks,rolling 5y,522,vix,0.07935090758530361,-0.001379665187814627
+Weekly (Wed),% spread,all weeks,rolling 5y,522,term,0.052959954666707665,-0.02777061810641057
+Weekly (Wed),% spread,all weeks,rolling 5y,522,ipg,0.0628914452507815,-0.01783912752233674
+Monthly,$ spread,all months,expanding,120,dlev,-0.011802489505326585,-0.030137098003309548
+Monthly,$ spread,all months,expanding,120,inv,0.008435043141319154,-0.009899565356663809
+Monthly,$ spread,all months,expanding,120,inv_m,0.014251578931402054,-0.004083029566580909
+Monthly,$ spread,all months,expanding,120,prod,-0.0019723417647157238,-0.020306950262698686
+Monthly,$ spread,all months,expanding,120,rig,0.0078318530278646,-0.010502755470118363
+Monthly,$ spread,all months,expanding,120,cot,0.004442892348585525,-0.013891716149397437
+Monthly,$ spread,all months,expanding,120,dcot,0.01771658233190132,-0.0006180261660816422
+Monthly,$ spread,all months,expanding,120,oi,0.013949774103419132,-0.00438483439456383
+Monthly,$ spread,all months,expanding,120,cl1_ret,0.008388353305493257,-0.009946255192489706
+Monthly,$ spread,all months,expanding,120,crack_lvl,5.567137123518862e-06,-0.018329041360859444
+Monthly,$ spread,all months,expanding,120,dcrack,0.030345555735692642,0.01201094723770968
+Monthly,$ spread,all months,expanding,120,brent_wti,0.005945239928584312,-0.012389368569398651
+Monthly,$ spread,all months,expanding,120,bdi_chg,0.014119940594876645,-0.004214667903106317
+Monthly,$ spread,all months,expanding,120,dxy,0.006703297629781058,-0.011631310868201905
+Monthly,$ spread,all months,expanding,120,vix,-0.023267542984850564,-0.04160215148283353
+Monthly,$ spread,all months,expanding,120,term,0.00216435925469316,-0.016170249243289803
+Monthly,$ spread,all months,expanding,120,ipg,-0.0018368934944230642,-0.020171501992406027
+Monthly,$ spread,all months,rolling 5y,120,dlev,-0.011545519741286814,0.004921611786953939
+Monthly,$ spread,all months,rolling 5y,120,inv,-0.050353632391883174,-0.03388650086364242
+Monthly,$ spread,all months,rolling 5y,120,inv_m,-0.031004912398527207,-0.014537780870286454
+Monthly,$ spread,all months,rolling 5y,120,prod,-0.0605336122187341,-0.04406648069049335
+Monthly,$ spread,all months,rolling 5y,120,rig,-0.05856520323472392,-0.042098071706483164
+Monthly,$ spread,all months,rolling 5y,120,cot,-0.01915549763275126,-0.002688366104510509
+Monthly,$ spread,all months,rolling 5y,120,dcot,-0.018596421032409882,-0.0021292895041691295
+Monthly,$ spread,all months,rolling 5y,120,oi,-0.04804921511278759,-0.03158208358454684
+Monthly,$ spread,all months,rolling 5y,120,cl1_ret,-0.05952329759458874,-0.04305616606634799
+Monthly,$ spread,all months,rolling 5y,120,crack_lvl,-0.05054045460360235,-0.034073323075361595
+Monthly,$ spread,all months,rolling 5y,120,dcrack,-0.022468580635356394,-0.006001449107115642
+Monthly,$ spread,all months,rolling 5y,120,brent_wti,-0.04106631155552898,-0.024599180027288226
+Monthly,$ spread,all months,rolling 5y,120,bdi_chg,-0.019596618276940703,-0.00312948674869995
+Monthly,$ spread,all months,rolling 5y,120,dxy,-0.06405881122798673,-0.04759167969974598
+Monthly,$ spread,all months,rolling 5y,120,vix,-0.11537868538288176,-0.09891155385464101
+Monthly,$ spread,all months,rolling 5y,120,term,-0.11572054356771644,-0.09925341203947569
+Monthly,$ spread,all months,rolling 5y,120,ipg,-0.060731398153583305,-0.04426426662534255
+Monthly,% spread,all months,expanding,120,dlev,-0.08927022395781781,-0.07872243044491434
+Monthly,% spread,all months,expanding,120,inv,-0.024142940471408636,-0.013595146958505167
+Monthly,% spread,all months,expanding,120,inv_m,-0.017930892878512017,-0.0073830993656085475
+Monthly,% spread,all months,expanding,120,prod,-0.03437102386270485,-0.023823230349801383
+Monthly,% spread,all months,expanding,120,rig,-0.031038153353431408,-0.02049035984052794
+Monthly,% spread,all months,expanding,120,cot,-0.06145334634256616,-0.05090555282966269
+Monthly,% spread,all months,expanding,120,dcot,-0.01898897236830588,-0.00844117885540241
+Monthly,% spread,all months,expanding,120,oi,-0.017873599660000128,-0.0073258061470966584
+Monthly,% spread,all months,expanding,120,cl1_ret,-0.027713075824955302,-0.017165282312051833
+Monthly,% spread,all months,expanding,120,crack_lvl,-0.02165562375796215,-0.01110783024505868
+Monthly,% spread,all months,expanding,120,dcrack,-0.006475608377051634,0.004072185135851836
+Monthly,% spread,all months,expanding,120,brent_wti,-0.051929345770841184,-0.041381552257937715
+Monthly,% spread,all months,expanding,120,bdi_chg,-0.03211653648552404,-0.02156874297262057
+Monthly,% spread,all months,expanding,120,dxy,-0.02173406598984018,-0.01118627247693671
+Monthly,% spread,all months,expanding,120,vix,-0.05693236319415518,-0.04638456968125171
+Monthly,% spread,all months,expanding,120,term,-0.02988772384220373,-0.01933993032930026
+Monthly,% spread,all months,expanding,120,ipg,-0.038305161666581045,-0.027757368153677575
+Monthly,% spread,all months,rolling 5y,120,dlev,-0.06104266512052914,0.035841430290681986
+Monthly,% spread,all months,rolling 5y,120,inv,-0.14105823604559253,-0.04417414063438141
+Monthly,% spread,all months,rolling 5y,120,inv_m,-0.11227694744966876,-0.015392852038457638
+Monthly,% spread,all months,rolling 5y,120,prod,-0.15740852435137342,-0.0605244289401623
+Monthly,% spread,all months,rolling 5y,120,rig,-0.16812178027272973,-0.0712376848615186
+Monthly,% spread,all months,rolling 5y,120,cot,-0.13563875794683877,-0.03875466253562765
+Monthly,% spread,all months,rolling 5y,120,dcot,-0.08297590075006767,0.013908194661143458
+Monthly,% spread,all months,rolling 5y,120,oi,-0.14483582451551347,-0.04795172910430234
+Monthly,% spread,all months,rolling 5y,120,cl1_ret,-0.13983508625174634,-0.04295099084053522
+Monthly,% spread,all months,rolling 5y,120,crack_lvl,-0.12824360139830926,-0.031359505987098135
+Monthly,% spread,all months,rolling 5y,120,dcrack,-0.11191550444229437,-0.015031409031083243
+Monthly,% spread,all months,rolling 5y,120,brent_wti,-0.11613977266876607,-0.01925567725755495
+Monthly,% spread,all months,rolling 5y,120,bdi_chg,-0.10459676685655572,-0.007712671445344599
+Monthly,% spread,all months,rolling 5y,120,dxy,-0.16729303614439317,-0.07040894073318205
+Monthly,% spread,all months,rolling 5y,120,vix,-0.23750896343986416,-0.14062486802865304
+Monthly,% spread,all months,rolling 5y,120,term,-0.245972647305851,-0.14908855189463988
+Monthly,% spread,all months,rolling 5y,120,ipg,-0.17968809707250766,-0.08280400166129653

@@ -1,3 +1,0 @@
-,DF statistic,5% critical value,lags,reading
-1. generic carry (raw Friday level),-4.797863389674611,-2.865305765357574,4,unit root rejected: looks mean-reverting
-2. cumulative P&L of holding the spread (roll-adjusted changes added up),0.00950287351681947,-2.865291103159288,1,unit root not rejected: behaves like a random walk

@@ -1,0 +1,66 @@
+done: Weekly (Fri) | $ spread | non-roll weeks | expanding
+done: Weekly (Fri) | $ spread | non-roll weeks | rolling 5y
+done: Weekly (Fri) | $ spread | all weeks | expanding
+done: Weekly (Fri) | $ spread | all weeks | rolling 5y
+done: Weekly (Fri) | % spread | non-roll weeks | expanding
+done: Weekly (Fri) | % spread | non-roll weeks | rolling 5y
+done: Weekly (Fri) | % spread | all weeks | expanding
+done: Weekly (Fri) | % spread | all weeks | rolling 5y
+done: Weekly (Wed) | $ spread | non-roll weeks | expanding
+done: Weekly (Wed) | $ spread | non-roll weeks | rolling 5y
+done: Weekly (Wed) | $ spread | all weeks | expanding
+done: Weekly (Wed) | $ spread | all weeks | rolling 5y
+done: Weekly (Wed) | % spread | non-roll weeks | expanding
+done: Weekly (Wed) | % spread | non-roll weeks | rolling 5y
+done: Weekly (Wed) | % spread | all weeks | expanding
+done: Weekly (Wed) | % spread | all weeks | rolling 5y
+done: Monthly | $ spread | all months | expanding
+done: Monthly | $ spread | all months | rolling 5y
+done: Monthly | % spread | all months | expanding
+done: Monthly | % spread | all months | rolling 5y
+
+=== Summary, validation 2005-2014, OOS R2 vs no-change ===
+        freq   target         sample     window   n  specs  share beating no-change  AR base R2  median spec R2  best spec R2  LASSO R2  Ridge R2  its R2 05-09  its R2 10-14  AR base R2 10-14
+Weekly (Fri) $ spread non-roll weeks  expanding 401    155                    0.000      -0.018          -0.023        -0.002    -0.003    -0.001         0.012        -0.141             0.016
+Weekly (Fri) $ spread non-roll weeks rolling 5y 401    155                    0.000      -0.036          -0.055        -0.033     0.000    -0.015        -0.021        -0.180             0.005
+Weekly (Fri) $ spread      all weeks  expanding 521    155                    1.000       0.258           0.255         0.269     0.268     0.234         0.277         0.228             0.256
+Weekly (Fri) $ spread      all weeks rolling 5y 521    155                    1.000       0.236           0.228         0.237     0.248     0.177         0.257         0.109             0.196
+Weekly (Fri) % spread non-roll weeks  expanding 401    155                    0.097      -0.012          -0.020         0.011     0.000    -0.001         0.031        -0.650             0.024
+Weekly (Fri) % spread non-roll weeks rolling 5y 401    155                    0.000      -0.064          -0.083        -0.064     0.001    -0.013        -0.042        -1.406             0.012
+Weekly (Fri) % spread      all weeks  expanding 521    155                    1.000       0.304           0.301         0.316     0.312     0.250         0.326         0.126             0.238
+Weekly (Fri) % spread      all weeks rolling 5y 521    155                    1.000       0.264           0.254         0.264     0.258     0.241         0.277         0.022             0.213
+Weekly (Wed) $ spread non-roll weeks  expanding 402    155                    0.000      -0.040          -0.047        -0.025     0.000    -0.001        -0.027        -0.021            -0.025
+Weekly (Wed) $ spread non-roll weeks rolling 5y 402    155                    0.000      -0.068          -0.087        -0.063     0.000    -0.004        -0.054        -0.093            -0.049
+Weekly (Wed) $ spread      all weeks  expanding 522    155                    1.000       0.161           0.158         0.209     0.210     0.183         0.244         0.095             0.085
+Weekly (Wed) $ spread      all weeks rolling 5y 522    155                    1.000       0.123           0.113         0.173     0.154     0.089         0.220         0.034             0.033
+Weekly (Wed) % spread non-roll weeks  expanding 402    155                    0.000      -0.032          -0.041        -0.009    -0.000    -0.000        -0.006        -0.076            -0.025
+Weekly (Wed) % spread non-roll weeks rolling 5y 402    155                    0.000      -0.141          -0.167        -0.140     0.000    -0.003        -0.138        -0.159            -0.074
+Weekly (Wed) % spread      all weeks  expanding 522    155                    1.000       0.213           0.209         0.256     0.242     0.182         0.279         0.040             0.059
+Weekly (Wed) % spread      all weeks rolling 5y 522    155                    0.994       0.081           0.070         0.127     0.138     0.084         0.135         0.059             0.064
+     Monthly $ spread     all months  expanding 120    155                    0.374       0.018          -0.004         0.030    -0.033    -0.055         0.021         0.036             0.100
+     Monthly $ spread     all months rolling 5y 120    155                    0.006      -0.016          -0.071         0.010    -0.072    -0.057         0.043        -0.242             0.014
+     Monthly % spread     all months  expanding 120    155                    0.000      -0.011          -0.049        -0.006    -0.055    -0.070         0.029        -0.471             0.082
+     Monthly % spread     all months rolling 5y 120    155                    0.000      -0.097          -0.180        -0.041    -0.180    -0.080         0.032        -0.756            -0.018
+
+=== Best and picked specs ===
+        freq   target         sample     window               best spec            picked on 05-09
+Weekly (Fri) $ spread non-roll weeks  expanding base + cl1_ret + dcrack   base + cl1_ret + bdi_chg
+Weekly (Fri) $ spread non-roll weeks rolling 5y           base + dcrack    base + cl1_ret + dcrack
+Weekly (Fri) $ spread      all weeks  expanding    base + dlev + dcrack       base + dlev + dcrack
+Weekly (Fri) $ spread      all weeks rolling 5y       base + dlev + inv    base + cl1_ret + dcrack
+Weekly (Fri) % spread non-roll weeks  expanding          base + cl1_ret   base + cl1_ret + bdi_chg
+Weekly (Fri) % spread non-roll weeks rolling 5y                 AR base       base + bdi_chg + dxy
+Weekly (Fri) % spread      all weeks  expanding    base + dlev + dcrack    base + cl1_ret + dcrack
+Weekly (Fri) % spread      all weeks rolling 5y              base + inv       base + inv + cl1_ret
+Weekly (Wed) $ spread non-roll weeks  expanding      base + dlev + prod         base + dlev + prod
+Weekly (Wed) $ spread non-roll weeks rolling 5y       base + dlev + inv          base + dlev + inv
+Weekly (Wed) $ spread      all weeks  expanding       base + dlev + inv         base + dlev + prod
+Weekly (Wed) $ spread      all weeks rolling 5y       base + dlev + inv          base + dlev + inv
+Weekly (Wed) % spread non-roll weeks  expanding      base + dlev + prod          base + dlev + vix
+Weekly (Wed) % spread non-roll weeks rolling 5y              base + inv          base + inv + prod
+Weekly (Wed) % spread      all weeks  expanding      base + dlev + dcot         base + dlev + prod
+Weekly (Wed) % spread      all weeks rolling 5y       base + dlev + inv          base + dlev + inv
+     Monthly $ spread     all months  expanding           base + dcrack    base + dcrack + bdi_chg
+     Monthly $ spread     all months rolling 5y       base + dlev + cot      base + dcot + cl1_ret
+     Monthly % spread     all months  expanding           base + dcrack base + crack_lvl + bdi_chg
+     Monthly % spread     all months rolling 5y      base + dlev + dcot      base + dcot + cl1_ret

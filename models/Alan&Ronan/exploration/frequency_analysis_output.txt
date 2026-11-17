@@ -1,0 +1,80 @@
+Expiry calendar check: median |daily change in S| is 0.250 on roll days vs 0.040 on other days (415 expiries)
+
+=== Spread properties, 1995-2014 ===
+                                 Weekly Monthly
+obs (1995-2014)                    1043     240
+obs in test window 2015-Jun24       496     114
+mean S ($)                       -0.149  -0.140
+sd S ($)                          0.919   0.819
+sd dS ($)                         0.473   0.496
+ADF p, level S                    0.000   0.000
+KPSS p, level S                   0.010   0.024
+ADF p, dS                         0.000   0.000
+AR(1) rho on level                0.867   0.817
+half-life (periods)               4.873   3.423
+half-life (weeks)                 4.873  14.834
+ACF dS lag 1                     -0.274  -0.069
+ACF dS lag 2                     -0.133  -0.128
+ACF dS lag 4                      0.183  -0.061
+Ljung-Box p (4 lags) dS           0.000   0.006
+ARCH-LM p (4 lags) dS             0.000   0.000
+excess kurtosis dS               44.925   5.326
+share of changes spanning a roll  0.230   1.000
+sd dS roll periods                0.674   0.496
+sd dS non-roll periods            0.393     NaN
+ACF dS lag 1, non-roll only       0.170     NaN
+days-to-expiry range               0-22   11-16 
+
+=== Weekly: spread by trading days to CL1 expiry (1995-2014) ===
+          n  mean_S  sd_dS
+bucket                    
+0-5     286  -0.169  0.548
+6-10    240  -0.218  0.269
+11-15   258  -0.133  0.429
+16+     259  -0.078  0.558 
+
+S on days-to-expiry: slope 0.0069 $/day, HAC p = 0.065
+
+Weekly: 14 changes beyond 4 sd (full sample to Jun 2024); 8 of them span a roll
+                S     dS   roll  dte
+Date                                
+2003-04-25  0.160 -1.850   True   17
+2007-04-20 -0.730  1.970  False    0
+2008-09-19  1.800  1.870  False    1
+2008-12-19 -8.490 -5.650  False    0
+2008-12-26 -2.820  5.670   True   15
+2009-01-23 -2.740  3.320   True   19
+2009-02-20 -1.090  3.370  False    0
+2010-05-21 -1.630  2.190   True   21
+2011-02-25 -1.480  2.030   True   17
+2015-02-27 -2.380 -1.910   True   15
+2020-03-27 -3.640 -3.440   True   16
+2020-04-10 -6.060 -3.500  False    7
+2020-04-24 -4.280  2.480   True   17
+2022-03-04  3.570  1.870  False   12 
+
+Monthly: 4 changes beyond 4 sd (full sample to Jun 2024); 4 of them span a roll
+                S     dS  roll  dte
+Date                               
+2008-12-31 -3.990 -2.600  True   12
+2009-02-28 -2.130  2.320  True   15
+2020-03-31 -4.030 -3.850  True   14
+2020-05-31 -0.350  2.660  True   16 
+
+=== Validation 2005-2014, expanding window, target = next-period change in S ($) ===
+   freq                                       model   n  RMSE model  RMSE no-change  OOS R2 vs no-change  direction hit
+ Weekly                               constant only 521       0.585           0.585               -0.001          0.495
+ Weekly                AR on level (mean reversion) 521       0.578           0.585                0.025          0.524
+ Weekly                       AR + lagged inventory 521       0.577           0.585                0.026          0.519
+ Weekly                        AR + roll-week terms 521       0.504           0.585                0.258          0.544
+ Weekly               constant, non-roll weeks only 401       0.494           0.494                0.000          0.537
+ Weekly                     AR, non-roll weeks only 401       0.498           0.494               -0.018          0.527
+ Weekly         AR + inventory, non-roll weeks only 401       0.498           0.494               -0.019          0.527
+ Weekly momentum (last change), non-roll weeks only 401       0.497           0.494               -0.016          0.524
+Monthly                               constant only 120       0.584           0.582               -0.006          0.433
+Monthly                AR on level (mean reversion) 120       0.577           0.582                0.018          0.575
+Monthly                       AR + lagged inventory 120       0.578           0.582                0.014          0.550
+Monthly                      momentum (last change) 120       0.602           0.582               -0.072          0.425 
+
+Note: RMSE levels are not comparable across frequencies (different horizons).
+Compare each model with its own no-change benchmark via OOS R2.

@@ -1,0 +1,119 @@
+done Weekly (Fri)
+done Monthly
+
+=== Weekly (Fri): validation 2005-2014, OOS R2 vs no-change (non-roll weeks only) ===
+   family                                              model     R2  R2_0509  R2_1014   hit   n
+reference                                     AR (reference) -0.018   -0.023    0.016 0.527 401
+ extremes                             AR: band slopes, k=1.0 -0.028   -0.036    0.031 0.524 401
+ extremes              AR: forecast only outside band, k=1.0 -0.017   -0.022    0.016 0.500 401
+ extremes                             AR: band slopes, k=1.5 -0.046   -0.056    0.030 0.514 401
+ extremes              AR: forecast only outside band, k=1.5 -0.013   -0.021    0.042 0.581 401
+ extremes       AR, scored only on dates outside 1.5 sd band -0.017   -0.024    0.135 0.581 106
+ extremes                             AR: band slopes, k=2.0 -0.092   -0.115    0.077 0.506 401
+ extremes              AR: forecast only outside band, k=2.0 -0.015   -0.024    0.049 0.613 401
+ extremes  AR: asymmetric (contango vs backwardation slopes) -0.048   -0.058    0.027 0.486 401
+ seasonal                                 AR + month dummies -0.018   -0.015   -0.041 0.522 401
+ seasonal                               AR + quarter dummies -0.013   -0.013   -0.009 0.506 401
+ seasonal                            AR + annual sine/cosine -0.016   -0.019    0.003 0.489 401
+    ARIMA                                    ARIMA (0, 0, 0) -5.600   -5.020   -9.882 0.501 401
+    ARIMA                                    ARIMA (0, 0, 1) -2.365   -2.172   -3.789 0.501 401
+    ARIMA                                    ARIMA (0, 0, 2) -1.285   -1.199   -1.917 0.509 401
+    ARIMA                                    ARIMA (0, 1, 1) -0.168   -0.109   -0.599 0.501 401
+    ARIMA                                    ARIMA (0, 1, 2) -0.179   -0.124   -0.589 0.476 401
+    ARIMA                                    ARIMA (1, 0, 0) -0.158   -0.144   -0.265 0.504 401
+    ARIMA                                    ARIMA (1, 0, 1) -0.207   -0.152   -0.612 0.501 401
+    ARIMA                                    ARIMA (1, 0, 2) -0.215   -0.162   -0.600 0.481 401
+    ARIMA                                    ARIMA (1, 1, 0) -0.146   -0.128   -0.279 0.482 401
+    ARIMA                                    ARIMA (1, 1, 1) -0.194   -0.139   -0.593 0.453 401
+    ARIMA                                    ARIMA (1, 1, 2) -0.197   -0.143   -0.593 0.478 401
+    ARIMA                                    ARIMA (2, 0, 0) -0.217   -0.190   -0.415 0.496 401
+    ARIMA                                    ARIMA (2, 0, 1) -0.216   -0.164   -0.605 0.473 401
+    ARIMA                                    ARIMA (2, 0, 2) -0.224   -0.172   -0.606 0.483 401
+    ARIMA                                    ARIMA (2, 1, 0) -0.145   -0.089   -0.554 0.511 401
+    ARIMA                                    ARIMA (2, 1, 1) -0.245   -0.196   -0.612 0.486 401
+    ARIMA                                    ARIMA (2, 1, 2) -0.182   -0.142   -0.479 0.501 401
+    ARIMA               ARIMA, order picked by AIC each year -0.214   -0.178   -0.479 0.494 401
+    ARIMA               ARIMA, order picked by BIC each year -0.201   -0.163   -0.479 0.509 401
+    ARIMA                      ARIMAX (roll dummy) (0, 0, 0) -5.543   -4.969   -9.785 0.501 401
+    ARIMA                      ARIMAX (roll dummy) (0, 0, 1) -2.404   -2.215   -3.800 0.501 401
+    ARIMA                      ARIMAX (roll dummy) (0, 0, 2) -1.284   -1.200   -1.902 0.504 401
+    ARIMA                      ARIMAX (roll dummy) (0, 1, 1) -0.166   -0.106   -0.611 0.496 401
+    ARIMA                      ARIMAX (roll dummy) (0, 1, 2) -0.179   -0.122   -0.599 0.491 401
+    ARIMA                      ARIMAX (roll dummy) (1, 0, 0) -0.152   -0.138   -0.259 0.532 401
+    ARIMA                      ARIMAX (roll dummy) (1, 0, 1) -0.202   -0.146   -0.617 0.522 401
+    ARIMA                      ARIMAX (roll dummy) (1, 0, 2) -0.213   -0.160   -0.606 0.504 401
+    ARIMA                      ARIMAX (roll dummy) (1, 1, 0) -0.154   -0.132   -0.315 0.487 401
+    ARIMA                      ARIMAX (roll dummy) (1, 1, 1) -0.194   -0.139   -0.604 0.471 401
+    ARIMA                      ARIMAX (roll dummy) (1, 1, 2) -0.203   -0.149   -0.602 0.481 401
+    ARIMA                      ARIMAX (roll dummy) (2, 0, 0) -0.215   -0.186   -0.430 0.529 401
+    ARIMA                      ARIMAX (roll dummy) (2, 0, 1) -0.217   -0.164   -0.610 0.494 401
+    ARIMA                      ARIMAX (roll dummy) (2, 0, 2) -0.227   -0.175   -0.609 0.501 401
+    ARIMA                      ARIMAX (roll dummy) (2, 1, 0) -0.155   -0.100   -0.564 0.514 401
+    ARIMA                      ARIMAX (roll dummy) (2, 1, 1) -0.245   -0.194   -0.616 0.489 401
+    ARIMA                      ARIMAX (roll dummy) (2, 1, 2) -0.184   -0.144   -0.484 0.517 401
+    ARIMA ARIMAX (roll dummy), order picked by AIC each year -0.201   -0.163   -0.484 0.504 401
+    ARIMA ARIMAX (roll dummy), order picked by BIC each year -0.198   -0.159   -0.484 0.519 401
+
+=== Monthly: validation 2005-2014, OOS R2 vs no-change ===
+   family                                                  model     R2  R2_0509  R2_1014   hit   n
+reference                                         AR (reference)  0.018   -0.020    0.100 0.575 120
+reference                                    AR + IP (reference) -0.002   -0.049    0.098 0.583 120
+ extremes                                 AR: band slopes, k=1.0  0.071    0.030    0.158 0.550 120
+ extremes                  AR: forecast only outside band, k=1.0  0.028   -0.029    0.148 0.630 120
+ extremes                            AR + IP: band slopes, k=1.0  0.048   -0.004    0.156 0.558 120
+ extremes             AR + IP: forecast only outside band, k=1.0  0.009   -0.056    0.146 0.648 120
+ extremes                                 AR: band slopes, k=1.5  0.049    0.007    0.136 0.558 120
+ extremes                  AR: forecast only outside band, k=1.5  0.028   -0.014    0.118 0.649 120
+ extremes                            AR + IP: band slopes, k=1.5  0.034   -0.016    0.138 0.567 120
+ extremes             AR + IP: forecast only outside band, k=1.5  0.005   -0.048    0.116 0.649 120
+ extremes           AR, scored only on dates outside 1.5 sd band  0.050   -0.019    0.522 0.649  37
+ extremes                                 AR: band slopes, k=2.0 -0.002   -0.052    0.102 0.583 120
+ extremes                  AR: forecast only outside band, k=2.0  0.021    0.004    0.057 0.727 120
+ extremes                            AR + IP: band slopes, k=2.0 -0.018   -0.075    0.103 0.575 120
+ extremes             AR + IP: forecast only outside band, k=2.0 -0.001   -0.028    0.055 0.727 120
+ extremes      AR: asymmetric (contango vs backwardation slopes) -0.080   -0.148    0.065 0.550 120
+ extremes AR + IP: asymmetric (contango vs backwardation slopes) -0.101   -0.179    0.061 0.558 120
+ seasonal                                     AR + month dummies  0.007   -0.047    0.122 0.550 120
+ seasonal                                   AR + quarter dummies  0.018   -0.032    0.122 0.592 120
+ seasonal                                AR + annual sine/cosine  0.014   -0.033    0.112 0.600 120
+ seasonal                                AR + IP + month dummies -0.015   -0.079    0.121 0.567 120
+ seasonal                              AR + IP + quarter dummies -0.004   -0.064    0.121 0.600 120
+ seasonal                           AR + IP + annual sine/cosine -0.007   -0.063    0.111 0.608 120
+    ARIMA                                        ARIMA (0, 0, 0) -2.471   -3.065   -1.220 0.567 120
+    ARIMA                                        ARIMA (0, 0, 1) -0.721   -0.962   -0.215 0.583 120
+    ARIMA                                        ARIMA (0, 0, 2) -0.298   -0.451    0.023 0.625 120
+    ARIMA                                        ARIMA (0, 1, 1) -0.101   -0.150    0.001 0.433 120
+    ARIMA                                        ARIMA (0, 1, 2) -0.098   -0.186    0.087 0.492 120
+    ARIMA                                        ARIMA (1, 0, 0)  0.003   -0.046    0.104 0.567 120
+    ARIMA                                        ARIMA (1, 0, 1) -0.043   -0.113    0.104 0.558 120
+    ARIMA                                        ARIMA (1, 0, 2) -0.079   -0.161    0.095 0.525 120
+    ARIMA                                        ARIMA (1, 1, 0) -0.080   -0.118   -0.000 0.433 120
+    ARIMA                                        ARIMA (1, 1, 1) -0.103   -0.195    0.092 0.500 120
+    ARIMA                                        ARIMA (1, 1, 2) -0.045   -0.112    0.097 0.550 120
+    ARIMA                                        ARIMA (2, 0, 0) -0.040   -0.108    0.104 0.550 120
+    ARIMA                                        ARIMA (2, 0, 1) -0.057   -0.134    0.104 0.542 120
+    ARIMA                                        ARIMA (2, 0, 2) -0.074   -0.149    0.085 0.533 120
+    ARIMA                                        ARIMA (2, 1, 0) -0.103   -0.171    0.042 0.433 120
+    ARIMA                                        ARIMA (2, 1, 1) -0.140   -0.252    0.097 0.517 120
+    ARIMA                                        ARIMA (2, 1, 2) -0.033   -0.094    0.096 0.525 120
+    ARIMA                   ARIMA, order picked by AIC each year -0.141   -0.252    0.092 0.525 120
+    ARIMA                   ARIMA, order picked by BIC each year -0.079   -0.160    0.092 0.492 120
+    ARIMA                           ARIMAX (IP growth) (0, 0, 0) -2.468   -2.984   -1.381 0.567 120
+    ARIMA                           ARIMAX (IP growth) (0, 0, 1) -0.740   -0.993   -0.207 0.583 120
+    ARIMA                           ARIMAX (IP growth) (0, 0, 2) -0.289   -0.434    0.017 0.633 120
+    ARIMA                           ARIMAX (IP growth) (0, 1, 1) -0.117   -0.163   -0.019 0.467 120
+    ARIMA                           ARIMAX (IP growth) (0, 1, 2) -0.105   -0.181    0.057 0.492 120
+    ARIMA                           ARIMAX (IP growth) (1, 0, 0) -0.007   -0.051    0.086 0.558 120
+    ARIMA                           ARIMAX (IP growth) (1, 0, 1) -0.055   -0.121    0.085 0.567 120
+    ARIMA                           ARIMAX (IP growth) (1, 0, 2) -0.081   -0.151    0.065 0.550 120
+    ARIMA                           ARIMAX (IP growth) (1, 1, 0) -0.093   -0.127   -0.021 0.458 120
+    ARIMA                           ARIMAX (IP growth) (1, 1, 1) -0.105   -0.190    0.072 0.508 120
+    ARIMA                           ARIMAX (IP growth) (1, 1, 2) -0.065   -0.131    0.075 0.533 120
+    ARIMA                           ARIMAX (IP growth) (2, 0, 0) -0.050   -0.114    0.085 0.567 120
+    ARIMA                           ARIMAX (IP growth) (2, 0, 1) -0.055   -0.129    0.102 0.533 120
+    ARIMA                           ARIMAX (IP growth) (2, 0, 2) -0.064   -0.144    0.104 0.542 120
+    ARIMA                           ARIMAX (IP growth) (2, 1, 0) -0.111   -0.170    0.013 0.467 120
+    ARIMA                           ARIMAX (IP growth) (2, 1, 1) -0.128   -0.225    0.075 0.483 120
+    ARIMA                           ARIMAX (IP growth) (2, 1, 2) -0.038   -0.091    0.073 0.525 120
+    ARIMA      ARIMAX (IP growth), order picked by AIC each year -0.151   -0.257    0.072 0.517 120
+    ARIMA      ARIMAX (IP growth), order picked by BIC each year -0.092   -0.170    0.072 0.508 120

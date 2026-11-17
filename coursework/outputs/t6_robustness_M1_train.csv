@@ -1,7 +1,0 @@
-,1 extra point of contango,build 5 mb above normal,production +100 kb/d,n
-M1 baseline,+3.06 (1.51),+1.14 (0.73),-1.84 (-1.33),765
-0. with ev_1998 and ev_2008 dummies,+1.90 (1.20),+0.39 (0.28),-1.72 (-1.17),765
-1. without 1998,+3.20 (1.42),+0.99 (0.58),-1.77 (-1.25),713
-2. excluding roll weeks,+4.07 (1.60),+1.83 (0.93),-0.95 (-0.60),589
-3. $ target (y_usd on usd_clean),+2.52 (1.08),+0.22 (0.29),-0.93 (-1.08),765
-4. thin window = 5 sessions,+3.88 (1.90),+1.21 (0.79),-0.66 (-0.86),765

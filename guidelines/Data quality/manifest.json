@@ -1,0 +1,25 @@
+{
+  "source_sha256": "4355813a4761a6f242ae6ff1eff03dce6f89127320161b6fb2481e9aa908bae5",
+  "files_sha256": {
+    "data\\clean\\industry_daily.csv": "c1286bdfad731e70460d8bb91bc0d6c42a2c198dd36fd556f46908ff7fcfc9ce",
+    "data\\clean\\industry_monthly.csv": "2d11000f675f6990b2c44660db16eff1ac106c48691311b5d02fd788d797d826",
+    "data\\clean\\industry_weekly.csv": "0668a60f16cd17b46da1864308c69120640ebeeebc84780744768e1e326063e0",
+    "data\\clean\\macro_monthly.csv": "e33adbc74e992aadf9c1f30bb34c9929f783a4efbe71d2933587eaab7966234e",
+    "data\\clean\\monthly_observations.csv": "6fe73bd0c7efd1c6fc8cd5bdcf55740b6ff446c6fb4810ddb2cb005d9082e6cf",
+    "data\\clean\\monthly_prepared.csv": "57c57dbd482df82dd86fb900370858728236eb3cf63d77483449458a037197b6",
+    "data\\clean\\monthly_targets.csv": "2c2c1ed7c2af5fd08140a61b6d7b5b7aa29c18fa40ddbcd051320331c9ce6f97",
+    "data\\clean\\stock_prices_monthly.csv": "3afabf0b1b9685b0cb9e97dc002440bc3be0b055a1689fa7fc998f9d265cfdc9",
+    "guidelines\\Data quality\\calendar_review.csv": "407a0e795ba0d3dee46ce241407317a8f5285dde3da4cc21f7d585ca701b81db",
+    "guidelines\\Data quality\\constant_runs.csv": "6e100890bf3f7309beb101b2f4a014b53fcc65dfc6fc9f2a55e33c9d5357d23b",
+    "guidelines\\Data quality\\cross_frequency_comparison.csv": "2d526dbe498610e2ab85fe0d060d8b0847fdaa1366da57b2c8b9e716f5999d61",
+    "guidelines\\Data quality\\cross_frequency_summary.csv": "bd4c6581d516d6b2436cf8f5b4f56c9916b13545e1399ba9b82c601af9767214",
+    "guidelines\\Data quality\\data_dictionary.csv": "78be8b46a052df1fd6f97ef18ff9619f199533c92fa90c04dae54ddf6578d2d2",
+    "guidelines\\Data quality\\formula_audit.csv": "a6db781987718499f910503965b4657fded8489668e4c110c4282af04c5852d9",
+    "guidelines\\Data quality\\missing_ranges.csv": "919d2fb2bbb1711df802edab707e5f1c724f775c7ae7bc90970052a5660aa224",
+    "guidelines\\Data quality\\missingness.csv": "d863a316ef55b64d288b3441c0eaab1e26fe5b363e21135a988daa1197984fac",
+    "guidelines\\Data quality\\quarantined_rows.csv": "905775632c2bd7ca35b113748913d977ed32bfa9b60398d91bddb210719271b0",
+    "guidelines\\Data quality\\review_flags.csv": "28c9c8a7103ecc3c316316c6f380e6547ef8755b406d6b3fcb21b631ed549073",
+    "guidelines\\Data quality\\source_definitions.csv": "24343559cb4b2f28a56827019f85664d63f05d611df410b9d3f8dd73a7ce1b2c",
+    "guidelines\\Data quality\\summary.json": "2a1357fdd327123fe98e16fd1baf60fa9761a8333c9ad8b78c035548be72c600"
+  }
+}

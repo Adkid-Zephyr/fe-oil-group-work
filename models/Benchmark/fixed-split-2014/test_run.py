@@ -1,0 +1,65 @@
+"""Regression checks for split, timing and independent forecasts."""
+import unittest
+import numpy as np
+import pandas as pd
+import run
+
+class ForecastTests(unittest.TestCase):
+    def test_monthly_split_and_independent_fit(self):
+        frame=run.monthly_frame(pd.read_csv(run.MONTHLY))
+        out,_,meta=run.evaluate(frame)
+        self.assertEqual(meta['test_n'],126)
+        self.assertEqual(meta['train_end'],'2013-12-31')
+        train=frame.loc[:'2013-12-31'].dropna(subset=['actual']+run.FEATURES)
+        import statsmodels.api as sm
+        fit=sm.OLS(train.actual,sm.add_constant(train[run.FEATURES])).fit()
+        np.testing.assert_allclose(out.ols,fit.predict(sm.add_constant(out[run.FEATURES])),atol=1e-10)
+        self.assertEqual(meta['excluded_test_rows'],0)
+
+    def test_test_outcomes_do_not_fit_model(self):
+        frame=run.monthly_frame(pd.read_csv(run.MONTHLY))
+        out,_,meta=run.evaluate(frame)
+        changed=frame.copy();changed.loc['2014-01-01':,'actual']+=1000
+        other,_,other_meta=run.evaluate(changed)
+        self.assertEqual(meta['coefficients'],other_meta['coefficients'])
+        np.testing.assert_array_equal(out.ols,other.ols)
+
+    def test_future_raw_data_cannot_change_past_forecasts(self):
+        source=pd.read_csv(run.MONTHLY)
+        full,_,_=run.evaluate(run.monthly_frame(source))
+        prefix,_,_=run.evaluate(run.monthly_frame(source[pd.to_datetime(source.date)<'2020-01-01']))
+        pd.testing.assert_frame_equal(prefix,full.loc[prefix.index])
+
+    def test_weekly_time_alignment(self):
+        frame=run.weekly_frame(pd.read_csv(run.DAILY),pd.read_csv(run.MONTHLY),pd.read_csv(run.WEEKLY))
+        usable=frame.dropna(subset=run.FEATURES)
+        self.assertTrue((usable.available_date<=usable.origin).all())
+        self.assertTrue((usable.input_price_date<=usable.origin).all())
+        self.assertTrue((usable.observed_date<=usable.index).all())
+
+    def test_weekly_ronan_convention_and_independent_fit(self):
+        daily=pd.read_csv(run.DAILY); monthly=pd.read_csv(run.MONTHLY); weekly=pd.read_csv(run.WEEKLY)
+        frame=run.weekly_frame(daily,monthly,weekly)
+        out,_,meta=run.evaluate(frame)
+        d=daily.set_index(pd.to_datetime(daily.date)).sort_index()
+        fridays=pd.DatetimeIndex(pd.to_datetime(weekly.date)).sort_values()
+        px=d[['cl1','cl2']].reindex(d.index.union(fridays)).ffill().loc[fridays]
+        expected=100*(px.cl1/px.cl1.shift(1)-1)
+        np.testing.assert_allclose(out.actual,expected.loc[out.index],atol=1e-10)
+        self.assertEqual(meta['train_end'],'2013-12-27')
+        self.assertEqual(meta['test_n'],551)
+        train=frame.loc[:'2013-12-31'].dropna(subset=['actual']+run.FEATURES)
+        import statsmodels.api as sm
+        fit=sm.OLS(train.actual,sm.add_constant(train[run.FEATURES])).fit()
+        np.testing.assert_allclose(out.ols,fit.predict(sm.add_constant(out[run.FEATURES])),atol=1e-10)
+        d=daily[pd.to_datetime(daily.date)<'2020-01-01']
+        w=weekly[pd.to_datetime(weekly.date)<'2020-01-01']
+        m=monthly[pd.to_datetime(monthly.date)<'2020-01-01']
+        prefix,_,_=run.evaluate(run.weekly_frame(d,m,w))
+        pd.testing.assert_frame_equal(prefix,out.loc[prefix.index])
+        changed=frame.copy();changed.loc['2014-01-01':,'actual']+=1000
+        other,_,other_meta=run.evaluate(changed)
+        self.assertEqual(meta['coefficients'],other_meta['coefficients'])
+        np.testing.assert_array_equal(out.ols,other.ols)
+
+if __name__=='__main__':unittest.main()
