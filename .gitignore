@@ -2,12 +2,9 @@
 .venv/
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
 .env
 .env.*
 
 # Excel lock file while Oil Data.xlsx is open
 ~$*
-
-# Five-minute briefing. Rebuilt locally by coursework/build_briefing.py.
-coursework/briefing.pptx
-coursework/PRESENTATION.md
