@@ -1,0 +1,238 @@
+{
+  "source": {
+    "file": "data/raw/Oil Data.xlsx",
+    "resolved_path": "C:\\Users\\zhizh\\Desktop\\oil forecasting CW\\data\\raw\\Oil Data.xlsx",
+    "spread_from": "Industry_D columns CL1 and CL2",
+    "industry_from": "Industry_W",
+    "macro_from": "Macro_M, last month-end on or before the Friday",
+    "gasoline_from": "StockPrices_M, previous month's change",
+    "window": [
+      "1994-12-30",
+      "2024-06-28"
+    ],
+    "fridays": 1540,
+    "fridays_using_an_earlier_session": 66,
+    "max_price_lag_days": 2,
+    "daily_rows_without_a_date": 534
+  },
+  "spread": "CL2 - CL1",
+  "frequency": "weekly",
+  "holdout": [
+    "2019-01-04",
+    "2024-06-28"
+  ],
+  "n_holdout": 287,
+  "arima_order": [
+    1,
+    0,
+    2
+  ],
+  "arimax_order": [
+    1,
+    0,
+    1
+  ],
+  "lasso_nonzero_at_2018": {
+    "spread": -0.12237413879528097,
+    "stock_change": 0.022377157473076694,
+    "production_change": 0.011531682131831538,
+    "crack_change": 0.008396262541714102,
+    "vix_change": -0.006114377309917454,
+    "ip_growth": -0.016684253186899256,
+    "gasoline_change": -0.04362221209298792,
+    "yield_curve_change": -0.007973846438318744
+  },
+  "diagnostics": {
+    "n": 1250,
+    "r_squared": 0.06857668724299348,
+    "adj_r_squared": 0.06633409499719012,
+    "from": "1995-01-20",
+    "to": "2018-12-28",
+    "nw_lags": 7,
+    "coefficients": {
+      "intercept": 0.026925526861348924,
+      "spread": -0.13314541558483953,
+      "stock_change": 7.791008732780934e-06,
+      "rig_change": -0.00079901150198929
+    },
+    "hac_se": {
+      "intercept": 0.012391425979717676,
+      "spread": 0.02399822412236992,
+      "stock_change": 3.1250357655890176e-06,
+      "rig_change": 0.0009044755439941714
+    },
+    "hac_t": {
+      "intercept": 2.172915926336542,
+      "spread": -5.548136183157327,
+      "stock_change": 2.4930942610547877,
+      "rig_change": -0.8833975747545905
+    },
+    "hac_p": {
+      "intercept": 0.029786645567096755,
+      "spread": 2.887309500946446e-08,
+      "stock_change": 0.012663522293211387,
+      "rig_change": 0.3770215006768406
+    },
+    "dw": 2.4104363027037423,
+    "bg_p": 6.93097814446566e-31,
+    "lb1_p": 3.635595869233781e-13,
+    "lb4_p": 1.3190189953087275e-25,
+    "lb12_p": 1.0981350695663135e-31,
+    "bp_p": 3.9033541398608996e-25,
+    "chow_break": "2007-01-12",
+    "chow_p": 0.0023292929900785575,
+    "cusum_stat": 2.1325042736239714,
+    "cusum_p": 0.00022441764096256504
+  },
+  "stationarity": [
+    {
+      "n": 1243,
+      "adf_stat": -2.6451842336769187,
+      "adf_p": 0.2595390950730869,
+      "adf_lags": 8,
+      "adf_5pct": -3.414027971743045,
+      "kpss_stat": 0.730576992725078,
+      "kpss_p": 0.01,
+      "kpss_5pct": 0.146,
+      "series": "CL1"
+    },
+    {
+      "n": 1241,
+      "adf_stat": -2.4884512259559557,
+      "adf_p": 0.3337601150102331,
+      "adf_lags": 10,
+      "adf_5pct": -3.414033683067611,
+      "kpss_stat": 0.7549092943695707,
+      "kpss_p": 0.01,
+      "kpss_5pct": 0.146,
+      "series": "CL2"
+    },
+    {
+      "n": 1245,
+      "adf_stat": -5.384247767607434,
+      "adf_p": 3.655029494953335e-06,
+      "adf_lags": 6,
+      "adf_5pct": -2.8638642784217305,
+      "kpss_stat": 1.040281682398295,
+      "kpss_p": 0.01,
+      "kpss_5pct": 0.463,
+      "series": "spread CL2-CL1"
+    },
+    {
+      "n": 1239,
+      "adf_stat": -13.028141200273721,
+      "adf_p": 2.37576835866955e-24,
+      "adf_lags": 12,
+      "adf_5pct": -2.863875547501718,
+      "kpss_stat": 0.008703959347876739,
+      "kpss_p": 0.1,
+      "kpss_5pct": 0.463,
+      "series": "change in the spread"
+    },
+    {
+      "n": 1241,
+      "adf_stat": -10.888703328654826,
+      "adf_p": 1.240897693445116e-19,
+      "adf_lags": 9,
+      "adf_5pct": -2.863871779019612,
+      "kpss_stat": 0.11142379144375568,
+      "kpss_p": 0.1,
+      "kpss_5pct": 0.463,
+      "series": "stock change, lagged"
+    },
+    {
+      "n": 1243,
+      "adf_stat": -6.87531136210537,
+      "adf_p": 1.4797711844267448e-09,
+      "adf_lags": 6,
+      "adf_5pct": -2.8638680226791444,
+      "kpss_stat": 0.12588428669859064,
+      "kpss_p": 0.1,
+      "kpss_5pct": 0.463,
+      "series": "rig change, lagged"
+    },
+    {
+      "n": 1237,
+      "adf_stat": -8.66314870973184,
+      "adf_p": 4.762195235032616e-14,
+      "adf_lags": 9,
+      "adf_5pct": -2.8638793281844253,
+      "kpss_stat": 0.09806103582084184,
+      "kpss_p": 0.1,
+      "kpss_5pct": 0.463,
+      "series": "yield-curve change, carried month"
+    }
+  ],
+  "metrics": [
+    {
+      "model": "No change",
+      "n": 287,
+      "rmse": 0.4879663408738192,
+      "mae": 0.23383275261324057,
+      "oos_r2_vs_no_change": NaN,
+      "direction_hit_rate": NaN
+    },
+    {
+      "model": "OLS: spread, stocks, rigs",
+      "n": 287,
+      "rmse": 0.4820104214537807,
+      "mae": 0.2321927947363027,
+      "oos_r2_vs_no_change": 0.024262213004136557,
+      "direction_hit_rate": 0.49477351916376305
+    },
+    {
+      "model": "OLS: spread only",
+      "n": 287,
+      "rmse": 0.47853188932639995,
+      "mae": 0.22809276033835438,
+      "oos_r2_vs_no_change": 0.03829463983590009,
+      "direction_hit_rate": 0.5400696864111498
+    },
+    {
+      "model": "ARIMA",
+      "n": 287,
+      "rmse": 0.5052238739026359,
+      "mae": 0.23830296371641174,
+      "oos_r2_vs_no_change": -0.07198324374118048,
+      "direction_hit_rate": 0.5400696864111498
+    },
+    {
+      "model": "ARIMAX: stocks and rigs",
+      "n": 287,
+      "rmse": 0.5117814053482603,
+      "mae": 0.2606883949913466,
+      "oos_r2_vs_no_change": -0.09999135719547803,
+      "direction_hit_rate": 0.5296167247386759
+    },
+    {
+      "model": "Ridge, wider set",
+      "n": 287,
+      "rmse": 0.49552237665591764,
+      "mae": 0.2543013445693566,
+      "oos_r2_vs_no_change": -0.03120927325907208,
+      "direction_hit_rate": 0.4843205574912892
+    },
+    {
+      "model": "LASSO, wider set",
+      "n": 287,
+      "rmse": 0.4851565898396912,
+      "mae": 0.23814638992103235,
+      "oos_r2_vs_no_change": 0.01148301187452394,
+      "direction_hit_rate": 0.4808362369337979
+    }
+  ],
+  "trading": {
+    "threshold": 0.05,
+    "weeks": 287,
+    "weeks_traded": 135,
+    "hit_rate_when_traded": 0.5555555555555556,
+    "cumulative_pnl": 6.740000000000034,
+    "mean_pnl_per_week": 0.023484320557491407
+  },
+  "largest_holdout_move": {
+    "target_date": "2020-04-10",
+    "spread": 2.5599999999999987,
+    "ols": -0.15191674272889952,
+    "actual_change": 3.5
+  }
+}
