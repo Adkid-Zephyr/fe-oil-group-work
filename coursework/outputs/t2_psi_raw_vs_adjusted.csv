@@ -1,11 +1,11 @@
 ,,psi,t,half-life,n
-1995-2004,raw change on raw level,-0.16591105127963288,-4.340196453761192,3.8 weeks,522
+1995-2004,raw change on raw level,-0.16591105127963265,-4.3401964537611954,3.8 weeks,522
 1995-2004,"adjusted, frozen days kept, raw level",-0.05384463322985404,-1.067994512221701,not quoted (t > -2.86; arithmetic gives 12.5),522
-1995-2004,"adjusted, frozen days kept, clean level",-0.05643995689514561,-1.0644181606727539,not quoted (t > -2.86; arithmetic gives 11.9),522
+1995-2004,"adjusted, frozen days kept, clean level",-0.056439956895145624,-1.0644181606727539,not quoted (t > -2.86; arithmetic gives 11.9),522
 1995-2004,"ADJUSTED, FROZEN DROPPED, CLEAN LEVEL (the rule)",0.027773680692442335,1.3440348275721423,none (psi >= 0),522
-1995-2004,adjusted $ change on $ clean level,0.027980784400769693,1.331238935174107,none (psi >= 0),522
-full training,raw change on raw level,-0.17844947045609116,-4.841816167714309,3.5 weeks,774
-full training,"adjusted, frozen days kept, raw level",0.0010432284164397564,0.02573081868973211,none (psi >= 0),774
-full training,"adjusted, frozen days kept, clean level",-0.001803071530680425,-0.039626849568224924,not quoted (t > -2.86; arithmetic gives 384.1),774
+1995-2004,adjusted $ change on $ clean level,0.0279807844007697,1.3312389351741072,none (psi >= 0),522
+full training,raw change on raw level,-0.17844947045609116,-4.841816167714305,3.5 weeks,774
+full training,"adjusted, frozen days kept, raw level",0.0010432284164397598,0.025730818689732197,none (psi >= 0),774
+full training,"adjusted, frozen days kept, clean level",-0.0018030715306804285,-0.03962684956822502,not quoted (t > -2.86; arithmetic gives 384.1),774
 full training,"ADJUSTED, FROZEN DROPPED, CLEAN LEVEL (the rule)",0.040352303610277106,1.3153198873895564,none (psi >= 0),774
-full training,adjusted $ change on $ clean level,0.031788362818159104,0.9249948411531962,none (psi >= 0),774
+full training,adjusted $ change on $ clean level,0.031788362818159104,0.9249948411531972,none (psi >= 0),774
