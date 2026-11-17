@@ -1,0 +1,37 @@
+{
+  "source_project": "fe-oil-research",
+  "imported_after_source_session_completed": true,
+  "date": "2026-10-27",
+  "files": [
+    {
+      "source_file": "analyze.py",
+      "source_sha256": "66e484bdc31edb23ddd972d3083f10c47f2dc2a58000052f020702edc641b04d"
+    },
+    {
+      "source_file": "build.py",
+      "source_sha256": "290132e160550b0858495d5270bf26b5b416c0e491ad46b99d35ecff100f01f9"
+    },
+    {
+      "source_file": "requirements.txt",
+      "source_sha256": "60941156f48f579c54ccc0f5dd2481e50b55df5b190a7c3f52d9da031c9b705d"
+    },
+    {
+      "source_file": "source/template.html",
+      "source_sha256": "a177fb25ed99342bb0a8fa6cc12c892951d4bd67bd8d92dbe00aeefea98695cc"
+    },
+    {
+      "source_file": "source/report.html",
+      "source_sha256": "a23b64c20a15cccc0e59e23fb84728a580eb7791ddfcec4189c3d9bbde7e12fc"
+    },
+    {
+      "source_file": "source/PROTOCOL.md",
+      "source_sha256": "0582f8f2e6eb56ae1b27c5e4f7434595a2f1a367142c0f911bfb448ae1a92c4a"
+    }
+  ],
+  "adaptations": [
+    "Shared workbook path in analyze.py",
+    "English-only report interface",
+    "Repository-specific README and design note",
+    "HTML rebuilt from adapted code and template"
+  ]
+}
